@@ -1,0 +1,57 @@
+(function($){
+	
+	$.confirm = function(params){
+		
+		if($('#confirm-box').length){
+			// A confirm is already shown on the page:
+			return false;
+		}
+		
+		var buttonHTML = '';
+		$.each(params.buttons,function(name,obj){
+			
+			// Generating the markup for the buttons:
+			
+			buttonHTML += '<a class="confirm-btn  '+obj['class']+'">'+name+'</a>';
+			
+			if(!obj.action){
+				obj.action = function(){};
+			}
+		});
+		
+		var markup = [
+			'<div class="confirm-box" id="confirm-box">',
+				'<div class="confirm-con" id="confirm-con">',
+					'<div class="confirm-txt" id="confirm-txt">',params.message,'</div>',
+					'<div id="confirm-buts">',
+					buttonHTML,
+				'</div></div></div>'
+		].join('');
+		
+		$(markup).appendTo('body').fadeIn();
+		var top = $("#confirm-box #confirm-con").height()/2;
+		$('#confirm-con').css({top:'50%',marginTop:'-'+top+'px'});
+		
+		var buttons = $('#confirm-buts .confirm-btn'),
+			i = 0;
+
+		$.each(params.buttons,function(name,obj){
+			buttons.eq(i++).click(function(){
+				
+				// Calling the action attribute when a
+				// click occurs, and hiding the confirm.
+				
+				obj.action();
+				$.confirm.hide();
+				return false;
+			});
+		});
+	}
+
+	$.confirm.hide = function(){
+		$('#confirm-box').fadeOut(function(){
+			$(this).remove();
+		});
+	}
+	
+})(jQuery);

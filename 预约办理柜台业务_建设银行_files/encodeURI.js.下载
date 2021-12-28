@@ -1,0 +1,16 @@
+jQuery(function(){
+	//将中文关键字转为字节码
+	var length=jQuery('.h-words').length;
+
+	for(var i=0;i<length;i++){
+		var href=jQuery('.h-words').eq(i).attr('href');
+		var index=href.lastIndexOf('=')+1;
+		var keyword=href.substr(index);
+
+		//转码
+		var U_keyword=window.encodeURIComponent(keyword);
+		
+		var U_href=href.substr(0,index)+U_keyword;
+		jQuery('.h-words').eq(i).attr('href',U_href);
+	}
+});

@@ -1,0 +1,315 @@
+
+
+
+document.write('<div class="jhjt_noconflict"><div class="zhezhao"><div class="zz_top1"><div class="zz_top_left fl"><ul><li class="zz_top_lii_noconflict hover_noconflict">境外分支机构</li><li class="zz_top_lii_noconflict">境内附属公司</li><div class="clear"></div></ul></div><div class="zz_top_right1 fr"> <a href="#" id="button2_noconflict" class="but2_noconflict"><img src="http://image3.ccb.com/cn/home/v3/images/shutdown.png"></a> </div><div class="clear"></div></div><div class="jhjt_tab_main"><div class="showshow"><div class="showj"><div class="in_s"> <a href="http://www.ccb.com/cn/group/index.html" target="_blank">进入建行集团网站 &gt;</a> </div><div class="showj_in"><img src="http://image4.ccb.com/cn/home/include/20151206_1449369972/jt.jpg"><div class="showj_info"><ul><li class="showj_tit"><a href="http://www.ccb.com/cn/ccbtoday/indexv3.html" target="_blank" onclick="LinkClickFunction(this)">今日建行 &gt;</a></li><script src="http://www.ccb.com/cn/ccbtoday/include/home_newsv3.js" type="text/javascript" charset="utf-8"></script><li class="showj_tit"><a href="http://www.ccb.com/cn/investor/indexv3.html" target="_blank" onclick="LinkClickFunction(this)">投资者关系 &gt;</a></li><script src="http://www.ccb.com/cn/investor/include/home_annov3.js" type="text/javascript" charset="utf-8"></script><li class="showj_tit"><a href="http://job.ccb.com" target="_blank" onclick="LinkClickFunction(this)">诚聘英才 &gt;</a></li></ul></div></div>\
+					<div class="showj_r_noconflict" style="display:block;">\
+						<div class="world_map">\
+                            <img src="http://image4.ccb.com/cn/home/v3/images/indexMapImage.png" border="0" usemap="#Map">\
+                            <map name="Map" id="Map">\
+								<area shape="rect" coords="373,81,409,103" href="#">\
+								<div class="area_city_noconflict" style="left: 265px; top: 101px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a target="_blank" onclick="LinkClickFunction(this)">建欧华沙分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="345,63,413,81" href="#">\
+								<div class="area_city_noconflict" style="left: 248px; top: 76px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a onclick="LinkClickFunction(this)" target="_blank">建欧阿姆斯特丹分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="306,63,338,81" href="#">\
+								<div class="area_city_noconflict" style="left: 195px; top: 82px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a onclick="LinkClickFunction(this)" target="_blank" href="http://www.uk.ccb.com">建行伦敦</a></li>\
+										<li><a onclick="LinkClickFunction(this)" target="_blank" href="http://www.uk.ccb.com">伦敦分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="261,84,306,101" href="#">\
+								<div class="area_city_noconflict" style="left: 160px; top: 96px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a target="_blank" onclick="LinkClickFunction(this)">建信租赁国际</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="261,109,295,124" href="#">\
+								<div class="area_city_noconflict" style="left: 149px; top: 126px; display: none;">\
+								<div class="area_city_up"></div>\
+									<ul>\
+										<li><a target="_blank" onclick="LinkClickFunction(this)">建欧巴黎分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="434,88,478,107" href="#">\
+								<div class="area_city_noconflict" style="left: 330px; top: 103px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://ru.ccb.com" target="_blank" onclick="LinkClickFunction(this)">建行俄罗斯</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="472,110,531,129" href="#">\
+								<div class="area_city_noconflict" style="left: 370px; top: 130px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://kz.ccb.com" target="_blank" onclick="LinkClickFunction(this)">阿斯塔纳分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="257,130,302,147" href="#">\
+								<div class="area_city_noconflict" style="left: 146px; top: 150px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a onclick="LinkClickFunction(this)" target="_blank" href="http://eu.ccb.com">建行欧洲</a></li>\
+										<li><a href="http://lu.ccb.com" target="_blank" onclick="LinkClickFunction(this)">卢森堡分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="361,105,414,123" href="#">\
+								<div class="area_city_noconflict" style="left: 258px; top: 123px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://de.ccb.com/" target="_blank" onclick="LinkClickFunction(this)">法兰克福分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="361,123,403,141" href="#">\
+								<div class="area_city_noconflict" style="left: 268px; top: 143px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://ch.ccb.com/" target="_blank" onclick="LinkClickFunction(this)">苏黎世分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="340,141,372,158" href="#">\
+								<div class="area_city_noconflict" style="left: 229px; top: 162px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a target="_blank" onclick="LinkClickFunction(this)">建欧米兰分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="279,150,335,167" href="#">\
+								<div class="area_city_noconflict" style="left: 177px; top: 174px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a target="_blank" onclick="LinkClickFunction(this)">建欧巴塞罗那分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="185,111,220,130" href="#">\
+								<div class="area_city_noconflict" style="left: 71px; top: 129px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://us.ccb.com" target="_blank" onclick="LinkClickFunction(this)">纽约分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="154,148,187,167" href="#">\
+								<div class="area_city_noconflict" style="left: 40px; top: 169px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a target="_blank" onclick="LinkClickFunction(this)">建行巴西开曼分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="204,227,248,246" href="#">\
+								<div class="area_city_noconflict" style="left: 96px; top: 247px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://www.br.ccb.com" target="_blank" onclick="LinkClickFunction(this)">建行巴西</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="161,250,219,268" href="#">\
+								<div class="area_city_noconflict" style="left: 60px; top: 267px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a target="_blank" onclick="LinkClickFunction(this)">智利分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="303,261,353,278" href="#">\
+								<div class="area_city_noconflict" style="left: 214px; top: 278px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a target="_blank" onclick="LinkClickFunction(this)">开普敦分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="343,222,413,243" href="#">\
+								<div class="area_city_noconflict" style="left: 248px; top: 244px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://za.ccb.com" target="_blank" onclick="LinkClickFunction(this)">约堡分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="421,180,454,198" href="#">\
+								<div class="area_city_noconflict" style="left: 311px; top: 199px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://ae.ccb.com" target="_blank" onclick="LinkClickFunction(this)">迪拜国际金融中心分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area href="#" coords="459,179,518,199" shape="rect">\
+								<div class="area_city_noconflict" style="left: 359px; top: 202px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://vn.ccb.com" target="_blank" onclick="LinkClickFunction(this)">胡志明市分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="494,156,539,176" href="#">\
+								<div class="area_city_noconflict" style="left: 382px; top: 176px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://www.asia.ccb.com/macau/personal/" target="_blank" onclick="LinkClickFunction(this)">澳门分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="534,142,569,162" href="#">\
+								<div class="area_city_noconflict" style="left: 422px; top: 161px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://www.asia.ccb.com" target="_blank" onclick="LinkClickFunction(this)">建行亚洲</a></li>\
+										<li><a href="http://hk.ccb.com" target="_blank" onclick="LinkClickFunction(this)">香港分行</a></li>\
+										<li><a href="http://www.ccbintl.com" target="_blank" onclick="LinkClickFunction(this)">建银国际</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="555,105,588,124" href="#">\
+								<div class="area_city_noconflict" style="left: 445px; top: 133px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://kr.ccb.com" target="_blank" onclick="LinkClickFunction(this)">首尔分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="592,114,624,132" href="#">\
+								<div class="area_city_noconflict" style="left: 479px; top: 133px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://jp.ccb.com" target="_blank" onclick="LinkClickFunction(this)">东京分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="591,157,626,177" href="#">\
+								<div class="area_city_noconflict" style="left: 477px; top: 177px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a target="_blank" onclick="LinkClickFunction(this)">大阪分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="560,177,590,173" href="#">\
+								<div class="area_city_noconflict" style="left: 538px; top: 320px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://nz.ccb.com/" target="_blank" onclick="LinkClickFunction(this)">中国建设银行(新西兰)有限公司</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="462,202,518,220" href="#">\
+								<div class="area_city_noconflict" style="left: 358px; top: 220px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://my.ccb.com/malaysia/cn/indexv3.html" target="_blank" onclick="LinkClickFunction(this)">建行马来西亚</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="553,222,602,242" href="#">\
+								<div class="area_city_noconflict" style="left: 447px; top: 243px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://sg.ccb.com" target="_blank" onclick="LinkClickFunction(this)">新加坡分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="511,281,546,301" href="#">\
+								<div class="area_city_noconflict" style="left: 397px; top: 300px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a target="_blank" onclick="LinkClickFunction(this)">珀斯分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="607,237,668,257" href="#">\
+								<div class="area_city_noconflict" style="left: 508px; top: 258px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a target="_blank" onclick="LinkClickFunction(this)">布里斯班分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="560,306,606,324" href="#">\
+								<div class="area_city_noconflict" style="left: 445px; top: 320px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a target="_blank" onclick="LinkClickFunction(this)">墨尔本分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="617,291,651,311" href="#">\
+								<div class="area_city_noconflict" style="left: 507px; top: 311px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://au.ccb.com" target="_blank" onclick="LinkClickFunction(this)">悉尼分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="657,311,793,329" href="#">\
+								<div class="area_city_noconflict" style="left: 550px; top: 330px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://nz.ccb.com" target="_blank" onclick="LinkClickFunction(this)">建行新西兰</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="125,101,168,121" href="#">\
+								<div class="area_city_noconflict" style="left: 20px; top: 120px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://ca.ccb.com" target="_blank" onclick="LinkClickFunction(this)">多伦多分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="563,180,598,200" href="#">\
+								<div class="area_city_noconflict" style="left: 450px; top: 200px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://tw.ccb.com" target="_blank" onclick="LinkClickFunction(this)">台北分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div>\
+								</div>\
+								<area shape="rect" coords="453,224,523,242" href="#">\
+								<div class="area_city_noconflict" style="left: 366px; top: 241px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a href="http://idn.ccb.com" target="_blank" onclick="LinkClickFunction(this)">建行印度尼西亚</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div> \
+								</div>\
+								<area shape="rect" coords="573,202,610,220" href="#">\
+								<div class="area_city_noconflict" style="left: 460px; top: 221px; display: none;">\
+									<div class="area_city_up"></div>\
+									<ul>\
+										<li><a target="_blank" href="http://la.ccb.com/labuan/en/indexv3.html" onclick="LinkClickFunction(this)">建行纳闽分行</a></li>\
+									</ul>\
+									<div class="area_city_bottom"></div> \
+								</div>\
+                        	</map>\
+                        </div>\
+                    </div>\
+					<div class="showj_r_noconflict">\
+						<div class="list_one1 fl">\
+							<ul>\
+								<li class="list_li"><a href="http://group.ccb.com/cn/group/include/20160106_1452056483.html" title="建信基金管理有限责任公司"> 建信基金管理有限责任公司</a></li> <li class="list_li"><a href="http://group.ccb.com/cn/group/include/20160203_1454464973.html" title="建信金融租赁有限公司"> 建信金融租赁有限公司</a></li> <li class="list_li"><a href="http://group.ccb.com/cn/group/include/20160106_1452057278.html" title="建信信托有限责任公司"> 建信信托有限责任公司</a></li> <li class="list_li"><a href="http://group.ccb.com/cn/group/include/20160112_1452577123.html" title="建信人寿保险有限公司"> 建信人寿保险有限公司</a></li> </ul></div><div class="list_one1 fl"><ul><li class="list_li"><a href="http://group.ccb.com/cn/group/include/20160106_1452055545.html" title="建信期货有限责任公司"> 建信期货有限责任公司</a></li> <li class="list_li"><a href="http://group.ccb.com/cn/group/include/20160112_1452576547.html" title="中德住房储蓄银行有限责任公司"> 中德住房储蓄银行有限责任公司</a></li> <li class="list_li"><a href="http://group.ccb.com/cn/group/include/20180211_1518319758.html" title="建信金融资产投资有限公司"> 建信金融资产投资有限公司</a></li> <li class="list_li"><a href="http://group1.ccb.com/cn/group/include/20180803_1533282117.html" title="建信财产保险有限公司"> 建信财产保险有限公司</a></li> </ul></div><a class="fR_noconflict f_blue" href="http://group.ccb.com/cn/group/company/company.html?churchyard#none" target="_blank">查看更多></a></div></div></div></div></div><div class="clear"></div></div>')

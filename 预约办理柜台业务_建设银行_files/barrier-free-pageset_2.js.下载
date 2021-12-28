@@ -1,0 +1,466 @@
+function bfreePageSetting_2(tool, bfreeArea, bfreeTool) {
+    return {
+        "/cn/|live/index_portal.jhtml|tran/": function () {
+            bfreeArea
+                .addNav(".header_top_box")
+                .addInteractive(".header_box .chengshixuanze .select-city")
+                .addInteractive('.login_box')
+                .addInteractive(".header_box .search_tow")
+                .addWindow("body>.banner")
+                .addServis(".index_scroll .index_scroll_main")
+                .addNav(".footer")
+            $('.logo img').attr({ 'alt': '首页', 'title': '首页' });
+            $('.search_tow .search_tow_a').attr('aria-label', '搜索按钮');
+            $('.footer_link_main .footerr_links_img:eq(0) a img').attr({ 'alt': '诚信网站', 'title': '诚信网站' });
+            $('.footer_link_main .footerr_links_img:eq(1) a img').attr({ 'alt': '可信网站身份验证', 'title': '可信网站身份验证' });
+            $('.copy-right_right ul li img').eq(0).attr({ 'alt': '官方微博', 'title': '官方微博' });
+            $('.copy-right_right ul li img').eq(1).attr({ 'alt': '微信银行', 'title': '微信银行' });
+            $('.copy-right_right ul li img').eq(2).attr({ 'alt': '手机银行', 'title': '手机银行' });
+        },
+        "/cn/forex/indexv3.html": function () {//外汇首页
+            bfreeArea
+                .addNav(".header_box .forex_nav")
+                .addInteractive(".header_box .search_tow")
+                .addWindow("body>.banner")
+                .addServis(".index_scroll .index_scroll_main")
+                .addWindow(".f_information_left .jsh_box_css")
+                .addWindow(".f_information_left .box_add_css")
+                .addWindow("#in_banner")
+            $('.banner .fcon > div').attr('aria-label', '业务配置图片文字')  //广告
+        },
+        "https://sinfo.ccb.com/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NYY010": function () {//网点业务预约
+            bfreeArea
+                .addInteractive('.login_box')
+                .addNav(".header_box .nav_company")
+                .addInteractive("#jhform")
+        },
+        "/cn/home/s_company_indexv3.html": function () {  //小微企业首页
+            bfreeArea
+                .addInteractive('.Quick_Link')
+                .addNav(".header_box .nav_company")
+                .addInteractive(".header_box .search_tow")
+                .addWindow("body>.banner")
+                .addServis(".index_scroll .index_scroll_main")
+                .addWindow(".vcc-index_title_box .vcc-index_tab_main_div")
+                .addWindow(".index_x_banner_bu")
+                .addWindow(".yzgh_box")
+                .addNav(".news_con")
+
+            $('.banner .fcon > div').attr('aria-label', '业务配置图片文字')  //广告
+            $('.vcc-index_tab_main_div .vcc-index_tab_main_boxL_bg').attr('aria-label', '小微e家');
+            $('.vcc-index_tab_main_div .vcc-index_tab_main_boxR_bg').attr('aria-label', '善融贷');
+            $('.index_x_banner_bu ul li a img').eq(0).attr({ 'alt': '信用贷', 'title': '信用贷' })
+            $('.index_x_banner_bu ul li a img').eq(2).attr({ 'alt': '结算透', 'title': '结算透' })
+            $('.index_x_banner_bu ul li a img').eq(3).attr({ 'alt': '速贷通', 'title': '速贷通' });
+            $('.yzgh_box_main ul li a img').eq(0).attr({ 'alt': '建行小微企业金融服务', 'title': '建行小微企业金融服务' });
+            $('.yzgh_box_main ul li a img').eq(1).attr({ 'alt': '小微企业善融贷', 'title': '小微企业善融贷' });
+            $('.yzgh_box_main ul li a img').eq(2).attr({ 'alt': '建行善融商务企业商城', 'title': '建行善融商务企业商城' });
+            $('.yzgh_box_main ul li a img').eq(3).attr({ 'alt': '小微企业网银循环贷', 'title': '小微企业网银循环贷' });
+        },
+        "/cn/creditcard/index.html": function () {  //信用卡首页
+            bfreeArea
+                .addInteractive('.Quick_Link')
+                .addNav(".header_box .crd_card_nav")
+                .addServis(".index_scroll .index_scroll_main")
+                .addWindow(".yxsh_box .yzgh_box_main")
+                .addWindow(".vcc-index_tab_main_div .index_x_banner")
+                .addWindow(".yxsh_box .yzgh_box_main")
+                .addWindow(".index_x_banner2 .index_x_banner_main")
+                .addWindow(".vcc-index_title_box_1 .yzgh_box_main") //服务厅
+                .addWindow(".vcc-index_tab_main_div .index_x_banner_main")
+                .addWindow(".yxsh_box .yzgh_box_main")
+                .addWindow(".vcc-index_tab_main_div  .index_x_banner2")
+                .addWindow(".Announcement .Announcement_main")
+            $('.banner .fcon  div').attr('aria-label', '业务配置图片文字')  //广告
+
+            //卡天地
+            $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top img').eq(0).attr({ 'alt': $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top i').eq(0).text(), 'title': $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top i').eq(0).text() });
+            $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top img').eq(1).attr({ 'alt': $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top i').eq(1).text(), 'title': $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top i').eq(1).text() });
+            $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top img').eq(2).attr({ 'alt': $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top i').eq(2).text(), 'title': $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top i').eq(2).text() });
+            $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top img').eq(3).attr({ 'alt': $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top i').eq(3).text(), 'title': $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top i').eq(3).text() });
+            $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top img').eq(4).attr({ 'alt': $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top i').eq(4).text(), 'title': $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top i').eq(4).text() });
+            $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top img').eq(5).attr({ 'alt': $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top i').eq(5).text(), 'title': $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top i').eq(5).text() });
+            $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top img').eq(6).attr({ 'alt': $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top i').eq(6).text(), 'title': $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top i').eq(6).text() });
+            $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top img').eq(7).attr({ 'alt': $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top i').eq(7).text(), 'title': $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top i').eq(7).text() });
+            $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top img').eq(8).attr({ 'alt': $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top i').eq(8).text(), 'title': $('.yzgh_box_main .my_scroll_box ul li .index_scroll_top i').eq(8).text() });
+            //办卡指南
+            $('.index_x_banner2:eq(0) ul li a img').eq(0).attr({ 'alt': '流程简介', 'title': '流程简介' })
+            $('.index_x_banner2:eq(0) ul li a img').eq(1).attr({ 'alt': '热点产品', 'title': '热点产品' })
+            $('.index_x_banner2:eq(0) ul li a img').eq(2).attr({ 'alt': '在线申请', 'title': '在线申请' })
+            //龙卡惠
+            $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(0) ul li div img').eq(0).attr({ 'alt': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(0) ul li div h3').eq(0).text(), 'title': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(0) ul li div h3').eq(0).text() });
+            $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(0) ul li div img').eq(1).attr({ 'alt': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(0) ul li div h3').eq(1).text(), 'title': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(0) ul li div h3').eq(1).text() });
+            $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(0) ul li div img').eq(2).attr({ 'alt': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(0) ul li div h3').eq(2).text(), 'title': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(0) ul li div h3').eq(2).text() });
+
+            $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(1) ul li div img').eq(0).attr({ 'alt': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(1) ul li div h3').eq(0).text(), 'title': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(1) ul li div h3').eq(0).text() });
+            $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(1) ul li div img').eq(1).attr({ 'alt': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(1) ul li div h3').eq(1).text(), 'title': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(1) ul li div h3').eq(1).text() });
+            $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(1) ul li div img').eq(2).attr({ 'alt': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(1) ul li div h3').eq(2).text(), 'title': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(1) ul li div h3').eq(2).text() });
+            //特惠商户
+            $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(2) ul li div img').eq(0).attr({ 'alt': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(2) ul li div h3').eq(0).text(), 'title': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(2) ul li div h3').eq(0).text() });
+            $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(2) ul li div img').eq(1).attr({ 'alt': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(2) ul li div h3').eq(1).text(), 'title': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(2) ul li div h3').eq(1).text() });
+            $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(2) ul li div img').eq(2).attr({ 'alt': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(2) ul li div h3').eq(2).text(), 'title': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(2) ul li div h3').eq(2).text() });
+            //积分兑换              
+            $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(3) ul li div img').eq(0).attr({ 'alt': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(3) ul li div h3').eq(0).text(), 'title': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(3) ul li div h3').eq(0).text() });
+            $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(3) ul li div img').eq(1).attr({ 'alt': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(3) ul li div h3').eq(1).text(), 'title': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(3) ul li div h3').eq(1).text() });
+            $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(3) ul li div img').eq(2).attr({ 'alt': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(3) ul li div h3').eq(2).text(), 'title': $('.vcc-index_tab_main_crd_box .yzgh_box_main_main_content:eq(3) ul li div h3').eq(2).text() });
+
+            //刷卡指南
+            $('.index_x_banner2:eq(1) ul li a img').eq(0).attr({ 'alt': $('.index_x_banner2:eq(1) ul li div').eq(0).text(), 'title': $('.index_x_banner2:eq(1) ul li div').eq(0).text() })
+            $('.index_x_banner2:eq(1) ul li a img').eq(1).attr({ 'alt': $('.index_x_banner2:eq(1) ul li div').eq(1).text(), 'title': $('.index_x_banner2:eq(1) ul li div').eq(1).text() })
+            $('.index_x_banner2:eq(1) ul li a img').eq(2).attr({ 'alt': $('.index_x_banner2:eq(1) ul li div').eq(2).text(), 'title': $('.index_x_banner2:eq(1) ul li div').eq(2).text() })
+            //服务厅                
+            //服务指南
+            $('.index_x_banner2:eq(2) ul li a img').eq(0).attr({ 'alt': $('.index_x_banner2:eq(2) ul li div').eq(0).text(), 'title': $('.index_x_banner2:eq(2) ul li div').eq(0).text() })
+            $('.index_x_banner2:eq(2) ul li a img').eq(1).attr({ 'alt': $('.index_x_banner2:eq(2) ul li div').eq(1).text(), 'title': $('.index_x_banner2:eq(2) ul li div').eq(1).text() })
+            $('.index_x_banner2:eq(2) ul li a img').eq(2).attr({ 'alt': $('.index_x_banner2:eq(2) ul li div').eq(2).text(), 'title': $('.index_x_banner2:eq(2) ul li div').eq(2).text() })
+            //分期乐                
+            //分期指南 
+            $('.index_x_banner2:eq(3) ul li a img').eq(0).attr({ 'alt': $('.index_x_banner2:eq(3) ul li div').eq(0).text(), 'title': $('.index_x_banner2:eq(3) ul li div').eq(0).text() })
+            $('.index_x_banner2:eq(3) ul li a img').eq(1).attr({ 'alt': $('.index_x_banner2:eq(3) ul li div').eq(1).text(), 'title': $('.index_x_banner2:eq(3) ul li div').eq(1).text() })
+            $('.index_x_banner2:eq(3) ul li a img').eq(2).attr({ 'alt': $('.index_x_banner2:eq(3) ul li div').eq(2).text(), 'title': $('.index_x_banner2:eq(3) ul li div').eq(2).text() })
+        },
+        "http://cloud.life.ccb.com/live/index_portal.jhtml": function () {  //悦生活首页
+            bfreeArea
+                .addNav(".header_box .insur_nav")
+                .addWindow("body>.banner")
+                .addWindow(".vcc-index_title_box .section")
+                .addWindow(".yzgh_box ")
+                .addWindow(".life_operate ")
+            $('.banner .fcon > div').attr('aria-label', '业务配置图片文字')  //广告
+            //常用缴费
+            $('.scroll_box_02 ul li a img').eq(0).attr({ 'alt': $('.scroll_box_02 ul li a h1').eq(0).text(), 'title': $('.scroll_box_02 ul li a h1').eq(0).text() });
+            $('.scroll_box_02 ul li a img').eq(1).attr({ 'alt': $('.scroll_box_02 ul li a h1').eq(1).text(), 'title': $('.scroll_box_02 ul li a h1').eq(1).text() });
+            $('.scroll_box_02 ul li a img').eq(2).attr({ 'alt': $('.scroll_box_02 ul li a h1').eq(2).text(), 'title': $('.scroll_box_02 ul li a h1').eq(2).text() });
+            $('.scroll_box_02 ul li a img').eq(3).attr({ 'alt': $('.scroll_box_02 ul li a h1').eq(3).text(), 'title': $('.scroll_box_02 ul li a h1').eq(3).text() });
+            $('.scroll_box_02 ul li a img').eq(4).attr({ 'alt': $('.scroll_box_02 ul li a h1').eq(4).text(), 'title': $('.scroll_box_02 ul li a h1').eq(4).text() });
+            $('.scroll_box_02 ul li a img').eq(5).attr({ 'alt': $('.scroll_box_02 ul li a h1').eq(5).text(), 'title': $('.scroll_box_02 ul li a h1').eq(5).text() });
+            $('.scroll_box_02 ul li a img').eq(6).attr({ 'alt': $('.scroll_box_02 ul li a h1').eq(6).text(), 'title': $('.scroll_box_02 ul li a h1').eq(6).text() });
+            $('.scroll_box_02 ul li a img').eq(7).attr({ 'alt': $('.scroll_box_02 ul li a h1').eq(7).text(), 'title': $('.scroll_box_02 ul li a h1').eq(7).text() });
+            $('.scroll_box_02 ul li a img').eq(8).attr({ 'alt': $('.scroll_box_02 ul li a h1').eq(8).text(), 'title': $('.scroll_box_02 ul li a h1').eq(8).text() });
+            $('.scroll_box_02 ul li a img').eq(9).attr({ 'alt': $('.scroll_box_02 ul li a h1').eq(9).text(), 'title': $('.scroll_box_02 ul li a h1').eq(9).text() });
+            $('.scroll_box_02 ul li a img').eq(10).attr({ 'alt': $('.scroll_box_02 ul li a h1').eq(10).text(), 'title': $('.scroll_box_02 ul li a h1').eq(10).text() });
+            $('.scroll_box_02 ul li a img').eq(11).attr({ 'alt': $('.scroll_box_02 ul li a h1').eq(11).text(), 'title': $('.scroll_box_02 ul li a h1').eq(11).text() });
+            $('.scroll_box_02 ul li a img').eq(12).attr({ 'alt': $('.scroll_box_02 ul li a h1').eq(12).text(), 'title': $('.scroll_box_02 ul li a h1').eq(12).text() });
+            $('.scroll_box_02 ul li a img').eq(13).attr({ 'alt': $('.scroll_box_02 ul li a h1').eq(13).text(), 'title': $('.scroll_box_02 ul li a h1').eq(13).text() });
+            $('.scroll_box_02 ul li a img').eq(14).attr({ 'alt': $('.scroll_box_02 ul li a h1').eq(14).text(), 'title': $('.scroll_box_02 ul li a h1').eq(14).text() });
+            $('.scroll_box_02 ul li a img').eq(15).attr({ 'alt': $('.scroll_box_02 ul li a h1').eq(15).text(), 'title': $('.scroll_box_02 ul li a h1').eq(15).text() });
+            //生活
+            $('.scroll_box_03 ul li a img').eq(0).attr({ 'alt': $('.scroll_box_03 ul li a h1').eq(0).text(), 'title': $('.scroll_box_03 ul li a h1').eq(0).text() });
+            $('.scroll_box_03 ul li a img').eq(1).attr({ 'alt': $('.scroll_box_03 ul li a h1').eq(1).text(), 'title': $('.scroll_box_03 ul li a h1').eq(1).text() });
+            $('.scroll_box_03 ul li a img').eq(2).attr({ 'alt': $('.scroll_box_03 ul li a h1').eq(2).text(), 'title': $('.scroll_box_03 ul li a h1').eq(2).text() });
+            $('.scroll_box_03 ul li a img').eq(3).attr({ 'alt': $('.scroll_box_03 ul li a h1').eq(3).text(), 'title': $('.scroll_box_03 ul li a h1').eq(3).text() });
+            $('.scroll_box_03 ul li a img').eq(4).attr({ 'alt': $('.scroll_box_03 ul li a h1').eq(4).text(), 'title': $('.scroll_box_03 ul li a h1').eq(4).text() });
+            $('.scroll_box_03 ul li a img').eq(5).attr({ 'alt': $('.scroll_box_03 ul li a h1').eq(5).text(), 'title': $('.scroll_box_03 ul li a h1').eq(5).text() });
+            $('.scroll_box_03 ul li a img').eq(6).attr({ 'alt': $('.scroll_box_03 ul li a h1').eq(6).text(), 'title': $('.scroll_box_03 ul li a h1').eq(6).text() });
+            $('.scroll_box_03 ul li a img').eq(7).attr({ 'alt': $('.scroll_box_03 ul li a h1').eq(7).text(), 'title': $('.scroll_box_03 ul li a h1').eq(7).text() });
+            $('.scroll_box_03 ul li a img').eq(8).attr({ 'alt': $('.scroll_box_03 ul li a h1').eq(8).text(), 'title': $('.scroll_box_03 ul li a h1').eq(8).text() });
+            $('.scroll_box_03 ul li a img').eq(9).attr({ 'alt': $('.scroll_box_03 ul li a h1').eq(9).text(), 'title': $('.scroll_box_03 ul li a h1').eq(9).text() });
+            //school
+            $('.scroll_box_04 ul li a img').eq(0).attr({ 'alt': $('.scroll_box_04 ul li a h1').eq(0).text(), 'title': $('.scroll_box_04 ul li a h1').eq(0).text() });
+            $('.scroll_box_04 ul li a img').eq(1).attr({ 'alt': $('.scroll_box_04 ul li a h1').eq(1).text(), 'title': $('.scroll_box_04 ul li a h1').eq(1).text() });
+            $('.scroll_box_04 ul li a img').eq(2).attr({ 'alt': $('.scroll_box_04 ul li a h1').eq(2).text(), 'title': $('.scroll_box_04 ul li a h1').eq(2).text() });
+            $('.scroll_box_04 ul li a img').eq(3).attr({ 'alt': $('.scroll_box_04 ul li a h1').eq(3).text(), 'title': $('.scroll_box_04 ul li a h1').eq(3).text() });
+            $('.scroll_box_04 ul li a img').eq(4).attr({ 'alt': $('.scroll_box_04 ul li a h1').eq(4).text(), 'title': $('.scroll_box_04 ul li a h1').eq(4).text() });
+            //政务
+            $('.scroll_box_05 ul li a img').eq(0).attr({ 'alt': $('.scroll_box_05 ul li a h1').eq(0).text(), 'title': $('.scroll_box_05 ul li a h1').eq(0).text() });
+            $('.scroll_box_05 ul li a img').eq(1).attr({ 'alt': $('.scroll_box_05 ul li a h1').eq(1).text(), 'title': $('.scroll_box_05 ul li a h1').eq(1).text() });
+            $('.scroll_box_05 ul li a img').eq(2).attr({ 'alt': $('.scroll_box_05 ul li a h1').eq(2).text(), 'title': $('.scroll_box_05 ul li a h1').eq(2).text() });
+            $('.scroll_box_05 ul li a img').eq(3).attr({ 'alt': $('.scroll_box_05 ul li a h1').eq(3).text(), 'title': $('.scroll_box_05 ul li a h1').eq(3).text() });
+            $('.scroll_box_05 ul li a img').eq(4).attr({ 'alt': $('.scroll_box_05 ul li a h1').eq(4).text(), 'title': $('.scroll_box_05 ul li a h1').eq(4).text() });
+            $('.scroll_box_05 ul li a img').eq(5).attr({ 'alt': $('.scroll_box_05 ul li a h1').eq(5).text(), 'title': $('.scroll_box_05 ul li a h1').eq(5).text() });
+            $('.scroll_box_05 ul li a img').eq(6).attr({ 'alt': $('.scroll_box_05 ul li a h1').eq(6).text(), 'title': $('.scroll_box_05 ul li a h1').eq(6).text() });
+            //医疗
+            $('.scroll_box_06 ul li a img').eq(0).attr({ 'alt': $('.scroll_box_06 ul li a h1').eq(0).text(), 'title': $('.scroll_box_06 ul li a h1').eq(0).text() });
+            $('.scroll_box_06 ul li a img').eq(1).attr({ 'alt': $('.scroll_box_06 ul li a h1').eq(1).text(), 'title': $('.scroll_box_06 ul li a h1').eq(1).text() });
+            //交通
+            $('.scroll_box_07 ul li a img').eq(0).attr({ 'alt': $('.scroll_box_07 ul li a h1').eq(0).text(), 'title': $('.scroll_box_07 ul li a h1').eq(0).text() });
+            $('.scroll_box_07 ul li a img').eq(1).attr({ 'alt': $('.scroll_box_07 ul li a h1').eq(1).text(), 'title': $('.scroll_box_07 ul li a h1').eq(1).text() });
+            $('.scroll_box_07 ul li a img').eq(2).attr({ 'alt': $('.scroll_box_07 ul li a h1').eq(2).text(), 'title': $('.scroll_box_07 ul li a h1').eq(2).text() });
+            $('.scroll_box_07 ul li a img').eq(3).attr({ 'alt': $('.scroll_box_07 ul li a h1').eq(3).text(), 'title': $('.scroll_box_07 ul li a h1').eq(3).text() });
+            $('.scroll_box_07 ul li a img').eq(4).attr({ 'alt': $('.scroll_box_07 ul li a h1').eq(4).text(), 'title': $('.scroll_box_07 ul li a h1').eq(4).text() });
+            $('.scroll_box_07 ul li a img').eq(5).attr({ 'alt': $('.scroll_box_07 ul li a h1').eq(5).text(), 'title': $('.scroll_box_07 ul li a h1').eq(5).text() });
+            $('.scroll_box_07 ul li a img').eq(6).attr({ 'alt': $('.scroll_box_07 ul li a h1').eq(6).text(), 'title': $('.scroll_box_07 ul li a h1').eq(6).text() });
+            $('.scroll_box_07 ul li a img').eq(7).attr({ 'alt': $('.scroll_box_07 ul li a h1').eq(7).text(), 'title': $('.scroll_box_07 ul li a h1').eq(7).text() });
+            $('.scroll_box_07 ul li a img').eq(8).attr({ 'alt': $('.scroll_box_07 ul li a h1').eq(8).text(), 'title': $('.scroll_box_07 ul li a h1').eq(8).text() });
+            $('.scroll_box_07 ul li a img').eq(9).attr({ 'alt': $('.scroll_box_07 ul li a h1').eq(9).text(), 'title': $('.scroll_box_07 ul li a h1').eq(9).text() });
+            //便民
+            $('.scroll_box_08 ul li a img').eq(0).attr({ 'alt': $('.scroll_box_08 ul li a h1').eq(0).text(), 'title': $('.scroll_box_08 ul li a h1').eq(0).text() });
+            $('.scroll_box_08 ul li a img').eq(1).attr({ 'alt': $('.scroll_box_08 ul li a h1').eq(1).text(), 'title': $('.scroll_box_08 ul li a h1').eq(1).text() });
+            $('.scroll_box_08 ul li a img').eq(2).attr({ 'alt': $('.scroll_box_08 ul li a h1').eq(2).text(), 'title': $('.scroll_box_08 ul li a h1').eq(2).text() });
+            //公益
+            $('.scroll_box_09 ul li a img').eq(0).attr({ 'alt': $('.scroll_box_09 ul li a h1').eq(0).text(), 'title': $('.scroll_box_09 ul li a h1').eq(0).text() });
+            $('.life_operate ul li a img').eq(0).attr({ 'alt': '最新公告', 'title': '最新公告' });//life_operate
+            $('.life_operate ul li a img').eq(1).attr({ 'alt': '常见问题', 'title': '常见问题' })
+            $('.life_operate ul li a img').eq(2).attr({ 'alt': '优惠资讯', 'title': '优惠资讯' })
+        },
+        "/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NQ0000&FLAG=0": function () {  //账户查询
+            bfreeArea
+                .addInteractive(".header_box .header")
+                .addInteractive(".l_login")
+                .addWindow(".tishi:eq(0)")
+        },
+        "http://cloud.life.ccb.com/live/guide_portal.jhtml": function () {  //服务指南
+            bfreeArea
+                .addNav(".header_box .fund_nav")
+                .addWindow(".yzgh_box")
+                .addNav(".footer_links")
+        },
+        "/cn/fund/guide/guide_index.html": function () {  //服务指南1_fund
+            bfreeArea
+                .addNav(".header_box .insur_nav")
+                .addServis(".fund_tool_main")
+                .addWindow(".floor .eq(1)")
+                .addWindow(".liucheng")
+                .addWindow(".wangdian")
+        },
+        "/cn/finance/service/handbook.html": function () {  //服务指南2
+            bfreeArea
+                .addNav(".life_nav")
+                .addServis(".help_center")
+                .addWindow(".mo_box")
+                .addWindow(".serve ")
+                .addWindow(".Interactive")
+                .addWindow(".dianzi_main")
+        },
+        "/cn/creditcard/serveiceDirect.html": function () {  //服务指南3
+            bfreeArea
+                .addInteractive('.Quick_Link')
+                .addNav(".crd_card_nav")
+                .addServis(".vcc-index_tab_main_crd_box")
+                .addServis(".index_x_banner2")
+                .addServis(".vcc-index_tab_main_div .ul_box02")
+                .addServis(".vcc-index_tab_main_div .ul_box03")
+        },
+        "/cn/job/plan_index.html?planType=XY": function () {  //校园招聘
+            bfreeArea
+                .addInteractive(".header_box .login_person_top")
+                .addNav(".header_box .nav_group")
+                .addInteractive(".header_box .search_tow")
+                .addWindow('.banner .focus')
+                .addWindow('.wrap:eq(0)')
+                .addInteractive(".Choice")
+                .addWindow(".org_table ")
+        },
+        "/cn/finance/index.html": function () {  //理财
+            bfreeArea
+                .addNav(".header_box .life_nav")
+                .addWindow('.banner .focus')
+                .addServis('.section')
+                .addWindow(".life_tab")
+                .addWindow("#tab1")
+                .addWindow("#tab2 ")
+                .addWindow("#tab3")
+                .addWindow("#tab4")
+                .addWindow(".banner_main")
+                .addWindow(".news_con .news")
+        },
+        "/cn/finance/product.html": function () {  //理财产品
+            bfreeArea
+                .addNav(".header_box .life_nav")
+                .addInteractive(".header_box .search_tow")
+                .addInteractive('.bannerimg')
+                .addList('.section')
+        },
+        "/cn/job/plan_index.html?planType=SH": function () {  //社会招聘
+            bfreeArea
+                .addInteractive(".header_box .login_person_top")
+                .addNav(".header_box .nav_group")
+                .addInteractive(".header_box .search_tow")
+                .addWindow('.banner .focus')
+                .addWindow('.anno_list')
+                .addInteractive(".Choice .Choice_box")
+                .addWindow(".table1")
+                .addWindow(".org_table")
+        },
+        "cn/home/privatebank_index.html": function () {  //私人银行
+            bfreeArea
+                .addInteractive(".header_box .login_person_top")
+                .addNav(".header_box .nav_group")
+                .addInteractive(".header_box .search_tow")
+                .addWindow('.banner .focus')
+                .addWindow('.anno_list')
+                .addInteractive(".Choice .Choice_box")
+                .addWindow(".table1")
+                .addWindow(".org_table ")
+        },
+        "/cn/creditcard/cards/": function () {  //全球支付信用卡
+            bfreeArea
+                .addNav(".crd_card_nav")
+                .addInteractive(".header_box .search_tow")
+                .addWindow('.bx_sx_div_fillBox .details_box')
+                .addServis('.bx_sx_div_fillBox .legal_right_list')
+            $('.details_box_top_inf .details_box_top_inf_L ul li img').attr({ 'alt': $('.details_box_top_title').text(), 'title': $('.details_box_top_title').text() })
+            $('.footer_link_main .footerr_links_img:eq(0) a img').attr({ 'alt': '诚信网站', 'title': '诚信网站' });
+            $('.footer_link_main .footerr_links_img:eq(1) a img').attr({ 'alt': '可信网站身份验证', 'title': '可信网站身份验证' });
+            $('.copy-right_right ul li img').eq(0).attr({ 'alt': '官方微博', 'title': '官方微博' });
+            $('.copy-right_right ul li img').eq(1).attr({ 'alt': '微信银行', 'title': '微信银行' });
+            $('.copy-right_right ul li img').eq(2).attr({ 'alt': '手机银行', 'title': '手机银行' })
+        },
+        "/cn/creditcard/apply_process3.html": function () {  //办卡进度查询
+            bfreeArea
+                .addNav(".header_box .crd_card_nav")
+                .addInteractive('#applyprocess')
+        },
+        "/cn/home/company/zqcp/246978.html": function () {  //国债介绍
+            bfreeArea
+                .addInteractive('.header_box .login_box')
+                .addInteractive('.que_l .menubar')
+                .addWindow('.qur_r')
+        },
+        "https://sinfo.ccb.com/cn/creditcard/crd_activation.html": function () {  //在线开卡
+            bfreeArea
+                .addInteractive('.header_box .login_box')
+                .addInteractive('#crdactiv')
+        },
+        "/cn/fund/news/news_index.html": function () {  //基金公告
+            bfreeArea
+                .addInteractive('.header_box .login_box')
+                .addNav('.fund_nav')
+                .addInteractive('.floor .mr_40 .f14:eq(0)')
+                .addWindow('.floor .mr_40 .news2:eq(0)')
+                .addInteractive('.floor li .f14:eq(1)')
+                .addWindow('.floor li .news2:eq(1)')
+                .addWindow('.floor li .news2:eq(2)')
+                .addWindow('.floor li .news2:eq(3)')
+                .addWindow('.floor li .news2:eq(4)')
+                .addWindow('.floor li .new_inf')
+        },
+        "/cn/creditcard/service/card_shoufei.html": function () {  //收费标准
+            bfreeArea
+                .addInteractive('.header_box .login_box')
+                .addNav('.header_box .crd_card_nav')
+                .addList('.zhangcheng_mian')
+        },
+        "/cn/creditcard/cards/": function () {  //日本旅游卡
+            bfreeArea
+                .addInteractive('.header_box .login_box')
+                .addNav('.header_box .crd_card_nav')
+                .addWindow('.bx_sx_div_fillBox .details_box')
+                .addWindow('.bx_sx_div_fillBox .legal_right_list div')
+            $('.details_box_top_inf .details_box_top_inf_L ul li img').attr({ 'alt': $('.details_box_top_title').text(), 'title': $('.details_box_top_title').text() })
+        },
+        "/cn/creditcard/creditFavarite.html": function () {  //更多优惠活动
+            bfreeArea
+                .addInteractive('.header_box .login_box')
+                .addNav('.header_box .crd_card_nav')
+                .addInteractive('.groom-nav .content')
+                .addWindow('.ykyh_main')
+            $('.activity_list ul li a img:eq(0)').attr('title', $('.activity_list ul li div.activity_title h3:eq(0) a').text());
+            $('.activity_list ul li a img:eq(1)').attr('title', $('.activity_list ul li div.activity_title h3:eq(1) a').text());
+            $('.activity_list ul li a img:eq(2)').attr('title', $('.activity_list ul li div.activity_title h3:eq(2) a').text());
+            $('.activity_list ul li a img:eq(3)').attr('title', $('.activity_list ul li div.activity_title h3:eq(3) a').text());
+            $('.activity_list ul li a img:eq(4)').attr('title', $('.activity_list ul li div.activity_title h3:eq(4) a').text());
+            $('.activity_list ul li a img:eq(5)').attr('title', $('.activity_list ul li div.activity_title h3:eq(5) a').text());
+            $('.activity_list ul li a img:eq(6)').attr('title', $('.activity_list ul li div.activity_title h3:eq(6) a').text());
+            $('.activity_list ul li a img:eq(7)').attr('title', $('.activity_list ul li div.activity_title h3:eq(7) a').text());
+            $('.activity_list ul li a img:eq(8)').attr('title', $('.activity_list ul li div.activity_title h3:eq(8) a').text());
+            $('.activity_list ul li a img:eq(9)').attr('title', $('.activity_list ul li div.activity_title h3:eq(9) a').text());
+            $('.activity_list ul li a img:eq(10)').attr('title', $('.activity_list ul li div.activity_title h3:eq(10) a').text());
+            $('.activity_list ul li a img:eq(11)').attr('title', $('.activity_list ul li div.activity_title h3:eq(11) a').text());
+            $('.activity_list ul li a img:eq(12)').attr('title', $('.activity_list ul li div.activity_title h3:eq(12) a').text());
+            $('.activity_list ul li a img:eq(13)').attr('title', $('.activity_list ul li div.activity_title h3:eq(13) a').text());
+            $('.activity_list ul li a img:eq(14)').attr('title', $('.activity_list ul li div.activity_title h3:eq(14) a').text());
+            $('.activity_list ul li a img:eq(15)').attr('title', $('.activity_list ul li div.activity_title h3:eq(15) a').text());
+            $('.activity_list ul li a img:eq(16)').attr('title', $('.activity_list ul li div.activity_title h3:eq(16) a').text());
+            $('.activity_list ul li a img:eq(17)').attr('title', $('.activity_list ul li div.activity_title h3:eq(17) a').text());
+        },
+        "/cn/creditcard/cards/": function () {  //欧洲旅游卡
+            bfreeArea
+                .addInteractive('.header_box .login_box')
+                .addNav('.header_box .crd_card_nav')
+                .addWindow('.bx_sx_div_fillBox .details_box')
+                .addServis('.bx_sx_div_fillBox .legal_right_list')
+            $('.details_box_top_inf .details_box_top_inf_L ul li img').attr({ 'alt': $('.details_box_top_title').text(), 'title': $('.details_box_top_title').text() })
+        },
+        "/cn/ebank/personal/tdys/201305311369981708.html": function () {  //电子银行_服务介绍
+            bfreeArea
+                .addNav('.header_box .crd_card_nav')
+                .addInteractive('.body_wrap .col_left')
+                .addWindow('.col_right .banner')
+                .addWindow('.main_content')
+        },
+        "/cn/creditcard/service/card_zhangcheng.html": function () {  //章程
+            bfreeArea
+                .addInteractive('.header_box .login_box')
+                .addNav('.header_box .crd_card_nav')
+                .addInteractive('.zhangcheng_mian .zc_mian_left')
+                .addWindow('.zhangcheng_mian .zc_mian_right')
+        },
+        "http://login.ccb.com/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NHY010": function () {  //网站登录
+            bfreeArea
+                .addWindow('.header_box')
+                .addInteractive(".section .login")
+        },
+        "/cn/creditcard/jf_query_login.html": function () {  //账单查询
+            bfreeArea
+                .addInteractive('.header_box .login_box')
+                .addNav('.header_box .crd_card_nav')
+                .addInteractive('#jfquery')
+                .addWindow('.zhangcheng_mian .zc_mian_right')
+        },
+        "/cn/gold/accountgoldlist.html": function () {  //贵金属  代理个人金交所贵金属业务
+            bfreeArea
+                .addWindow(".header_box .logo")
+                .addInteractive(".header_box .search_tow_a_noconflict")
+                .addInteractive('#leftbox')
+                .addNav('#main #nav')
+                .addWindow('#ad1')
+                .addWindow('#main .b1_border_table')
+                .addWindow('.mokuai_b_758 .gradient hack_h_lsae39')
+            $('.search_tow .search_tow_a_noconflict').attr('aria-label', '搜索按钮');
+            $('#focuseFrom a img').attr({ 'alt': '建行账号支付', 'title': '建行账号支付' })
+            $('.drag_div a img').attr({ 'alt': '展示中心', 'title': '展示中心' })
+        },
+        "/cn/gold3v/account_commodity/619645.html": function () {  //账户商品
+            bfreeArea
+                .addInteractive(".header_box .login_box")
+                .addNav('.nav_more')
+                .addNav('#main #nav')
+                .addInteractive(".question .que_l")
+                .addWindow(".question .qur_r")
+        },
+        "/cn/html1/office/xyk/subject/16/1222yjhk/index.html": function () {  //还款方式
+            bfreeArea
+                .addNav('.header_box .menu')
+                .addWindow(".banner")
+                .addWindow(".main_detail .title")
+                .addWindow(".main_detail .phone")
+                .addWindow(".main_detail .web")
+                .addWindow(".main_detail .wechat")
+                .addServis(".main_detail .code")
+                .addWindow(".share")
+                .addWindow(".theysee")
+                .addNav(".footer_links")
+        },
+        "http://128.128.97.200:8301/CCBIS/V6/STY1/CN/login.jsp?UDC_CUSTOMER_ID=&UDC_CUSTOMER_NAME=&UDC_COOKIE=3e88472473a9c48fuc4ZnWvgy2xPkkfkRzu21604885629616UNp3eqcBrnDA3Z27823H203a1fabf8840b4d50a13e2649a067ac&UDC_SESSION_ID=OhVzSav1UvhIVEg242de01a4d1e-20210806110200": function () {  //个人网银登录 test
+            //"http://128.128.97.200:8301/CCBIS/V6/STY1/CN/login.jsp?UDC_CUSTOMER_ID=&UDC_CUSTOMER_NAME=&UDC_COOKIE=3e88472473a9c48fuc4ZnWvgy2xPkkfkRzu21604885629616UNp3eqcBrnDA3Z27823H203a1fabf8840b4d50a13e2649a067ac&UDC_SESSION_ID=OhVzSav1UvhIVEg242de01a4d1e-20210806110200": function () {  //个人网银登录 product 
+            bfreeArea
+                .addWindow('.banner .silder_list')
+                .addInteractive('.login_w')
+                .addWindow(".LoginNav")
+                .addNav(".footer")
+        },
+        // "/cn/fund/product/product_index.html": function () {  //基金产品
+        //     bfreeArea
+        //         .addNav(".header_top_box")
+        // },
+        // "/cn/fund/news/news_index.html": function () {  //基金资讯
+        //     bfreeArea
+        //         .addNav(".header_top_box")
+        // },
+        // "/cn/fund/guide/guide_index.html": function () {  //基金查询
+        //     bfreeArea
+        //         .addNav(".header_top_box")
+        // },
+        "/cn/forex/forex-school.html": function () {//外汇学堂
+            bfreeArea
+                .addInteractive('.login_box')
+            $('.banner .fcon >div').attr({ 'aria-label': '业务配置图片文字' })  //广告
+        },
+        "/cn/forex/exchange-quotations.html": function () {//外汇行情
+            bfreeArea
+                .addInteractive('.login_box')
+            $('.banner .fcon >div').attr({ 'aria-label': '业务配置图片文字' })  //广告
+        },
+    }
+}

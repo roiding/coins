@@ -1,0 +1,63 @@
+/**
+ * 改变面包屑，展示所需的标题
+ * @param nav_json json类型的数据 { 标题1 ： 标题2对应的url[，标题2：标题2对应的URL，...]}
+ */
+function changeNav(nav_json, topNum) {
+	topNum = Number(topNum) || 0;
+	$(".header_top_box .header_top_main .header_top_left li").each(function(i){
+		if(topNum == i){
+			$(this).addClass("se");	
+		}else{
+			$(this).removeClass("se");	
+		}																		
+	});
+
+	var html;
+	switch (topNum) {
+		case 2: html = "<a class=\"home\" href=\"http://www.ccb.com/cn/home/company_indexv3.html\">公司机构首页</a>";			
+			break;
+	
+		default: html = "<a class=\"home\" href=\"http://www.ccb.com/cn/home/indexv3.html\">个人客户首页</a>";
+			break;
+	}
+	
+	for (var title in nav_json) {
+		var url = nav_json[title];
+		if (url) {
+			html += "<span>&gt;</span><a href=\"" + url + "\">" + title + "</a>";
+		} else {
+			html += "<span>&gt;</span><span>" + title + "</span>";
+		}
+	}
+	$(".nav_more .nav_left").html(html);
+}
+
+/**
+ * 在logo图片右侧展示页面的名字
+ * @param title 页面的名字
+ */
+function changeTitle(title) {
+	var html = '<div class="nav_company" style="float: left;padding: 24px 0 0 6px;">\
+                            <ul>\
+                                <li class="shu_left nav_a" style="border-left: 1px solid #ccc;font-size: 18px;padding: 0 14px 0 14px;">\
+                                    '+ title +
+		'</li>\
+                            </ul>\
+                        </div>';
+	$(".header_noconflict").append(html);
+}
+
+function jnbAjax(){
+	var userAgent = navigator.userAgent;
+	var isOpera = userAgent.indexOf("Opera") > -1;
+	var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1 && !isOpera;
+	var isEdge = userAgent.indexOf("Windows NT 6.1") > -1 && !isIE;
+	if((isIE || isEdge) && "jinianbi.ccb.com" == location.hostname){
+		$.ajax({
+			url: 'http://jinianbi.ccb.com/cn/home/v3/images/zx_icon_1.png',
+			type: 'post'
+		})
+	}
+}
+
+// jnbAjax();

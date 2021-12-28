@@ -1,0 +1,28 @@
+
+
+
+!function(){
+	var urls=[],params=[],currenUrl=location.pathname;
+	for(var i=0,len=urls.length;i<len;i++){
+		if(urls[i].indexOf(currenUrl)>-1){
+			var paramObj=params[i],pageid=paramObj.pageid;
+			var userid=getCookie('cs_cid') || '';
+			var custName=getCookie('custName') || '';
+			var bankcode=getCookie('bankCode') || '';
+			var category=userid ? 1 : 0;
+			var questUrl='http://www.ccb.com/jsp/ccbcom/common/pageFeedBak.jsp?QUESTID=WZWZWZ_'+pageid+'&PAGEID=WZWZWZ_'+pageid+'&CATEGORY='+category+'&USERID='+userid+'&BRANCHCODE='+bankcode+'&NAME='+custName;
+			setQuest(questUrl);
+		}
+	}
+	function getCookie(key) {
+		var reg = new RegExp(key + "=([^;]+)")
+		var cookie = document.cookie.match(reg);
+		return cookie && decodeURIComponent(cookie[1]);
+	}
+	function setQuest(questUrl){
+		document.write('<style>.questionnaire{position:fixed;right: 0;bottom:55px;z-index:10;}.questionnaire a{width:40px;height:40px;display:block;background:url(/cn/v3/images/btn/go_top_bg.png) 0px 84px}.questionnaire a:hover{background:url(/cn/v3/images/btn/go_top_bg.png) -50px 84px}</style>')
+		document.write('<div class="questionnaire"><a target="_blank" href="'+questUrl+'"></a></div>')
+	}
+}()
+	
+

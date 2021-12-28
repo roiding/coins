@@ -1,0 +1,6 @@
+document.write('<div class="nav_more">\
+        <div class="nav_detail linh_25">\
+            <div class="nav_left"> <a class="home" href="http://www.ccb.com/cn/home/indexv3.html" onclick="LinkClickFunction(this)">个人客户首页</a><span>&gt;</span><span>预约纪念币</span>\
+            </div>\
+        </div>\
+    </div>');

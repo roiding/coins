@@ -1,0 +1,53 @@
+window.jQuery || document.write('<script type="text/javascript" src="/cn/v3/js/jquery_pc.js"></script>')
+document.write('<link href="http://www.ccb.com/cn/v3/head_noconflict/css/header_noconflict.css" rel="stylesheet" type="text/css" />\
+    <script src="http://www.ccb.com/cn/v3/js/check_url_params.js"><\/script>\
+    <script src="https://sinfo.ccb.com/cn/bfree/barrier-free.js"></script>\
+    <script src="http://www.ccb.com/cn/v3/head_noconflict/js/channel.js" type="text/javascript" charset="utf-8"><\/script>\
+    <script src="http://www.ccb.com/cn/v3/head_noconflict/js/encodeURI.js" type="text/javascript" charset="utf-8"><\/script>\
+    <script src="http://www.ccb.com/cn/js/dataacquisition.header.ccb.js" type="text/javascript" charset="utf-8"><\/script>\
+    <script src="http://www.ccb.com/cn/v3/head_noconflict/js/jquery_cookie_noconflict.js" type="text/javascript" charset="utf-8"><\/script>\
+    <script src="http://www.ccb.com/cn/v3/head_noconflict/js/city_changer_noconflict.js" type="text/javascript" charset="utf-8"><\/script>\
+    <script src="http://www.ccb.com/cn/v3/head_noconflict/js/header_noconflict.js" type="text/javascript" charset="utf-8"><\/script>\
+    <script src="http://www.ccb.com/cn/v3/head_noconflict/js/header_box_noconflict.js" type="text/javascript" charset="utf-8"><\/script>\
+    <script src="http://www.ccb.com/cn/v3/head_noconflict/header_top_noconflict.js" type="text/javascript" charset="utf-8"><\/script>\
+    <script src="http://www.ccb.com/cn/v3/head_noconflict/header_box_nologin_noconflict.js" type="text/javascript" charset="utf-8"><\/script>\
+    <script src="http://www.ccb.com/cn/v3/head_noconflict/search_tow_noconflict.shtml" type="text/javascript" charset="utf-8"><\/script>\
+	<style>\
+        .search_tow{display:none;}\
+        .login_box_jnb{clear: both;width: 960px;margin: 0 auto;position: relative;}\
+        .login_box_jnb .hide{display:none;}\
+        .login_box{ width:274px; height:60px; position:absolute; z-index:11; top:-50px; left:0; background:url(http://image4.ccb.com/cn/v3/images/login_bg.png) no-repeat;}\
+        .select_list{ text-indent:5px; position:relative;background:#fff;}\
+        .select_list a:hover{color:#fff;}\
+        .login_box .select_list{ margin:10px 10px 0 15px; float: left; text-align: left;}\
+        .login_box a:hover {color: #fff;}\
+        .select_value{z-index:1; background:url(http://image4.ccb.com/cn/v3/images/select.png) right 0 no-repeat; cursor:default; display:block; height:32px; line-height:32px; overflow:hidden; border-left:1px solid #0066b3; font-size:14px; color:#333;}\
+        .select_ul{ position: absolute; z-index:15; background:#fff; width:99%; top:29px; left:0; display:none;max-height:240px;overflow-y:auto;border:1px solid #999;}\
+        .select_ul ul{ *display:inline-block;}\
+        .select_ul ul li{ height:30px; line-height:30px; width:145px;cursor:default; display:list-item; font-size:14px; color:#333;}\
+        .select_ul li:hover{ background:#eee; color:#333;}\
+        .w_160 { width: 160px;}\
+        .select_ul ul li.choose{margin:0;padding:0;width:100%;}\
+        .Quick_Link_top_button{width:73px;height:32px;float:right; line-height:31px; color:#fff; background:url(http://image4.ccb.com/cn/v3/images/btn_login.png) no-repeat; text-indent:30px; font-size:14px;border: 1px solid;margin-right: 12px;margin-top: 9px;}\
+        \
+        .logined_box{width:274px; height:60px; position:absolute; z-index:11; top:-50px; left:0; background:url(http://image4.ccb.com/cn/v3/images/loginbg_success.png) no-repeat; line-height:28px; text-align:center;}\
+        .logined_box a{ color:#0066b3; margin:0 6px;}\
+        .logined_box a:hover{ text-decoration:underline;}\
+        .logined_box span{ font-size:14px; color:#333; margin-right:10px;}\
+        .logined_box span a{ color:#333; margin:0;}\
+        \
+        .nav_more{ margin-top:-5px; width:100%; height:45px; line-height:45px; background:url(http://image4.ccb.com/cn/v3/images/shadow_repeat.png) top repeat-x #dbebf7;}\
+        .nav_detail{ width:660px; padding-left:300px; margin:auto; font-size:14px; color:#000;}\
+        .nav_detail a{ color:#0066b3; float:left;margin:0 10px 0 0px;} \
+        .linh_25 a{ line-height: 45px;}\
+        .nav_detail span{ float:left;color:#333; margin-right:10px;} \
+        .nav_detail .home{padding-left:25px;background:url(http://image4.ccb.com/cn/v3/images/home.png) left center no-repeat; color:#0066b3;}\
+        .nav_right{float:right;width:130px;height:45px; overflow:hidden;}\
+        .nav_right a{float:right;cursor:pointer; }\
+        .nav_left{float:left;width:500px;overflow:hidden;}\
+        .nav_detail .wealth_link {padding-left: 26px;min-width: 98px;color: #ff9900;margin-right: 0;background: url(http://image4.ccb.com/cn/v3/images/yellow_person.png) no-repeat left center;}\
+    </style>\
+    <script src="http://www.ccb.com/cn/v3/head_noconflict/js/nav_to_jnb.js" type="text/javascript" charset="utf-8"></script>\
+    <script src="http://www.ccb.com/cn/v3/head_noconflict/js/js_to_jnb.js" type="text/javascript" charset="utf-8"></script>\
+    <script src="http://www.ccb.com/cn/v3/include/login/login_other_tojs2.js" type="text/javascript" charset="utf-8"></script>\
+	<script src="http://www.ccb.com/cn/v3/head_noconflict/js/select_list_to_jnb.js" type="text/javascript" charset="utf-8"></script>');

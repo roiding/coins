@@ -1,0 +1,1350 @@
+body,html{overflow-x: hidden;}
+/*进入我的预约首页*/ 
+.nav_detail a.yellow_person{
+	float: right;
+	color:#f90;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/coin/yellow_person.png) no-repeat left center;
+	padding-left: 25px;
+	margin:0;
+}
+
+/*业务预约首页css开始*/
+
+/*banner部分*/
+.wrap {
+    width: 960px;
+    margin: 0 auto;
+}
+.banner{
+	width: 1214px;
+	height: 350px;
+	background-image: url(http://image3.ccb.com/ccbctp/app_Njnb/images/appointment/banner.jpg);
+	background-repeat: no-repeat;
+}
+
+/*常用业务*/
+.common_business{margin-top: 45px;}
+h2.css{
+	font-size: 30px;
+	color:#333;
+	padding-left: 12px;
+	border-left: 10px solid #c1c1c1;
+	height: 32px;
+	line-height: 32px;
+	margin-bottom: 25px;
+}
+.choose_business{
+	width: 1160px;
+	height: 110px;
+	padding-left: 22px;
+	box-sizing: border-box;
+}
+.choose_business li{
+	width: 92px;
+	height: 110px;
+	float: left;
+	margin-right: 100px;
+}
+.choose_business li a{
+	text-align: center;
+	display: block;
+	width: 92px;
+	height: 16px;
+	line-height: 16px;
+	font-size: 14px;
+	padding-top: 94px;
+}
+.choose_business li a:hover{color: #0066b3;}
+
+/*优势*/
+.strength{
+	width: 100%;
+	height: 100px;
+	margin:44px 0;
+	background: #f4f4f4;
+}
+.strength ul{
+	height: 100px;
+	line-height: 100px;
+	padding-left: 22px;
+	width: 1200px;
+}
+.strength ul li{
+	float: left;
+	height: 72px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/appointment/str1.png) no-repeat left 20px;
+	padding-left: 67px;
+	padding-top: 28px;
+	margin-right: 80px;
+}
+.strength ul li:nth-child(3){background-image: url(http://image3.ccb.com/ccbctp/app_Njnb/images/appointment/str2.png);padding-left: 75px;}
+.strength ul li:nth-child(4){background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/appointment/str3.png) no-repeat left 25px;padding-left: 78px;}
+.strength ul li h4{
+	line-height: 24px;
+	font-size: 18px;
+	color:#666;
+}
+.strength ul li p{
+	line-height: 18px;
+	font-size: 12px;
+	color: #999;
+}
+.strength ul li:first-child{
+	width: 126px;
+	height: 100px;
+	margin-right: 40px;
+	background: none;
+	padding-top: 0;
+	padding-left: 0;
+}
+.strength ul li:first-child em{
+	float: left;
+	text-align: center;
+	font-style: italic;
+	font-size: 18px;
+	color:#666;
+	width: 62px;
+	text-align: center;
+}
+.strength ul li:first-child span{
+	margin-top: 3px;
+	float: left;
+	width: 64px;
+	height: 83px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/appointment/xiexian.png) no-repeat;
+}
+
+/*常见问题*/
+.common_question{margin-bottom: 60px;}
+.common_question ul{
+	width: 1500px;
+	padding-left: 22px;
+}
+.common_question ul li{
+	width: 345px;
+	float: left;
+	line-height: 28px;
+	font-size: 14px;
+}
+.common_question ul li span{
+	display: block;
+}
+
+/*业务预约首页css结束*/
+
+
+/*我的约首页css开始*/
+.my_banner{
+	width: 1250px;
+	height: 95px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/appointment/banner_bg.png) no-repeat;
+	margin:0 auto;
+	padding-top: 25px;
+}
+.my_banner ul{height: 75px;}
+.my_banner ul li{
+	width: 230px;
+	float: left;
+	height: 62px;
+	border-right: 1px solid #fff;
+	padding-top: 13px;
+	margin-left: 2px;
+	font-size: 14px;
+}
+.my_banner ul li:last-child{border-right: 0 none;}
+.my_banner ul li a.my{
+	display: block;
+	height: 19px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/appointment/my.png) no-repeat left center;
+	line-height: 19px;
+	padding-left: 35px;
+	color: #fff;
+}
+.my_banner ul li a.my2{background-image: url(http://image3.ccb.com/ccbctp/app_Njnb/images/appointment/my2.png);margin-left: 28px;}
+.my_banner ul li div{
+	margin-top: 16px;
+	line-height: 1;
+	height: 14px;
+	padding-left: 35px;
+}
+.my_banner ul li div a{
+	float: left;
+	color: #fff;
+	margin-right: 18px;
+}
+
+.my_appointment{margin-top: 50px;}
+.appointment_type{
+	height: 40px;
+	border-bottom: 1px solid #d2d2d2;
+}
+.appointment_type li{
+	float: left;
+	line-height:39px;
+	margin:0 25px;
+	font-size: 18px;
+	cursor: pointer;
+}
+.appointment_type li.look_more{
+	float: right;
+	margin:0;
+}
+.appointment_type li.look_more a{
+	font-size: 14px;
+	color: #0066b3;
+}
+.appointment_type li.cur{
+	border-bottom: 2px solid #0066b3;
+}
+
+.appointment_box{margin-top: 24px;}
+.appointment_box ul{
+	width: 958px;
+	height: 53px;
+	border: 1px solid #e6e6e6;
+	line-height: 53px;
+	border-top: 0 none;
+	font-size: 14px;
+}
+.appointment_box ul.tit{
+	height: 60px;
+	border-top: 1px solid #e6e6e6;
+	background: #e6e6e6;
+	line-height: 60px;
+	font-size: 16px;
+}
+.appointment_box ul li{
+	float: left;
+	text-align: center;
+}
+.appointment_box ul li a{color: #0066b3;}
+.appointment_box ul li:nth-child(1){width: 90px;}
+.appointment_box ul li:nth-child(2){width: 150px;}
+.appointment_box ul li:nth-child(3){width: 258px;}
+.appointment_box ul li:nth-child(4){width: 130px;}
+.appointment_box ul li:nth-child(5){width: 130px;}
+.appointment_box ul li:nth-child(6){width: 100px;}
+.appointment_box ul li:nth-child(7){width: 100px;}
+
+/*我保存的填单*/
+.hold{margin: 45px auto 60px;}
+.hold p{
+	height: 14px;
+	line-height: 1;
+	margin:-5px 0 5px;
+}
+.hold p a{float: right;color: #0066b3;font-size: 14px;}
+.hold_box ul li:nth-child(1){width: 100px;}
+.hold_box ul li:nth-child(2){width: 258px;}
+.hold_box ul li:nth-child(3){width: 200px;}
+.hold_box ul li:nth-child(4){width: 200px;}
+.hold_box ul li:nth-child(5){width: 200px;}
+
+/*我的约首页css结束*/
+
+/*已填单css开始*/
+.fill_list{padding: 40px 0 60px;}
+.fill_box ul li:nth-child(1){width: 100px;}
+.fill_box ul li:nth-child(2){width: 170px;}
+.fill_box ul li:nth-child(3){width: 170px;}
+.fill_box ul li:nth-child(4){width: 170px;}
+.fill_box ul li:nth-child(5){width: 248px;}
+.fill_box ul li:nth-child(6){width: 100px;}
+/*已填单css结束*/
+
+/*已预约css开始*/
+.not_handled{padding: 40px 0 60px;position: relative;}
+.not_handled h3{
+	line-height: 38px;
+	font-size: 18px;
+	padding-left: 10px;
+}
+.not_handled h3 a{
+	float: right;
+	margin-right: 10px;
+	font-size: 14px;
+	color: #0066b3;
+}
+.not_handled table,.completed_fill table{
+	border-left: 1px solid #e6e6e6;
+	border-top: 1px solid #e6e6e6;
+}
+.not_handled table td,.completed_fill table td{
+	border-right: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+	padding-left: 10px;
+	height: 37px;
+	font-size: 14px;
+}
+.not_handled table td:nth-child(2n){
+	background: #fff;
+	width: 295px;
+}
+.not_handled table td:nth-child(2n+1){
+	background: #eee;
+	width: 162px;
+}
+.not_handled table tbody.to_hide{display: none;}
+.not_back{
+	width: 80px;
+	height: 32px;
+	background: #0066b3;
+	color:#fff;
+	display: block;
+	margin:40px auto 0;
+	text-align: center;
+	border-radius: 5px;
+	line-height: 32px;
+}
+.not_handled .to_hide_show{
+	height: 26px;
+	width: 100%;
+	margin-bottom: 60px;
+	position: relative;
+}
+.not_handled .to_hide_show a{
+	width: 73px;
+	height: 24px;
+	border: 1px solid #e6e6e6;
+	border-top-color: #fff;
+	position: absolute;
+	left:50%;
+	top:-1px;
+	margin-left: -51px;
+	font-size: 14px;
+	line-height: 24px;
+	padding-left: 27px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/arrow_bottom.png) no-repeat 67px center;
+}
+.not_handled .to_hide_show a.current{background-image: url(http://image3.ccb.com/ccbctp/app_Njnb/images/arrow_top.png);}
+
+/*已预约css结束*/
+
+/*我的预约css开始*/
+.my_order{padding: 40px 0 60px;}
+.my_order h3{
+	line-height: 38px;
+	font-size: 18px;
+	padding-left: 10px;
+	margin-top: 30px;
+}
+.my_order h3:first-child{margin-top: 0;}
+.my_order h3 a{
+	float: right;
+	margin-right: 10px;
+	font-size: 14px;
+	color: #0066b3;
+}
+.my_order .appointment_box{margin-top: 0;}
+.hold_box2 ul li:nth-child(1){width: 100px;}
+.hold_box2 ul li:nth-child(2){width: 200px;}
+.hold_box2 ul li:nth-child(3){width: 200px;}
+.hold_box2 ul li:nth-child(4){width: 258px;}
+.hold_box2 ul li:nth-child(5){width: 200px;}
+/*我的预约css结束*/
+
+
+/*办理人信息css*/
+.handle_banner{
+	/*width: 1250px;*/
+	height: 73px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/appointment/banner_bg.png) no-repeat;
+	margin:0 auto;
+	padding-top: 47px;
+}
+.handle_banner ul{
+	height: 32px;
+}
+.handle_banner ul li{
+	float: left;
+	height: 32px;
+	line-height: 32px;
+	font-size: 24px;
+	color: #ddd;
+}
+.handle_banner ul li:first-child{margin-left: 30px;}
+.handle_banner ul li span{
+	width: 32px;
+	height: 32px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/process/circle.png) no-repeat;
+	float: left;
+	margin-right: 9px;
+	text-align: center;
+	color: #ddd;
+}
+.handle_banner ul li.arrow_right{
+	width: 10px;
+	height: 32px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/process/arrow.png) no-repeat left center;
+	margin:0 20px;
+}
+.handle_banner ul li.current{color:#fff;font-weight: bold;}
+.handle_banner ul li.current span{color:#fff;}
+
+.transactor{
+	/*padding: 40px 0 60px;*/
+	/*padding-left: 120px;*/
+	/*width: 840px;*/
+	font-size: 14px;
+	width:960px;
+}
+.transactor ul li{
+	height: 32px;
+	margin-bottom: 30px;
+	line-height: 32px;
+	position: relative;
+}
+.transactor span:first-child{
+	width: 100px;
+	float: left;
+}
+.transactor ul li span{float: left;}
+.transactor ul li span em{
+	color: red;
+	position: absolute;
+	left:118px;
+	top:3px;
+
+}
+.transactor ul li input{
+	width: 288px;
+	height: 30px;
+	line-height:30px;
+	border: 1px solid #0066b3;
+	padding-left: 10px;
+	float: left;
+	font-size: 14px;
+}
+
+/*开立账户2的css*/
+p.keep_list{
+	line-height: 1;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding-left: 120px;
+	font-size: 14px;
+	width: 840px;
+}
+p.keep_list a{
+	text-decoration: underline;
+	color: #0066b3;
+}
+.busniess_handle ul li span:first-child{width: 120px;}
+.busniess_handle ul li strong{
+	float: left;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/select.png) no-repeat left center;
+	margin-right: 20px;
+	padding-left: 20px;
+	font-weight: normal;
+	cursor: pointer;
+}
+.busniess_handle ul li strong.current{
+	background-image: url(http://image3.ccb.com/ccbctp/app_Njnb/images/selected.png);
+}
+.busniess_handle ul li.date input{
+	width: 132px;
+	background-position-x:116px;
+}
+
+.classify{position: relative;}
+.classify b{
+	float: left;
+	padding-left: 10px;
+	width: 288px;
+	height: 30px;
+	border: 1px solid #0066b3;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/so_xl.jpg) no-repeat right center;
+	cursor: pointer;
+	font-weight: normal;
+}
+.classify p{
+	position: absolute;
+	width: 298px;
+	border: 1px solid #0066b3;
+	left:100px;
+	top:32px;
+	border-top: 0 none;
+	display: none;
+	z-index: 5;
+}
+.classify p a{
+	width: 288px;
+	padding-left: 10px;
+	height: 30px;
+	line-height: 30px;
+	background: #fff;
+	margin-bottom: 0;
+	display: block;
+}
+.classify_box .classify p{width: 138px;left: 0;}
+.classify_box .classify p a{width: 128px;}
+.busniess_handle ul li.classify p{left: 247px;}
+.busniess_handle .classify div{
+	float: left;
+	position: relative;
+	width: 296px;
+	height: 30px;
+	padding-left:3px;
+}
+
+.busniess_handle .classify div.w108{width:120px;padding-left:6px;}
+.busniess_handle .classify div.w160{width:160px;}
+.busniess_handle ul li.classify div b{
+	width: 108px;
+	height: 30px;
+}
+.busniess_handle ul li.classify div p{
+	width: 118px;
+	left: 0;
+}
+.busniess_handle ul li.classify div p a{
+	width: 108px;
+}
+.busniess_handle ul li.choose_more em{
+	margin-right: 25px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/1_1.png) no-repeat left center;
+	padding-left: 17px;
+	float: left;
+}
+.busniess_handle ul li.choose_more em.curr{background-image: url(http://image3.ccb.com/ccbctp/app_Njnb/images/2.png);}
+
+.transactor ul li.yzm input{width: 198px;}
+.transactor ul li.yzm .this_yzm{
+	float: left;
+	width: 75px;
+	height: 32px;
+	margin-left:16px;
+}
+.transactor ul li.yzm .this_yzm img{width:75px;height:32px;}
+.transactor ul li.yzm p{
+	float: left;
+	margin-left: 32px;
+	color:#333;
+	line-height: 16px;
+}
+.transactor ul li.yzm p a{color:#0066b3;}
+.transactor ul li.mail_yzm input{width: 198px;}
+.transactor ul li.mail_yzm button{
+	float: left;
+	width: 80px;
+	height: 32px;
+	background: #0066b3;
+	border-radius:5px;
+	text-align: center;
+	line-height: 32px;
+	color: #fff;
+	margin-left: 10px;
+	cursor:pointer;
+	outline-style: none;
+}
+.transactor ul li.turn_page{padding-left: 100px;}
+.busniess_handle ul li.turn_page{padding-left: 120px;}
+.busniess_handle ul li.to_open{margin-top: 60px;}
+.busniess_handle ul li.to_open a{
+	font-size: 14px;
+	float: left;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/jian_xia.png) no-repeat right center;
+	padding-right: 22px;
+	color: #0066b3;
+}
+.busniess_handle ul li.to_open a.cur{
+	background-image: url(http://image3.ccb.com/ccbctp/app_Njnb/images/jian_shang.png);
+}
+.busniess_handle ul li.could_hide{display: none;}
+.busniess_handle ul li.could_hide2{display: ;}
+.ml10{margin-left:5px;}
+.next{
+	float: left;
+	width:90px;
+	height: 32px;
+	background: #0066b3;
+	border-radius:5px;
+	text-align: center;
+	line-height: 32px;
+	color: #fff;
+	margin-right: 20px;
+	font-size: 14px;
+	cursor: pointer;
+}
+.reversedBtn{margin-left:20px;}
+.previous{background: #3da4f1;}
+a.next:hover{color:#fff;}
+.point{margin-top: 38px;margin-bottom: 30px;}
+.point h4{height: 21px; background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/wxts.png) no-repeat left center; line-height: 21px; font-size: 18px; padding-left: 32px; }
+.point p{margin-left: 32px; color: #666; background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/dot.png) no-repeat left center; padding-left: 13px; line-height: 1; margin-top: 20px; }
+
+/*开立账户3的css*/
+.completed_fill{padding:78px 0 60px 120px;width:840px;margin-bottom:48px;}
+.completed_fill1{padding:60px 0px;width: 840px;}
+.completed_fill1 .foreign .foreign_tit{width:80%;}
+.completed_fill h3{height: 64px; line-height: 64px; font-size:30px; background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/success.png) no-repeat left center; padding-left: 100px; margin-bottom: 8px; }
+.completed_faile h3{height: 64px; line-height: 38px; font-size:16px; background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/shibai.png) no-repeat left center; padding-left: 100px; margin-bottom: 8px;font-weight: normal;color: #000;}
+.completed_fill p{
+	line-height: 30px;
+	font-size: 16px;
+	padding-left: 100px;
+}
+.completed_faile p{
+	margin-top: -30px;
+	color:#666;
+	font-size:14px;
+}
+.completed_fill p.your_info{
+	padding-left: 0;
+	margin-top: 20px;
+}
+.completed_fill table td+td{
+	background: #fff;
+	width:220px;
+	text-align:left;
+    padding: 0 0 0 50px;
+}
+.completed_fill table td:nth-child(2n+1){
+	background: #eee;
+	width: 120px;
+}
+.get_number{margin-top: 28px;padding-left: 190px;height: 32px;}
+.get_number1{margin-top: 48px;padding-left: 96px;height: 32px;}
+
+
+/*提交信息css*/
+.submit h3{background-image: url(http://image3.ccb.com/ccbctp/app_Njnb/images/shibai.png);margin-bottom: 40px;}
+
+
+/*网点预约css*/
+.dot_booking{
+	padding:40px 0 60px;
+	font-size: 14px;
+}
+.dot_booking .branch{
+	padding-left: 22px;
+	line-height: 28px;
+	height: 28px;
+	margin-bottom: 20px;
+}
+.dot_booking .branch span{
+	float: left;
+	width: 85px;
+	margin-right: 22px;
+}
+.dot_booking .branch a{
+	float: left;
+	margin-right: 10px;
+	width: 116px;
+	height: 28px;
+	background: #e5f0f8;
+	text-align: center;
+}
+.dot_booking .classify_box{
+	padding-left: 22px;
+	height: 32px;
+	line-height: 32px;
+}
+.classify_box span{
+	width: 85px;
+	text-align: right;
+	float: left;
+	margin-right: 22px;
+}
+.classify_box .classify{
+	float: left;
+	width: 140px;
+	height: 32px;
+	margin-right: 10px;
+	z-index: 5;
+}
+.classify_box .classify b{width: 128px;}
+.classify_box .classify div{
+	left:0;
+	width: 138px;
+}
+.classify_box .classify div a{width: 128px;}
+.classify_box .inp{
+	float: left;
+	height: 32px;
+	width: 215px;
+	position: relative;
+}
+.classify_box .inp input{
+	width: 203px;
+	height: 30px;
+	border: 1px solid #0066b3;
+	padding-left: 10px;
+}
+.classify_box .inp em{
+	position: absolute;
+	width: 29px;
+	height: 30px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/process/search.png) no-repeat;
+	right:1px;
+	top:1px;
+}
+.map{
+	position: relative;
+	margin:30px auto;
+}
+.map .big_map{margin-left: -1px;}
+.open_box1{
+	position: absolute;
+	left:403px;
+	top:16px;
+	display: none;
+}
+.open_box2{
+	width: 391px;
+	height:341px;
+	position: absolute;
+	left:403px;
+	top:16px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/process/bg.png) no-repeat;
+	font-size: 12px;
+	display: none;
+}
+.open_box2 h4{
+	width: 382px;
+	height: 28px;
+	line-height: 28px;
+	border-bottom: 1px solid #b5b5b5;
+	padding-left: 7px;
+	background: #f9f9f9;
+	margin: 1px 0 10px 1px;
+}
+.open_box2 p{
+	line-height: 18px;
+	color: #666;
+	padding-left: 25px;
+}
+.open_box2 .order_date{
+	margin: 10px 0;
+	padding-left: 25px;
+	height: 30px;
+	line-height: 30px;
+	position: relative;
+}
+.open_box2 .order_date span{
+	width: 60px;
+	float: left;
+}
+.open_box2 .order_date input{height: 28px;width: 173px;}
+
+.open_box2 .order_time{
+	padding-left: 25px;
+	line-height: 1;
+	height: 108px;
+	width: 300px;
+}
+.open_box2 .order_time span{
+	width: 60px;
+	float: left;
+	height: 108px;
+}
+.open_box2 .order_time ul{float: left;height: 108px;width: 240px;}
+.open_box2 .order_time ul li{
+	float: left;
+	width: 114px;
+	height: 17px;
+	line-height: 17px;
+	margin-bottom: 10px;
+}
+.open_box2 .order_time ul li em{
+	float: left;
+	width: 17px;
+	height: 17px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/select.png) no-repeat;
+	margin-right: 5px;
+	cursor: pointer;
+}
+.open_box2 .order_time ul li em.current{background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/selected.png) no-repeat;}
+.open_box2 a.next{
+	display: block;
+	float: none;
+	margin:32px auto 0;
+}
+
+h3.tip{
+	margin: 30px 0 22px 20px;
+	height: 21px;
+	font-size: 18px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/wxts.png) no-repeat;
+	padding-left: 32px;
+	line-height: 21px;
+}
+p.tip_detail{
+	line-height: 1;
+	font-size: 14px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/dot.png) no-repeat left center;
+	margin-left: 52px;
+	padding-left: 13px;
+	color: #666;
+}
+
+/*预约纪念币选择网点*/
+.busniess_handle ul li.net_dot{height: 70px;}
+.busniess_handle ul li.net_dot span:first-child{width:120px;display:inline-block;}
+.busniess_handle ul li.net_dot div{float: inherit;display:inline-block;}
+.busniess_handle ul li.net_dot input{width:290px;float: inherit;display:block;margin-left:120px;font-size:13px;}
+.busniess_handle ul li.net_dot .shuru{
+	line-height: 1;
+	position: absolute;
+	left:458px;
+	top:50px;
+	color: #999;
+	font-size: 12px;
+}
+.busniess_handle ul li.cashe span:last-child{
+	font-size: 12px;
+	color: #999;
+	margin-left: 12px;
+}
+#quickQuery_container{
+	padding-left:0;
+	}
+	#quickQuery_resultNum_box{display:block;}
+	#quickQuery_page_box span{width: inherit;}
+.busniess_handle .classify div#quickQuery_container{height: inherit;}
+#quickQuery_content_box{width:440px;padding-left:0;margin:0 0 0 -1px!important;font-size:12px;}
+#quickQuery_content_box ul {
+    padding-left: 0;
+}
+#quickQuery_content_box ul li{font-size: 12px;padding-left:0!important;margin-bottom:0;height:inherit;line-height:22px !important;}
+#quickQuery_content_box ul li span{width:72%;}
+.your_info{margin-top: 30px;}
+.your_info p{
+	padding-left: 0;
+	line-height: 46px;
+}
+.busniess_handle .classify div#quickQuery_resultNum_box{width:435px;}
+/*预约开户css*/
+.busniess_handle ul li.get_number2 span:last-child{
+	font-size: 12px;
+	margin-left: 40px;
+	line-height: 16px;
+	color: #999;
+}
+.busniess_handle ul li.get_number3 span:last-child{
+	font-size: 12px;
+	margin-left: 40px;
+	line-height: 32px;
+	color: #999;
+}
+.transactor ul li.may_choose a{
+	background: #e5f0f8;
+	padding:0 8px;
+	height: 28px;
+	margin-top: 2px;
+	margin-right: 10px;
+	float: left;
+	text-align: center;
+	line-height: 28px;
+}
+
+/*黄色的感叹号*/
+.completed_fill h3.yellow_mark{background-image: url(http://image3.ccb.com/ccbctp/app_Njnb/images/shibai.png);}
+
+/*预约开户确认信息*/
+.info_box{margin-top: 25px;}
+.info_box p{
+	width: 840px;
+	height: 14px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/appointment/p_bg.png) repeat-x left center;
+	position: relative;
+	padding-left: 0;
+	font-size: 14px;
+	margin-bottom: 20px;
+}
+.info_box p span{
+	position: absolute;
+	width: 100px;
+	height: 14px;
+	line-height: 14px;
+	background: #fff;
+	left:0;
+	top:0px;
+}
+
+/*外汇汇款的css*/
+.foreign{color:#333;font-size:14px;}
+.foreign_currency{padding-bottom: 60px;}
+.foreign_currency .foreign_guide{
+	height: 60px;
+	line-height: 60px;
+}
+.foreign_guide a{
+	float: right;
+	font-size: 14px;
+	color: #0066b3;
+}
+.foreign .foreign_tit{
+	height: 20px;
+	width: 100%;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/appointment/p_bg.png) repeat-x left center;
+	position:relative;
+	margin-bottom: 30px;
+}
+.foreign .foreign_tit span{
+	width: 120px;
+	height: 20px;
+	font-size: 18px;
+	background: #fff url(http://image3.ccb.com/ccbctp/app_Njnb/images/coin/jian.png) no-repeat left center;
+	line-height: 20px;
+	position: absolute;
+	left:0;
+	top:0;
+	padding-left: 27px;
+	color: #0066b3;
+}
+.foreign .foreign_tit span.curr{background-image: url(http://image3.ccb.com/ccbctp/app_Njnb/images/coin/jia.png);}
+.foreign .foreign_tit em{
+	width: 16px;
+	height: 20px;
+	background:url(http://image3.ccb.com/ccbctp/app_Njnb/images/coin/arrow_t.png) no-repeat;
+	position: absolute;
+	right:0;
+	top:0;
+	cursor: pointer;
+}
+.foreign .foreign_tit em.curre{background-image: url(http://image3.ccb.com/ccbctp/app_Njnb/images/coin/arrow_b.png);}
+.foreign li{
+	margin-bottom: 30px;
+	line-height: 32px;
+	font-size: 14px;
+	padding-left: 127px;
+	height: 32px;
+	position: relative;
+}
+.foreign li span{float: left;}
+.foreign li span:first-child{width: 120px;}
+.foreign2 li span:first-child{
+	width: 165px;
+	line-height: 14px;
+}
+.foreign2 li span:first-child em{
+	margin-left: -6px;
+	color: red;
+	line-height: 1;
+}
+.foreign2 li span:first-child strong{
+	font-weight: normal;
+	font-size: 12px;
+	margin-top: 4px;
+}
+.foreign2 li input{
+	padding-left: 10px;
+	width: 288px;
+	height: 30px;
+	border: 1px solid #0066b3;
+	float: left;
+}
+.foreign2 li .i_tishi{
+	width: 16px;
+	height: 16px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/coin/blue_question.png) no-repeat;
+	float: left;
+	margin-left: 10px;
+	margin-top: 8px;
+	line-height: 16px;
+	position: relative;
+	z-index: 5;
+	cursor: pointer;
+}
+.foreign2 li .i_tishi div {
+	position: absolute;
+	left: 25px;
+	top: -20px;
+}
+/*.foreign2 li .i_tishi .i_top{*/
+	/*width: 280px;*/
+	/*height: 13px;*/
+	/*background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/coin/top.png) no-repeat;*/
+	/*display: block;*/
+/*}*/
+
+/*.foreign2 li .i_tishi .i_bottom{*/
+	/*width: 280px;*/
+	/*height: 5px;*/
+	/*background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/coin/bottom.png) no-repeat;*/
+	/*display: block;*/
+/*}*/
+
+.foreign2 li .i_tishi .i_left{
+	position: absolute;
+	left:0;
+	top:0;
+	width: 13px;
+	height: 156px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/coin/tipbox-left.png) no-repeat;
+	/*display: inline-block;*/
+	float: left;
+}
+
+.foreign2 li .i_tishi .i_middle{
+	width: auto;
+	min-width:250px;
+	height:156px;
+	/*padding: 0 8px;*/
+	padding-top: 5px;
+	padding-left: 4px;
+	margin:0 5px 0 13px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/coin/tipbox-mid.png) repeat-x;
+	/*display: inline-block;*/
+	float: left;
+}
+.foreign2 li .i_tishi .i_right{
+	position: absolute;
+	right:0;
+	top:0;
+	width: 5px;
+	height: 156px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/coin/tipbox-right.png) no-repeat;
+	/*display: inline-block*/
+	float: right;
+}
+.foreign2 li .i_tishi .i_close{
+	position: absolute;
+	right:-20px;
+	top:0;
+	width: 16px;
+	height: 16px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/coin/i_close.png) no-repeat;
+	/*display: inline-block*/
+	cursor: pointer;
+}
+.i_tishi_msg{
+	/*width:auto;*/
+	position: relative;
+	height: 156px;
+	float: left;
+
+}
+.foreign2 li.huikuan input{width: 398px;}
+.foreign2 li p{left:292px;}
+.foreign2 li span:last-child{
+	font-size: 12px;
+	color: #999;
+	margin-left: 10px;
+}
+.foreign2 li.two_line span:last-child{
+	line-height: 16px;
+}
+.foreign2 li.text_area{
+	height: 90px;
+	position: relative;
+}
+.foreign2 li.text_area textarea{
+	width: 438px;
+	height: 88px;
+	border: 1px solid #0066b3;
+	float: left;
+	line-height: 30px;
+	text-indent: 8px;
+	font-family: "微软雅黑";
+}
+.foreign2 li.text_area .surplus{
+	position: absolute;
+	left:628px;
+	top:60px;
+	color: #999;
+}
+.foreign2 li.text_area span:last-child{
+	width: 200px;
+	height: 90px;
+	float: left;
+	margin-left: 10px;
+	line-height: 20px;
+}
+.foreign_currency .to_next{
+	padding-left: 292px;
+	height: 32px;
+	margin-top: 40px;
+}
+
+.cft-item h3 {
+	color: #0066b3;
+	font-size: 18px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ddd;
+}
+.quota {
+	display: none;
+}
+.quota .tip {
+	margin-top: -24px;
+	margin-left: 120px;
+}
+.company-select {
+	color: #0066b3;
+	margin: 0 20px;
+}
+.modal-mask, .modal-dialog {
+	display: none;
+}
+.modal-mask {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 12;
+	background: #000;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+.modal-dialog {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 12;
+	width: 800px;
+	height: 600px;
+	background: #fff;
+	margin: -300px 0 0 -400px;
+}
+.modal-dialog .modal-close {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	z-index: 2;
+	color: #abc;
+	height: 24px;
+	line-height: 24px;
+	font-size: 18px;
+	padding: 0 10px;
+	background: #eee;
+}
+.company-container {
+	padding: 10px;
+}
+.company-container .search {
+	height: 34px;
+	line-height: 34px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ddd;
+}
+.company-container .search span {
+	margin: 0 10px;
+	font-size: 14px;
+}
+.company-container .search input {
+	height: 24px;
+	padding: 0 5px;
+	line-height: 24px;
+	border: 1px solid #0066b3;
+}
+.company-container .search .search-button {
+	position: relative;
+	top: 1px;
+	color: #fff;
+	padding: 5px 12px;
+	background: #0066b3;
+}
+.company-container .container {
+	height: 488px;
+	overflow: hidden;
+}
+.company-container .container .tit {
+	font-size: 14px;
+	overflow: hidden;
+	font-weight: bold;
+	margin-bottom: 5px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #eee;
+}
+.company-container .item {
+	overflow: hidden;
+	padding: 2px 0;
+	font-size: 14px;
+	border-bottom: 1px dashed #ddd;
+}
+.company-container .item .name {
+	cursor: pointer;
+	color: #0066b3;
+}
+.company-container .container p {
+	float: left;
+	text-align: center;
+}
+.company-container .container .name {
+	width: 70%;
+}
+.company-container .container .type {
+	width: 30%;
+}
+.modal-pagination {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	font-size: 13px;
+}
+.modal-pagination ul, .modal-pagination ul li, .modal-pagination .total, .modal-pagination .go {
+	display: inline-block;
+}
+.modal-pagination ul li {
+	cursor: pointer;
+	color: #0066b3;
+	padding: 0 5px;
+}
+.modal-pagination ul li.active {
+	cursor: default;
+	color: #333;
+}
+.modal-pagination .total {
+	margin: 0 5px;
+}
+.modal-pagination .go input {
+	width: 48px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	border: 1px solid #0066b3
+}
+.modal-pagination .go span {
+	margin: 0 5px;
+}
+.modal-pagination .go a {
+	position: relative;
+	top: 1px;
+	color: #fff;
+	padding: 5px 12px;
+	background: #0066b3;
+}
+.mapicon {
+	position: relative;
+	top: 4px;
+	left: 10px;
+}
+.map-dialog {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 12;
+	width: 960px;
+	height: 700px;
+	margin: -350px 0 0 -480px;
+	background: url('http://image3.ccb.com/ccbctp/app_Njnb/images/bmap.png') no-repeat;
+}
+.map-dialog .map-close {
+	position: absolute;
+	top: 10px;
+	right: 8px;
+	width: 30px;
+	height: 30px;
+	border-radius: 30px;
+}
+.map-dialog .search-pannal {
+	position: absolute;
+	top: 61px;
+	left: 10px;
+	width: 300px;
+	height: 623px;
+}
+.map-dialog .search-pannal a {
+	display: block;
+	height: 80px;
+	margin: 0 10px 5px;
+}
+.map-dialog .search-pannal a:first-child {
+	margin-top: 61px;
+}
+.map-dialog .search-resulat {
+	position: absolute;
+	top: 78px;
+	right: 140px;
+	width: 391px;
+	height: 341px;
+}
+.map-dialog .open_box {
+	display: none;
+}
+.map-dialog .open_box2 {
+	top: 0;
+	left: 0;
+}
+.map-dialog .open_box a {
+	position: absolute;
+	right: 50%;
+	bottom: 43px;
+	width: 80px;
+	height: 33px;
+	margin-right: -40px;
+}
+.dzxx{
+	display: none;
+}
+.fushuka{
+	display: block;
+	height:32px;
+	margin-left: 118px;
+	margin-bottom: 30px;
+}
+.fushuka_apply{
+	margin-right: 25px;
+	background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/1_1.png) no-repeat left center;
+	padding-left: 17px;
+	float: left;
+	cursor: pointer;
+}
+.fushuka_apply.curr{
+	background-image: url(http://image3.ccb.com/ccbctp/app_Njnb/images/2.png);
+}
+.fushuka_hide{
+	display: none;
+}
+.transactor h2 {
+    font-size: 30px;
+    color: #333;
+    padding-left: 12px;
+    border-left: 10px solid #c1c1c1;
+    height: 32px;
+    line-height: 32px;
+    margin-bottom: 40px;
+}
+.mr{margin-left:240px;}
+.mr150{margin-left:130px;}
+.bc{background:#0166ff;}
+.transactor ul li.mail_yzm button.bc{background:#0166ff;}
+.recordIque ul li span em{left:22px;}
+.recordIque ul li{padding-left:32px;}
+/*预约记录选择方式*/
+.inquireType{font-size:18px;color:#333;margin-bottom:50px;margin-left:20px;border-bottom:1px solid #ccc;width:320px;padding:0px 120px;height:50px;}
+.inquireType span{padding:0 20px;display:inline-block;height:50px;cursor:pointer;}
+.inquireType span.cur{border-bottom:3px solid #0066b3;color:#0066b3;}
+
+/*预约记录查询结果*/
+.checkTable{border:1px solid #ccc;margin-bottom: 150px;}
+.checkTable tr th,.checkTable tr td{height:60px;}
+.checkTable tr{border-bottom:1px solid #ccc;}
+.checkTable tr th{background:#e4e4e4;}
+.checkTable tr td a{color:#0066b3;padding:0 10px;}
+
+.transactor ul li input.w160{width:160px;}
+.w160Icon{left:388px !important;top:2px !important;}
+
+/*代人预约样式*/
+a.point{height: 21px;margin-left: 20px;background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/first_login.gif) no-repeat left center; line-height: 21px; font-size: 14px; padding-left: 32px; color:#0066b3;cursor:pointer;}
+a.editing{background:#1ecd48;color:#fff;}
+.transactor ul li input.readonly,.classify b.readonly{border:1px solid #ccc; color:#999;cursor: no-drop;}
+p.trad{visibility: hidden;}
+.busniess_handle ul li.classify p.kardleft{left:152px;}
+.transactor ul li input.errorTips{border: 1px solid red;}
+.transactor ul li p.errorP{position:absolute;top:32px;left:260px;color:red;font-size:14px;}
+
+/*纪念币类型tab*/
+.tab_header{width:100%; border-bottom:2px solid #e4e4e4;margin-bottom:4px;overflow: hidden;}
+.tab_header span{display:inline-block;height:40px;line-height:40px;color:#333;font-size:14px;background:#e4e4e4;position:relative;margin-right:38px;padding-left:5px;cursor:pointer;}
+.tab_header span i{position:absolute;width:36px;height:40px;background:url(http://image3.ccb.com/ccbctp/app_Njnb/images/tab_bg.png) no-repeat right center;right:-36px;top:0px}
+
+
+.tab_header span.cur{display:inline-block;height:40px;line-height:40px;color:#fff;font-size:14px;background:#336799;position:relative;margin-right:38px;padding-left:5px;cursor:pointer;margin-right:30px;}
+.tab_header span.cur i{position:absolute;width:36px;height:40px;background:url(http://image3.ccb.com/ccbctp/app_Njnb/images/tab_bg1.png) no-repeat right center;right:-36px;top:0px}
+
+/*查看纪念币预约兑换情况*/
+.check_btn{padding-top:15px;overflow:hidden;margin-bottom:10px;}
+.check_btn a.point_btn{float:right;margin:0;margin-right:13%;cursor:pointer;color:#0066b3;background: url(http://image3.ccb.com/ccbctp/app_Njnb/images/first_login.gif) no-repeat left center;padding-left:32px;font-size:14px;height:21px;line-height:21px;}
+.line_gray{margin:0 10px;}
+/***预约兑换纪念币修改***/
+.text_l{  text-align:left;}
+.p_l{ padding-left:80px; margin:0 0 0 80px;}
+
+/***预约兑换纪念币修改end***/

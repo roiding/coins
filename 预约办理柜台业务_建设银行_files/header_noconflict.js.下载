@@ -1,0 +1,143 @@
+$(function(){
+	clickshow5("#kefu_noconflict",".kfhover",".jhjt_noconflict","#button2_noconflict",".white_content3_noconflict","se")
+	clickshow5("#jhjt_noconflict",".jhjt_noconflict",".kfhover",".but2_noconflict",".white_content3_noconflict","se")
+	clickshow5("#white_content3_noconflict",".white_content3_noconflict",".kfhover",".btn3_noconflict",".jhjt_noconflict","se")
+	tabshow(".zz_top_li_noconflict",".zz_info_noconflict","hover_noconflict")
+	tabshow(".zz_top_lii_noconflict",".showj_r_noconflict","hover_noconflict")
+	DownShow("#Map_noconflict area",".area_city_noconflict","")  
+	var cli_label = new Addclassname('.label_radio_noconflict','r_on_noconflict'); 
+	cli_label.addc();  
+
+//搜索点击		
+$('.search_tow_a_noconflict').click(function(){
+			$(this).toggleClass("search_tow_a_hover");  
+			$(".search_nav_noconflict").toggle();
+			$(".search_input").focus();
+		});
+//地址框点击
+$('#txt_noconflict').click(function(){
+			$('.select_hide_noconflict').show();
+		});
+
+//搜索关闭	
+$('.sd_sn_noconflict').click(function(){			
+			$('.search_nav_noconflict').hide();
+			$(".search_tow_a_noconflict").removeClass("search_tow_a_hover");
+		});
+
+$(".Business_box_noconflict").hover(function(){
+			$(this).find(".Business_text_noconflict").show(200);
+		},function(){
+			$(this).find(".Business_text_noconflict").hide(200);
+		});
+$(".map_style_noconflict a").hover(function(){
+		$(this).parent().find("img").show();
+    },function(){
+		$(this).parent().find("img").hide();
+    })
+$('.sd_sn_noconflict').click(function(){			
+			$('.search_nav_noconflict').hide();
+			$(".search_tow_a_noconflict").removeClass("search_tow_a_hover");
+		});
+})
+function DownShow(obj1,obj2,cl){ 
+	var index,id,timer,divcreate;  
+	divcreate=false;
+	$(obj1).hover(
+	function(){
+	  
+		id=$(obj1).index(this);
+		$(obj1).removeClass(cl);
+		$(this).addClass(cl);
+		hidecur();
+		$(obj2).eq(id).stop(true,true).delay(500).slideDown(100, function(){});
+		divcreate=true;  
+		index=id;
+		
+		
+	},function(){
+		id=$(obj1).index(this);
+		divcreate=false;
+		hidecur();
+		$(obj1).removeClass(cl);
+	})
+	$(obj2).hover(
+	function(){divcreate=true;hidecur();},function(){id=$(obj2).index(this);divcreate=false;hidecur();});
+	function hidecur(){
+		clearTimeout(timer);
+		if(index!=id){$(obj2).eq(index).stop(true,true).delay(50).fadeOut("fast", function(){});	}
+		timer=setTimeout(function(){
+		if(!divcreate){
+		$(obj2).eq(id).stop(true,true).delay(50).fadeOut("fast", function(){});	
+		};
+		},100);	
+	}
+}
+function clickshow5(obj1,obj2,obj3,obj4,obj5,cl){
+	
+
+	$(obj1).parent().removeClass(cl);
+	$(obj1).click(function(e){
+	e.stopPropagation();
+	$(this).parent().addClass(cl).siblings().removeClass(cl);;
+	$(obj2).show();
+	$(obj3).hide();  
+	$(obj5).hide();	
+
+	})
+	
+	$(obj4).click(function(){
+	
+	$(obj1).parent().removeClass(cl);
+	$(obj2).hide();
+	
+	
+})	
+	$(obj1).parent().removeClass(cl);
+	$(obj2).hide();
+
+
+
+$(document).bind("click",function(e){ 
+var target = $(e.target); 
+if(target.closest(obj2).length == 0){ 
+$(obj1).parent().removeClass(cl);
+$(obj2).hide(); 
+} 
+}) 
+
+}
+function tabshow(obj1,obj2,cl)
+{
+	var id;
+	$(obj1).mouseover(function(){
+	id=$(obj1).index($(this));	
+	$(obj1).removeClass(cl);
+	$(this).addClass(cl);
+	$(obj2).hide();
+	$(obj2).eq(id).show();
+	})	
+	$(obj2+":first").show();
+}
+function Addclassname(obj,classname,input_obj){//click方法只判断一次遍历同胞
+  this.obj = obj;
+  if (typeof this.addc != 'function') {  
+   Addclassname.prototype.addc=function(){
+    $(this.obj).each(function(index){
+      $(this).click(function(){
+        $(this).addClass(classname).siblings(this.obj).removeClass(classname);
+		$(this).parent().find("input").removeAttr("checked");
+		$(this).children("input").attr("checked","checked");
+		/**
+        if(input_obj!=null){
+         $(this).children(input_obj).attr('checked','checked');
+       }
+		**/
+       })
+     })
+   }
+ }
+}
+
+
+ 

@@ -1,0 +1,337 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*header*/
+ul,li,ol{list-style:none; }
+div, p, ul, h2, h3, h4, h5, img{padding:0px; margin:0px;}
+a{text-decoration:none;}
+img{border:0px;}
+.chengshixuanze_branch{width:72px;height:38px;float:left;margin-top: 30px; position:relative;z-index:999;margin-left: 67px;}
+.header_top_box{height:50px;background:#0066B3;width:100%;overflow:hidden;clear:both;}
+/* .header_top_box{height:50px;background:#0066B3;width:100%;} */
+.header_top_main{width:960px;line-height:50px;margin:0 auto;}
+.header_top_left ul li{font-size:16px;float:left;color:#fff; margin-right:12px;position:relative;}
+.header_top_left ul li.se{background:url(http://www.ccb.com/cn/v3/images/grjt.png) no-repeat bottom center;}
+.header_top_left ul li.se a{ color:#fff;}
+.header_top_left ul li a{color:#1dd9e2;}
+.header_top_left ul li a:hover{color:#fff;}
+.header_top_left ul li a:link,.header_top_left ul li a:visited{height: 50px; line-height: 50px;font-size:16px;font-family: "Microsoft Yahei",Arial, Helvetica, sans-serif,"黑体";}
+.header_noconflict_branch{clear:both;width:960px;margin:0 auto;height: 91px;position:relative; z-index:111;}
+.header_top_left ul li.se a{ color:#fff;height: 50px; line-height: 50px;}
+.header_top_left ul li a{color:#1dd9e2;height: 50px; line-height: 50px;}
+.header_top_left ul li a:hover{color:#fff;height: 50px; line-height: 50px;}
+/* .Business{padding-top:10px;position:relative;}  */
+.Business{padding-top:16px;position:relative; *padding-top:14px;padding-top:14px!important;>padding-top:14px!important;} 
+.Business a{background:#0066B3;}
+.Business_text_noconflict{position:absolute;left:77px;top:11px;>top:0px!important;width:141px;height:28px;line-height:26px;background:url(http://www.ccb.com/cn/v3/images/hv_top.png);display:none; text-align:center;}
+.header_top_left ul li div.Business_text_noconflict a{color:#27FFF7; margin:0 5px;font-size:12px;height: 30px;line-height: 30px;}
+.header_top_left ul li div.Business_text_noconflict a:hover{color:#fff;}
+.header_top_left{float:left;}
+.header_top_right{float:right}  
+.header_top_right ul li{float:left; margin-left:8px;font-size:14px;}
+.header_top_right ul li.se a.header_top_right_a{color:#fff;}
+.header_top_right_a{color:#1dd9e2;}
+.header_top_right_a:link, .header_top_right_a:visited{color:#1dd9e2;font-size:14px;font-family: "Microsoft Yahei",Arial, Helvetica, sans-serif,"黑体";height: 50px; line-height: 50px;}
+.header_top_right ul li a:hover{color:#fff;}
+.header_top_right ul li.padding_13{padding:0 4px;}
+.header_top_right ul li img{vertical-align:text-bottom;margin-right:8px;}
+.header_top_right ul li.se{background:url(http://www.ccb.com/cn/v3/images/hover2.png) bottom center no-repeat;}
+
+.header_box {width: 100%;height: auto;text-align: left; background:#fff url(http://www.ccb.com/cn/v3/images/shadow.png) repeat-x left bottom;}
+.header_noconflict{clear:both;width:960px;margin:0 auto;height:81px;position:relative; z-index:111;}
+.logo{float:left;width:200px;height:40px;padding-top:21px;padding-right:16px;}
+.logo_branch{float:left;width:200px;height:40px;padding-top: 9px;padding-right:16px;margin-left: -3px;}
+.chengshixuanze{width:72px;height:38px;float:left;margin-top:28px; position:relative;z-index:999;}
+.select-city_noconflict{background:url(http://www.ccb.com/cn/v3/images/city_bg.jpg) no-repeat left top;width:68px;height:24px;line-height:25px;padding-left:4px;left:-6px;position:relative;float:left;text-align:left}
+.city_selected{width:68px;height:24px; display:inline-block;}
+.select_hide_noconflict{width:545px;height:auto;position:absolute;left:-1px;top:7px;display:none;background:#fff; z-index:10000;}
+.select_txt{height:25px;line-height:25px;padding-left:220px;padding-bottom:17px;position:relative;}
+.select_txt a{display:block;text-align:left;position:absolute;top:2px;left:224px;color:#333;}
+.logo{float:left;width:200px;height:40px;padding-top:21px;padding-right:16px;}
+.header_box_2 .logo{ padding-top:6px;}
+.City_select{background:url(http://www.ccb.com/cn/v3/images/city.jpg) no-repeat left top;margin-top:28px;width:50px;height:25px;float:left;line-height:25px;padding-left:7px;position:relative;cursor:pointer;}
+
+.header_box_2 .nav{ padding-top:8px;}
+
+.mnavL{width:960px;position:absolute;border-top:2px #1693f1 solid;-moz-box-shadow:1px 3px 6px #6c7870;-webkit-box-shadow:1px 3px 6px #6c7870;box-shadow:1px 3px 6px #6c7870;-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135,Color='#333232)";filter:progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135,Color='#333232');top:67px;left:0;z-index:99999;background:#f8f8f8;color:#333;cursor:auto;font-size:14px;}
+.tz_td2 a,.tz_td3 a,.tz_td4 a{font-size:14px;}
+.header_box_2 .mnavL{ top:47px;}
+.mnavL_info{position:relative;width:960px;}
+.mnavLL{width:960px;height:388px;position:absolute;border-top:2px #1693f1 solid;-moz-box-shadow:1px 3px 6px #6c7870;-webkit-box-shadow:1px 3px 6px #6c7870;box-shadow:1px 3px 6px #6c7870;-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135,Color='#333232)";filter:progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135,Color='#333232');top:67px;left:0;z-index:100;background:#f8f8f8;color:#6a6a6a;cursor:auto;display:none;}
+.mnavL .mnavL_left{width:738px;border-right:1px solid #d8d8d8; min-height:310px;}
+.mn_boxx1{width:260px;padding-left:20px;}
+.m_box_info table tr td{text-align:left;height:50px;position:relative; width:108px;}
+
+.mn_box1{width:200px;padding-left:20px;}
+.mn_box_tit{height:32px;line-height:32px;padding-top:18px;}
+.mt_td1{width:30px;font-size:14px;font-weight:normal;}
+.mt_td2{font-size:14px;font-weight:normal;color:#1693f1;}
+.m_box_info{padding-top:0px;}
+.nm_bottom{width: 960px;height:50px;line-height:50px;background:#e5e5e5;overflow:hidden;}
+.mn_box1{width:170px;padding-left:20px;}
+.lineright{border-right:1px #d8d8d8 solid;height:362px;width:1px;float:left;}
+.mnavLL_info{position:relative;width:960px;}
+.mnavL_left_LL{width:738px;font-size:12px; border-right:1px solid #d8d8d8; min-height:310px;}
+
+.tz_1{padding-top:20px;padding-left:118px;height:30px;line-height:30px;}
+.mnavL .cell .tz_td1{width:114px; overflow:hidden;}
+.mnavL .cell .tz_td2{width:246px; overflow:hidden;}
+.mnavL .cell .tz_td3{width:246px; overflow:hidden;}
+.mnavL .cell .tz_td4{width:108px; overflow:hidden;}
+
+table.cell{table-layout:fixed;}
+.mn_box3{width:108px; margin-right:0;}
+
+.m_box_info table tr td a{color:#333333;font-size:14px;width:98px; overflow: hidden; white-space: nowrap;}
+.mnavL .mnavL_right{width:221px;padding-top:26px; text-align:center;}
+.mnavL .m_r_f_img2 img{width:186px;}
+
+.place_list{background:#fff;}
+.header_box_2{width:100%;height:50px;position:fixed;left:0;top:0;z-index:1000;background:#eee;display:none}
+.header_box_2 div.City_select,.header_box_2 div.Search,.header_box_2 div.Quick_Link,.header_box_2 div.chengshixuanze,.header_box_2 div.hidemenu{display:none}
+.header_box_2 div.nav{margin-left:71px;}
+.header_box_3{height:81px;width:100%;display:none}
+.nav_two_1{float:left;font-size:14px;padding-left:10px;width:108px;line-height:46px;}
+.nav_two_1 a{color:#4b85c5;}
+.hm_li a,.hm_li1 a{color:#1773B9;}
+.hm_li a:hover,.hm_li1 a:hover{color:#3da4f1;}
+
+.nm_bottom ul li.bott_li{float:left;width:854px;font-size:12px;text-align:left;height:50px;overflow:hidden;}
+.nm_bottom ul li.bott_lia{float:right;padding-right:40px;}
+.bott_li{float:left;font-size:12px;padding:0 36px;text-align:left;width:960px; overflow:hidden;}
+.bott_li dl{float:left;width:2000px;display:inline-block;overflow:hidden;white-space:nowrap;word-break: break-all;}
+.bott_li dl dt{float:left;margin-right:60px;}
+.bott_li dl dd {float:left;width:20px;margin-right:2px; }
+.bott_li dl dd img{float:left;vertical-align:middle; margin-top:18px;}
+
+.fl{float:left;display:inline;}
+.fr{float:right;display:inline;}
+.fR_noconflict{float:right}
+/*搜索*/
+.search_tow{width:;height:47px;float:right;margin-top:24px;}
+.header_box_2 .search_tow{ margin-top:8px;}
+.search_tow_a_noconflict{width:41px;height:38px;background:url(http://www.ccb.com/cn/v3/images/fdj.png) no-repeat 10px;display:block;float:left;margin-left:4px;}
+.search_nav_line{height:38px;line-height:38px;background:#eeeeee;width:1px;float:left;}
+a.search_tow_a__noconflict:hover{width:41px;height:38px;background:url(http://www.ccb.com/cn/v3/images/search_btn.jpg) no-repeat;display:block;margin-left:4px;}
+.search_tow_a_hover{width:41px;height:38px;background:url(http://www.ccb.com/cn/v3/images/search_btn.jpg) no-repeat;display:block;margin-left:4px;}
+.search_nav_noconflict{position:absolute;display:none;right:0;top:67px;border-top:2px #1693f1 solid;height:119px;z-index:888;width:960px;background:#f8f8f8;-moz-box-shadow:1px 1px 2px #ccc;-webkit-box-shadow:1px 1px 2px #ccc;box-shadow:1px 1px 2px #ccc;/* For IE 8 */
+ -ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135,Color='#333232)";/* For IE 5.5 - 7 */
+ filter:progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135,Color='#333232');display:none}
+.header_box_2 .search_nav__noconflict{ top:47px;}
+.search_input{width:341px;height:36px;line-height:36px;padding:0 0 0 5px;border:1px #0066b3 solid;font-size:14px;font-family: "Microsoft Yahei",Arial, Helvetica, sans-serif,"黑体"; color:#333333;}
+.search_sn{width:470px;height: 70px;margin:0 auto;overflow:hidden;}
+.search_sn .cell{text-align:right;}
+.search_btn{ width:100px; height:38px; font-family: "Microsoft Yahei",Arial, Helvetica, sans-serif,"黑体";line-height:38px; font-size:18px; color:#fff; text-align:center; display:inline-block; background:url(http://www.ccb.com/cn/v3/images/btn/scbtn.png) no-repeat; cursor:pointer;border:none;}
+.search_btn:hover{ color:#fff; opacity:0.8; filter:alpha(opacity=80);}
+.search_sn table .hot-words span{font-family:"Microsoft Yahei",Arial, Helvetica, sans-serif,"黑体";color:#666666}
+.search_sn table .hot-words a{color:#333;font-family:"Microsoft Yahei",Arial, Helvetica, sans-serif,"黑体";}
+.hot-words{height:40px;line-height:40px;font-size:14px; text-align:left;}
+.hot-words a{margin-right:20px;}
+.gb_btn{height:30px;text-align:right;padding-top:3px;padding-right:3px;}
+
+.kefu_noconflict{position:absolute;> margin-top:35px!important;padding-bottom: 30px;min-height: 200px;left:0%;width:100%;display:none;background-color:#86b9e6;z-index:1004;}
+.jqr{width:303px;height:227px;float:left;}
+.zxkf{width:960px;margin:0 auto;padding-top:32px;text-align: left;}
+.zxkf_li{width:612px;float:right;min-height:200px;position:relative;}
+.zz_top_right{cursor:pointer;position:absolute;right:0px;top:-12px;}
+.zxkf_top1{border-bottom:2px #b6d5f0 solid;height:40px;line-height:40px;padding-left:5px;font-size:18px;color:#fff;}
+.zxkf_con{padding:30px 5px;font-size:14px;color:#fff;}
+.zxkf_btn{background:url(http://www.ccb.com/cn/v3/images/kf_btn.png) no-repeat left top;width:120px;height:35px;line-height:35px;text-align:center;color:#fff;font-size:14px;cursor:pointer; margin-top:30px;}
+.label_radio_noconflict{ padding-left:40px; background:url(http://www.ccb.com/cn/v3/images/radio.png) left -41px no-repeat;background:url(http://www.ccb.com/cn/v3/images/radio.png) left -43px no-repeat!important; line-height:20px; cursor:pointer;}
+.label_radio_noconflict input{ display:none;}
+.r_on_noconflict{background:url(http://www.ccb.com/cn/v3/images/radio.png) left 2px no-repeat;background:url(http://www.ccb.com/cn/v3/images/radio.png) left 0px no-repeat!important;}
+.zxkf_con .label_radio_noconflict{ width:261px; display:inline-block; float:left; margin:15px 0;>margin:0!important;}
+.jhjt_noconflict{position:absolute;height:550px;>margin-top:35px!important;left:0%;display:none;width:100%;text-align: left;background-color:#86b9e6;z-index:1004;overflow:auto;}
+.zhezhao{width:960px;margin:0 auto;padding-top:9px;}
+.showshow .showj .in_s a{color:#0066b3;}
+.showshow .showj .in_s a:hover{color:#fff;}
+.zz_top1{height:42px;margin-top:20px;padding-left:100px;margin-left:320px;border-bottom:2px #b6d5f0 solid;position:relative;}
+.zz_top1 .zz_top_left ul li.hover_noconflict{background:url(http://www.ccb.com/cn/v3/images/hjjbg.jpg) repeat-x left bottom;color:#fff;z-index:999;}
+.zz_top_left ul li{display:block;padding:0 20px;height:45px;line-height:45px;font-weight:normal;cursor:pointer;color:#0066b3;font-size:18px;}
+.zz_top_right1{cursor:pointer;position:relative;right:0px;top:-9px;}
+.in_s{position:absolute;top:-50px;left:-3px;font-size:18px;}
+.in_s a:link{font-size:18px; font-family: "Microsoft Yahei",Arial, Helvetica, sans-serif,"黑体";}
+.showj_info{width:270px;margin:0 auto;}
+.showj_r_noconflict{width:680px;float:right;margin-top:10px; display:none;}
+.showj_r_noconflict .f_blue{color:#0066b3;}
+.list_one1{width:320px;}
+.list_one1 ul li{width:300px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;text-align: left;}
+.list_li{padding-left:15px;font-size:14px;color:#0066b3;cursor:pointer;line-height:40px;}
+.list_li a:link{font-size:14px;color:#0066b3;cursor:pointer;line-height:40px;font-family: "Microsoft Yahei",Arial, Helvetica, sans-serif,"黑体";}
+
+.showj_r_noconflict .fl{ padding-left:20px;}
+.world_map{ margin-top:20px; position:relative;}
+.area_city_noconflict{ position:absolute; width:191px; display:none;}
+.area_city_top{ width:191px;height:12px; background:url(http://www.ccb.com/cn/v3/images/area_city_top.png) top no-repeat;}
+.area_city_bottom{ width:191px;height:6px; background:url(http://www.ccb.com/cn/v3/images/area_city_bottom.png) top no-repeat;}
+
+.area_city_noconflict ul{margin:0;padding:0; background:#dbeaf8; border-left:1px solid #0066b3; border-right:1px solid #0066b3;}
+.area_city_noconflict ul li{ float:none;line-height:20px; font-size:12px; text-align: left;}
+.area_city_noconflict ul li a{ color:#0066b3;}
+.area_city_noconflict ul li a:hover{ color:#0066b3;}
+
+.showj_info ul li.showj_tit a:hover,.showj_info ul li.showj_li a:hover{color:#1dd9e2;}
+.showj_info ul li{width:252px;line-height:24px;}
+.showj_info ul li.showj_li a{font-size:14px;color:#0066b3;line-height:24px;}
+.showj_in{background:url(http://www.ccb.com/cn/v3/images/showj_in.png) no-repeat;width:252px;height:442px; float:left;}
+.showj_in img{ margin:5px 0 10px 5px;}
+.showj{width:960px;height:450px;position:relative;margin:5px auto;}
+.showj_info ul li.showj_li a{color:#0066b3;font-family: "Microsoft Yahei",Arial, Helvetica, sans-serif,"黑体";}
+.showj_info ul li.showj_tit a{color:#0066b3;font-size:18px;font-family: "Microsoft Yahei",Arial, Helvetica, sans-serif,"黑体";line-height:53px;}
+.showj_info ul li.showj_tit a:link｛line-height:53px;｝
+.showj_info ul li.showj_li a:link｛line-height:24px;｝
+
+
+.header_top_right ul li div.showj_info ul li.showj_tit div.showj_tit a{color:#0066b3}
+.white_content3_noconflict{display:none;position:absolute;>margin-top:35px!important;left:0%;width:100%;background-color:#86b9e6;z-index:1004;overflow:auto;}
+.zz_top_noconflict{height:42px;margin-top:20px;padding-left:365px;border-bottom:2px #b6d5f0 solid;position:relative;}
+.zz_top_left ul li{display:block;padding:0 20px;height:45px;line-height:45px;font-weight:normal;cursor:pointer;color:#0066b3;font-size:18px;}
+.zz_top_noconflict .zz_top_left ul li.hover_noconflict{background:url(http://www.ccb.com/cn/v3/images/hjjbg.jpg) repeat-x left bottom;color:#fff;z-index:999;}
+
+.map_info{width:960px;margin:10px auto 20px auto; text-align:center; position:relative;}
+.map_style_noconflict{ position:absolute; width:960px; left:0; top:0;}
+.map_style_noconflict a{ position:absolute; font-size:12px; color:#0066b3; z-index:100000;line-height: inherit;}
+.header_top_right ul li .map_style_noconflict a:hover{ color:#ff9900;}
+.map_style_noconflict img{ position:absolute; display:none;}
+.zz_info_noconflict{ display:none;}
+.list_infom{padding-top:20px;height:506px;}
+.map_list{ padding:20px 0 60px 0;}
+.header_top_right .map_list li{ float:left; display:inline; width:136px; margin-left:0;}
+.map_list li div{ font-size:18px; color:#fff; letter-spacing:6px; text-align:center;}
+.map_list li a:link,.map_list li a:visited{ display:block; text-indent:28px; color:#0066b3; font-size:16px;font-family: "Microsoft Yahei",Arial, Helvetica, sans-serif,"黑体";height:50px;line-height:50px;}
+
+/*城市切换*/
+.city_toggle_list{position:absolute;top:0;width:545px;text-align:left;display:none;left:40px;z-index:2;}
+.city_toggle_list_close{left:258px;top:9px;position:absolute;top:15px;right:5px;cursor:pointer;}
+.city_town .body ul li{padding:5px 4px;float:left;display:inline;width:60px;white-space:nowrap;word-break:keep-all;overflow:hidden;font-size:12px;text-align:center;cursor:auto;}
+.city_town .body ul li span{color:#0066b3;cursor:pointer;}
+.city_town .body p{font-size:14px;font-weight:bold;color:#919191;padding-bottom:5px;text-align:left;padding-left:15px;font-size:14px;}
+.city_town .body .close{text-align:right;}
+.city_town .body .close img{cursor:pointer;position:absolute;top:15px;right:15px;}
+.city_town{left:0px;}
+/*城市确认弹出层*/
+.city_box{background-color:#fff;color:#555555;left:50%;margin-left:0px;}
+.city_box p{font-size:16px;}
+.city_box p span{font-size:16px;font-weight:bold;}
+.city_box .gradient{height:200px;width:500px;}
+/*城市搜索优化样式*/
+.change_city_bg{z-index:370;background:#fff;position:absolute;}
+.change_city_box{width:544px;position:absolute;z-index:371;}
+.change_city_head_noconflict{position:relative;width:544px;height:80px;background:url(http://www.ccb.com/cn/v3/images/cost/city_top.png) no-repeat;}
+.abc_input_noconflict{height:30px;line-height:30px;float:left;border:1px solid #dbdbdb;width:220px;text-indent:10px;color:#999;}
+.change_city_head_noconflict button{width:80px;height:32px;float:left;cursor:pointer;background:#0066b3;border:0;color:#fff;margin-left:10px;font-size:16px;border-radius:3px;}
+.close_change_city{display:block;position:absolute;top:2px;right:3px;width:20px;height:20px;cursor:pointer;z-index:9999;}
+.city-seach_noconflict{height:34px;padding:10px 14px 0;}
+.change_city_body_noconflict{background:url(http://www.ccb.com/cn/v3/images/cost/city_body.png) repeat-y;padding-top:8px;text-align:left;font-family: "微软雅黑";
+}
+.change_city_tishi{height:30px;line-height:30px;color:#333;padding:0px 14px;}
+.limiter_noconflict{margin-top:4px;}
+.pro_city3_list1_noconflict a{display:inline-block;height:30px;line-height:30px;overflow:hidden;text-align:center;width:60px;position:relative;color:#666; left:14px;}
+.pro_city3_list2_noconflict span{display:inline-block;height:20px;width:60px;overflow:hidden;color:#666;cursor:pointer;}
+.pro_city3_list1_noconflict .pro_this{position:relative;z-index:10010;}
+.pro_city3_list2_noconflict{position:relative;top:-10px;display:none;}
+.pro_body_bg_noconflict{min-height:30px;}
+.top_arrow_noconflict{position:absolute;width:60px;z-index:100;top:-2px;+top:-20px!important;left:15px;}
+.top_arrow1{border-bottom:4px solid #1693f1;}
+.pro_body_bg_noconflict{background-color:#f6f6f6;border-top:2px solid #d8d8d8;margin-left:1px; padding:10px 0 10px 24px;}
+.pro_body_bg_noconflict span:hover{ color:#0066b3;}
+.close_list2{position:absolute;display:block;width:30px;height:25px;right:8px;top:5px;cursor:pointer;}
+.change_city_footer{width:544px;height:10px;background:url(http://www.ccb.com/cn/v3/images/cost/city_bottom.png) no-repeat;}
+/*----城市列表----*/
+.city1_box_noconflict{position:absolute;width:217px;z-index:10001;color:#919191;left:14px;top:82px;display:none}
+.city1_box_body_noconflict{border:solid 1px #dbdbdb;border-top:0;background-color:#fff;}
+.city1_box_noconflict ul{margin:0 auto;border-top:solid 1px #f1f4f9;}
+.city1_box_noconflict li{clear:both;padding:10px 20px;border-bottom:solid 1px #f1f4f9;cursor:pointer;margin:0;}
+.city_hover{background-color:#9CF;color:#fff;}
+.iframe_click{border:solid 3px #FFCC00;}
+.bg_click{position:absolute;z-index:1;}
+.red_city{color:red;font-weight:normal;}
+.select-city_noconflict{background:url(http://www.ccb.com/cn/v3/images/city_bg.jpg) no-repeat left top;width:68px;height:24px;line-height:25px;padding-left:4px;left:-6px;position:relative;float:left;}
+.city_selected{width:68px;height:24px; display:inline-block;}
+.select_hide_noconflict{width:545px;height:auto;position:absolute;left:-1px;top:7px;display:none;background:#fff; z-index:10000;}
+.select_txt{height:25px;line-height:25px;padding-left:220px;padding-bottom:17px;position:relative;}
+.select_txt a{display:block;text-align:left;position:absolute;top:2px;left:224px;color:#333;}
+.header_box{width:100%;height:auto;}
+
+.logo{float:left;width:200px;height:40px;padding-top:21px;padding-right:16px;}
+.header_box_2 .logo{ padding-top:6px;}
+.City_select{background:url(http://www.ccb.com/cn/v3/images/city.jpg) no-repeat left top;margin-top:28px;width:50px;height:25px;float:left;line-height:25px;padding-left:7px;position:relative;cursor:pointer;}
+.beijing_noconflict{width:545px;height:40px;position:relative; line-height:26px;text-align: left;}
+.beijing_noconflict a{margin-left:216px;}
+
+
+.chen{width: 72px;height: 38px;float: left;margin-top: 20px;position: relative;z-index: 999; font-size:18px;font-family:"Microsoft Yahei",Arial, Helvetica, sans-serif;margin-left: 20px;border-left: 1px solid #eee;line-height: 38px;text-align: cente;padding-left: 18px;}
+a:hover {
+    text-decoration: none;
+}
+.header_top_box{font-family: "Microsoft Yahei",Arial, Helvetica, sans-serif,"黑体";}
+.sn_td1,.sn_td2{padding:0px;}
+.clearfix:after { 
+	clear: both; 
+	overflow:hidden;
+}
+.clearfix:before, 
+.clearfix:after { 
+	content: "."; 
+	/*display: table;*/
+	font-size:0;
+}
+.clearfix { 
+  	zoom: 1; 
+}
+.select-city_noconflict a{text-decoration: none;color: #333;font-family: "Microsoft Yahei",Arial, Helvetica, sans-serif,"黑体";}
+.select-city_noconflict a:hover{color: #0066b3;}
+.area_city_up{ width:191px;height:12px; background:url(http://www.ccb.com/cn/home/v3/images/area_city_top.png) top no-repeat;}
+.area_city_bottom{ width:191px;height:6px; background:url(/cn/home/v3/images/area_city_bottom.png) top no-repeat;}
+.Business a img{display:block;}
+
+.clear{clear:both;}
+
+
+/*20180123 新客户服务css*/
+.kfhover{
+	position: absolute;
+    height: 430px;
+    left: 0%;
+    width: 100%;
+    display: none;
+    background-color: #86b9e6;
+    z-index: 9004;
+}
+.kfpath{width:960px; margin:0 auto; padding-top: 43px; overflow:hidden;}
+.kf_fl{float:left; margin-left:70px;/*margin-right: 20px;*/}
+.kf_fl a{display:block; line-height:1; font-size:24px;letter-spacing: 1.5px; color:#0066b3; margin-bottom:16px;
+text-decoration: underline;}
+.kf_fl .kf_ad{width:218px; height:300px;/* border:5px solid #fff;*/
+               /*box-shadow: 1.707px 1.707px 1px 0px rgba(21, 21, 21, 0.196);*/ margin-left:0; display:block;display: table-cell;
+vertical-align: middle;
+text-align: center;}
+.kf_fl .kf_ad img{width: 160px;
+height: 200px;
+margin: 0 auto;
+border: 5px solid #fff;
+display: block;
+}
+
+.kf_fr{float:right; margin-right:30px; /*width:520px;*/ position:relative;}
+.kf_fr .top_line{position:absolute; left:-15px; right:-30px; background:#b6d5f0; height:2px; top:30px;}
+.kf_fr_top{position:absolute; right:-30px; top:-24px;}
+.kf_fr_middle{/*margin-right:30px;*/}
+.kf_list{width:200px; float: left;/* margin-right: 58px; text-align: center;*/}
+.kf_list:nth-child(2){width:210px;}
+.kf_list .kf_tit{color:#fff; font-size:18px; line-height:20px; margin-bottom:40px;}
+.kf_list .kf_tit i{display:inline-block; height:20px; width:20px; margin-right:10px; vertical-align:top;}
+/*.kf_list .kf_tit i.i01{background:url(../CustomService/images/ico/icon_kftit_01.png) no-repeat right center;}*/
+.kf_list .kf_tit i.i02{background:url(../CustomService/images/ico/icon_kftit_02.png) no-repeat right center;}
+.kf_list .kf_tit i.i03{background:url(../CustomService/images/ico/icon_kftit_03.png) no-repeat right center;}
+.kf_list .kf_item{color:#0066b3; font-size:16px; line-height:48px; display:block; padding-left:30px;}
+.kf_list:nth-child(2) .kf_item{padding-left:0;}
+.pl0{ padding-left:0!important}/*ie9以下*/
+.kf_list:nth-child(2) .kf_tit{padding-left:0px;}
+
+.kf_fr_bottom{margin-top:44px; overflow:hidden;}
+.kf_fr_bottom dt{float: left; margin-right: 52px;}
+.kf_fr_bottom dt a, .kf_fr_bottom dt a:hover{color:#0066b3; font-size:12px;}
+.kf_fr_bottom dd{float: left; width: 20px; margin-right: 2px;}
+.kf_fr_bottom dd img {float: left;vertical-align: middle; margin-top: 18px;}
+.serviceAndcomplain { font-size: 16px; color: #fff; display: block; float: left; padding-left: 22px;}
+/*客户服务 end */

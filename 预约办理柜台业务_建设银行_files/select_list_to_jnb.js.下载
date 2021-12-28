@@ -1,0 +1,34 @@
+$(function () {
+    var hostname = location.hostname;
+    var s = $("head [src='/ccbctp/app_Njnb/js/main.js']");
+    var s1 = $("head [src='/Nctp/app_nbh/js/main.js']");
+    if (s.length < 1 && s1.length < 1) {
+        $("body").on("click", ".select_list", function () {
+            $(this).find(".select_ul").toggle();
+        })
+
+        $("body").on("mouseleave", ".select_list", function () {
+            $(this).find(".select_ul").hide();
+        })
+
+        $("body").on("click", ".select_list .select_ul ul li", function () {
+            $(this).parents(".select_list").find(".select_value").text($(this).text());
+        })
+    }
+})
+var oldToggle = $.fn.toggle
+$.fn.extend({
+    toggle: (function () {
+        var state = false;
+        return function (e, r, i) {
+            if (!state) {
+                console.log(1)
+                state = true;
+                oldToggle.apply(this, [e, r, i])
+                setTimeout(function () {
+                    state = false;
+                })
+            }
+        }
+    })()
+})

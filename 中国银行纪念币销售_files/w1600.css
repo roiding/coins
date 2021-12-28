@@ -1,0 +1,87 @@
+﻿/*this css for 1600 screen*/
+/*直接在原有宽度加200px*/
+.w1600 .bu-wrapper {
+	width: 1600px;
+}
+.w1600 .bu-main {
+ 	width: 1600px;
+}
+.w1600 .bu-header {
+	height: 80px;
+	position:relative;
+	text-align:center;
+	line-height:64px;
+	font-size:28px;
+	color:#b5002a;
+}
+
+/*单元格列宽*/
+.w1600 .w90{
+	width: 150px;
+}
+.w1600 .w120{
+	width: 180px;
+}
+.w1600 .w140{
+	width: 200px;
+}
+.w1600 .w60{
+	width: 100px;
+}
+.w1600 .w70{
+	width:100px;
+}
+.w1600 .w65{
+	width: 110px;
+}
+.w1600 .w55{
+	width: 105px;
+}
+.w1600 .w110{
+	width: 170px;
+}
+.w1600 .sel.w70 {
+	width: 68px;
+}
+.w1600 .sel.w70 .title .txt{
+	width: 48px;
+}
+.w1600 .sel.w70 .title .txt a{
+	width: 48px;
+}
+.w1600 .sel.w120 {
+	width: 118px;
+}
+.w1600 .sel.w120 .title .txt{
+	width: 98px;
+}
+.w1600 .sel.w120 .title .txt a{
+	width: 98px;
+}
+.w1600 .pop-con th.w90{
+	width: 90px;
+}
+.w1600 .pop-con th.w120{
+	width: 120px;
+}
+.w1600 .pop-con th.w140{
+	width: 140px;
+}
+.w1600 .pop-con th.w60{
+	width: 60px;
+}
+.w1600 .pop-con th.w70{
+	width:70px;
+}
+.w1600 .pop-con th.w65{
+	width: 65px;
+}
+.w1600 .pop-con th.w55{
+	width: 55px;
+}
+.w1600 .pop-con th.w110{
+	width: 110px;
+}
+.w1600 .tb-scroll .w90{
+	width: 90px;
+}

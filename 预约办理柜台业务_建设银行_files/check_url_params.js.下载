@@ -1,0 +1,76 @@
+!function () {
+    var param = location.search + location.hash
+    if (param) {
+        var _decode = decodeURIComponent(param),
+            _replace = _decode.replace(/[<>'"`\\]/g, function (match) {
+                var map = {
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    "'": '&apos;',
+                    '"': '&quot;',
+                    '`': '&#96;',
+                    '\\': '&#92;'
+                }
+                return map[match]
+            })
+        if (_decode != _replace) {
+            location.href = location.pathname + _replace
+        }
+    }
+    if ($ && $.prototype.on) {
+        !function () {//验证参数
+            if (location.pathname.match(/(?:news_detail|fundNews_details|cn\/mobilev3\/detail)\.html/)) {
+                check(location.search)
+            }
+            function check(urlSearch) {
+                try {
+                    var matcher = urlSearch.match(/(.+)&Rnd_Key=([^&]+)/),
+                        thisSearch = matcher[1],
+                        key = matcher[2],
+                        search = getCookie(key)
+                    thisSearch !== search && (location.href = location.pathname + search + '&Rnd_Key=' + key)
+                } catch (e) {
+                    ~location.pathname.indexOf('cn/mobilev3/detail') ? location.href = '//m.ccb.com/cn/home/indexv3m.html' : location.href = '//www.ccb.com/cn/home/indexv3.html'
+                }
+            }
+        }()
+
+        !function () {//保存参数
+            var Rnd_Keys = ['miAMiGkWcZ', 'bQugbtGDOC', 'CVFEVCDxqn', 'rTaRdxsZpZ', 'TpWqytiaJz', 'eAJRgVkxIS', 'cSOIQtiXIp', 'uTTuWjtFeP', 'BfaALMJFxL', 'JXAmXtShVb']
+            $(function () {
+                $('body').on('click', 'a[href*="news_detail.html?"],a[href*="fundNews_details.html?"],[onclick*="cn/mobilev3/detail.html?"]', function (e) {
+                    if (this.href) {
+                        intercept(this.href, true)
+                    } else {
+                        var value = $(this).attr('onclick'), url = value.match(/(["'])(.+)\1/)[2]
+                        intercept(getAbsoluteUrl(url), false)
+                    }
+                    e.preventDefault()
+                    e.stopPropagation()
+                    e.stopImmediatePropagation()
+                    return false
+                })
+            })
+            function intercept(url, isBlank) {
+                var Rnd_Idx = getCookie('Rnd_Idx') || -1,
+                    nowIdx = ++Rnd_Idx > 9 ? 0 : Rnd_Idx,
+                    key = Rnd_Keys[nowIdx] || Rnd_Keys[0],
+                    search = url.match(/\?.+/)[0],
+                    newUrl = url + '&Rnd_Key=' + key
+                document.cookie = 'Rnd_Idx=' + nowIdx + ';path=/;domain=ccb.com'
+                document.cookie = key + '=' + search + ';path=/;domain=ccb.com'
+                isBlank ? window.open(newUrl) : location.href = newUrl
+            }
+        }()
+    }
+    function getCookie(key) {
+        var reg = new RegExp(key + "=([^;]+)")
+        var cookie = document.cookie.match(reg);
+        return cookie && cookie[1];
+    }
+    function getAbsoluteUrl(url) {
+        var a = document.createElement('a')
+        a.href = url
+        return a.href
+    }
+}()

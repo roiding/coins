@@ -1,0 +1,81 @@
+@charset "utf-8";/* CSS Document */
+body,input,select,button{
+{/*font: 12px/1 Tahoma, Helvetica, Arial, "宋体", sans-serif;*/
+font: 12px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif; /* 用 ascii 字符表示，使得在任何编码下都无问题 for PC端 */
+}
+body{font-size:12px;line-height:166.6%;}  /*pc端常设置字体大小及间距*/
+h1 { font-size: 18px; /* 18px / 12px = 1.5 */ }
+h2 { font-size: 16px; }
+h3 { font-size: 14px; }
+h4, h5, h6 { font-size: 100%; }
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp, tt { font-family: "Courier New", Courier, monospace; } /* 统一等宽字体 */
+small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote,
+dl, dt, dd, ul, ol, li, pre, /* text formatting elements 文本格式元素 */
+fieldset, lengend, button, input, textarea, /* form elements 表单元素 */
+th, td { margin:0;padding:0;}
+input,button,select,img{margin:0;line-height:normal;}
+select{padding:1px}
+ul,ol{list-style:none}
+header,footer,section,aside,nav,hgroup,figure,figcaption{display:block;margin:0;padding:0;border:none;} /*HTML5标签变块级*/
+a{text-decoration:none;} /*重置链接下划线*/
+img{border:none;}
+
+/*清除浮动*/
+.clear{clear:both;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{display:inline-block}
+* html .clearfix{height:1%} /* Hides from IE-mac \*/
+.clearfix{display:block}/* End hide from IE-mac */}
+
+
+/*********CSS reset ***********/
+*{margin:0;padding:0; outline:none;}
+ul,li,ol{list-style:none; }
+img,a img{border:none;margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+em,i,u{font-style:normal;}
+a{text-decoration:none;color:#333;}
+a:hover{color:#0066b3;}
+body{font-size:12px;font-family:"Microsoft Yahei",Arial, Helvetica, sans-serif,"黑体";color:#666666;line-height:2.0; background:#fff;}
+select,input,button,button img,label{vertical-align:middle;font-family:"微软雅黑","黑体","宋体";border:none;}
+.clear_div{clear:both;}
+/* 浮动及边常用边距  */
+.fL{float:left;}
+.fR{float:right;}
+.mL10{margin-left:10px;}
+.mB10{margin-bottom:10px;}
+
+/*公用样式*/
+.lfloat{
+	float:left;
+	display: inline;
+}
+.rfloat{
+	float:right;
+	display: inline;
+}
+.clearfix:before, 
+.clearfix:after { 
+	content: ""; 
+	display: table; 
+	font-size:0;
+}
+.clearfix:after { 
+	clear: both; 
+	overflow:hidden;
+}
+.clearfix { 
+  	zoom: 1; 
+}
+.clear{
+	clear:both;
+}
+.relative{
+	position:relative;
+}
+.absolute{
+	position:absolute;
+}

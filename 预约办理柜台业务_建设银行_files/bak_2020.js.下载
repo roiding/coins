@@ -1,0 +1,128 @@
+function getProInfo(item) {//获取省份 
+    var item = $("#Scr_PD_ECD").val().split("|")[0];//item 产品id 
+    provinceArray = new Array();
+    var src = JS_FROM + "/cn/home/news/jnb/jnb_booking_" + item + "_" + V720 + ".js";
+    $.ajax({
+        type: "POST",
+        url: src,
+        async: false,
+        dataType: "jsonp",
+        jsonp: 'callback',
+        jsonpCallback: 'jnbcb',
+        //	cache:true,
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            alert('Error ');
+        },
+        success: function (msg) {
+            PRODUCT_LIST = msg.PRODUCT_LIST;
+            var proArr = [];
+            for (var proid in PRODUCT_LIST) {
+                if (PRODUCT_LIST[proid].PRODUCT_ID == item) {
+                    provinceArray = PRODUCT_LIST[proid].pro_list;
+                }
+            }
+            provinceArray = fixProvinceArray(provinceArray)
+            for (var j = 0; j < provinceArray.length; j++) {
+                if (provinceArray[j].value.indexOf("售完)") != -1) {
+                    $("#Prov_Cd").append("<option value='" + provinceArray[j].id + "' sidx='" + j + "' disabled=disabled>" + provinceArray[j].value + "</option>");
+                } else {
+                    $("#Prov_Cd").append("<option value='" + provinceArray[j].id + "' sidx='" + j + "'>" + provinceArray[j].value + "</option>");
+                }
+            }
+
+            if (isFrist_flag && V448 != '') {
+                $('#Prov_Cd').val(V448);
+                $("#Prov_Cd").parents(".pbd_selectCtrl").find(".cur_select").text($("#Prov_Cd").find('option:selected').text());
+                $('#Prov_Cd').change();
+            }
+        }
+
+    });
+}
+
+function getProvCity() {//获取省份 
+
+    var item = $("#Scr_PD_ECD").val().split("|")[0];//item 产品id 
+    provinceArray_new = new Array();
+    var src = JS_FROM + "/cn/home/news/jnb/jnb_booking_" + item + "_1.js";
+    $.ajax({
+        type: "POST",
+        url: src,
+        async: false,
+        dataType: "jsonp",
+        jsonp: 'callback',
+        jsonpCallback: 'jnbcb',
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            alert('Error ');
+        },
+        success: function (msg) {
+            PRODUCT_LIST = msg.PRODUCT_LIST;
+            var proArr = [];
+            for (var proid in PRODUCT_LIST) {
+                if (PRODUCT_LIST[proid].PRODUCT_ID == item) {
+                    provinceArray_new = PRODUCT_LIST[proid].pro_list;
+                }
+            }
+            provinceArray_new = fixProvinceArray(provinceArray_new)
+
+            //默认值设置 start
+            var showContactDom = $('#show_contact');
+            var Prov_CdDom = $('#Prov_Cd');//省域
+            var City_CdDom = $('#City_Cd');//市域
+            var CntyAndDstc_CdDom = $('#CntyAndDstc_Cd');//区域
+            var tmp_Prov_Cd = '';//省代码
+            var tmp_City_Cd = '';//市代码
+            var tmp_CntyAndDstc_Cd = '';//区代码
+            var PRODUCT_ID = $("#Scr_PD_ECD").val().split("|")[0];
+            var tmp_Prov_N = '';//省代码
+            var tmp_City_N = '';//市代码
+            var tmp_CntyAndDstc_N = '';//区代码
+
+            if (isFrist_flag && tmp_Prov_Cd != "" && tmp_City_Cd != "" && tmp_CntyAndDstc_Cd != "") {
+                for (var int_i = 0; int_i < provinceArray_new.length; int_i++) {
+                    if (tmp_Prov_Cd == provinceArray_new[int_i].id) {
+                        proSelct_index = int_i;
+                        tmp_Prov_N = provinceArray_new[int_i].value
+                        city_list = provinceArray_new[int_i].city_list;
+                        for (var int2 = 0; int2 < city_list.length; int2++) {
+                            if (tmp_City_Cd == city_list[int2].id) {
+                                citySelct_index = int2;
+                                tmp_City_N = city_list[int2].value;
+                                count_list = city_list[int2].COUNTY_list;
+                                for (var int3 = 0; int3 < count_list.length; int3++) {
+                                    if (tmp_CntyAndDstc_Cd == count_list[int3].id) {
+                                        tmp_CntyAndDstc_N = count_list[int3].value;
+                                        countyS_index = int3;
+                                        break;
+                                    }
+                                }//end for3
+                                break;
+                            }
+                        }//end for2
+                        break;
+                    }
+                }//end for
+
+                Prov_CdDom.val(tmp_Prov_Cd);
+                Prov_CdDom.attr('data-province-name', tmp_Prov_N);
+                City_CdDom.val(tmp_City_Cd);
+                City_CdDom.attr('data-city-name', tmp_City_N);
+                CntyAndDstc_CdDom.val(tmp_CntyAndDstc_Cd);
+                CntyAndDstc_CdDom.attr('data-city-name', tmp_CntyAndDstc_N);
+
+                showContactDom.html(tmp_Prov_N + ' ' + tmp_City_N + ' ' + tmp_CntyAndDstc_N);
+                showContactDom.css("color", "#333");
+                //获取网点信息
+                getPointInfo();
+            } //默认值设置 end
+
+
+
+
+        }
+    });
+}
+
+function fixProvinceArray(provinceArr) {
+    return JSON.parse(JSON.stringify(provinceArr).replace(/\(已售完\)/g, ""))
+}

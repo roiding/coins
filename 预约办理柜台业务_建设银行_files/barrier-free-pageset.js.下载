@@ -1,0 +1,56 @@
+function bfreePageSetting(tool, bfreeArea, bfreeTool) {
+    return {
+        "/cn/home/indexv3.html|/cn/creditcard/index.html": function () {
+            var cssText = '.header_box_2{position: static!important;}.header_box_2 .search_tow{margin: 24px!important;}.header_box_2 div.Quick_Link,.header_box_2 div.chengshixuanze{display: block!important;}'
+            tool.createStyle("bfree_css_header_box", "", cssText)
+        },
+        "/cn/creditcard/card_list.html": function () {
+            $("#card_keyword").attr("placeholder", "请输入产品名称")
+        },
+        "/cn/home/indexv3.html": function () {
+            $(".index_scroll .index_scroll_left a,.difference .button_left").attr("aria-label", "轮播切换控件 左")
+            $(".index_scroll .index_scroll_right a,.difference .button_right").attr("aria-label", "轮播切换控件 右")
+
+            $("#header_box .search_tow_a").text("搜索按钮").css("color", "transparent")
+        },
+        "/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NNYY00": function () {
+            //新开户预约
+        },
+        "/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NYY010": function () {
+            //旧开户预约，新的对外后不要了
+        },
+        "/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NYY500&UniEncodeStr": function () {
+            //取款预约
+        },
+        "/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NYY030": function () {
+            //境外汇款
+        },
+        "/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NE5E01": function () {
+            //信用卡办卡进度查询
+        },
+        "/cn/finance/product.html|/cn/fund/product/product_index.html": function () {
+            $(".model_box .mo_lei").attr("tabindex", "0").attr("aria-label", "模式切换控件")
+        },
+        "/cn/": function () {
+            tool.createStyle("bfree_css_adv", "", "a.AcqAdvClass{display:block;}")
+            $(".search_nav .search_input").attr("title", "搜索关键词").attr("aria-label", "搜索关键词")
+
+            tool.setInterval(function () {
+                var advImgs = $("[acqadid]").not("[aria-label]").toArray()
+
+                advImgs.forEach(function (elem) {
+                    var acqadid = elem.getAttribute("acqadid"),
+                        title = acqadid.split("_")[2]
+
+                    $(elem).attr("title", title).attr("aria-label", title)
+                    $(elem).has("*").length || $(elem).text(title).css("color", "transparent")
+                })
+            }, 500, 5000)
+
+            $("label:not([for]) :radio").toArray().forEach(function (radio, i) {
+                radio.id || (radio.id = radio.name + "_" + i)
+                $(radio).closest("label").attr("for", radio.id)
+            })
+        }
+    }
+}

@@ -1,0 +1,77 @@
+@charset "utf-8";
+#quickQuery_container{
+	width: 440px !important;
+	border: #598EDD 1px solid;
+	background-color: #fff;
+	font: normal 12px 宋体 vernada, arial;
+}
+#quickQuery_frame_forIE{
+	position: absolute;
+}
+#quickQuery_content_box_forIE{
+	position: absolute;
+	border: #598EDD 1px solid;
+	background-color: #fff;
+}
+#quickQuery_resultNum_box{
+	background-color: #D4E6FC;
+	border-bottom: #598EDD 1px solid;
+	height: 22px;
+	line-height: 22px;
+	padding-left: 5px;
+}
+#quickQuery_content_box{
+	margin: 5px 0;
+}
+#quickQuery_content_box ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#quickQuery_content_box ul li{
+	line-height: 22px;
+}
+#quickQuery_content_box ul li a{
+	display: block;
+	padding: 0 5px;
+	text-decoration: none;
+	color: #224499;
+	overflow: hidden;
+}
+#quickQuery_content_box ul li a1{
+	display: block;
+	padding: 0 5px;
+	text-decoration: none;
+	overflow: hidden;
+}
+#quickQuery_content_box ul li a:hover,
+#quickQuery_content_box ul li a.quickQuery_currentContent{
+	background-color: #598EDD;
+	color: #FFF;
+}
+#quickQuery_page_box{
+	background-color: #D4E6FC;
+	border-top: #598EDD 1px solid;
+	line-height: 20px;
+	padding-left: 5px;
+}
+.quickQuery_title{
+	/*width: 90px;*/
+	display: inline-block;
+	padding-right: 5px;
+}
+#quickQuery_page_box span a{
+	display: inline-block;
+	padding: 0 3px;
+	margin: 0 1px;
+	text-decoration: none;
+	color: #666;
+}
+#quickQuery_page_box span a:hover,
+#quickQuery_page_box span a.quickQuery_currentPage{
+	background-color: #598EDD;
+	color: #fff;
+}
+
+
+

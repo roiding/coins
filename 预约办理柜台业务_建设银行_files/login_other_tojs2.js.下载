@@ -1,0 +1,31 @@
+
+
+
+	
+document.write('<div class="login_box_jnb">\
+			<div class="login_box">\
+				<div class="select_list w_160 lfloat">\
+					<span class="select_value">个人网上银行</span>\
+					<div class="select_ul">\
+						<ul>\
+							<li class="choose">个人网上银行</li><li class="choose">商户服务平台</li><li class="choose">网站</li><li class="choose">善融商务</li><li class="choose">企业ERP云平台</li>\
+						</ul>\
+					</div>\
+				</div>\
+				<a id="http://www.ccb.com/cn/jump/personal_loginbank.html" style="cursor:pointer" class="Quick_Link_top_button" target="_blank">登录</a><a id="http://www.ccb.com/cn/home/tysh/tysh_index.html" style="cursor:pointer" class="Quick_Link_top_button hide" target="_blank">登录</a><a id="http://login.ccb.com/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NHY010" style="cursor:pointer" class="Quick_Link_top_button hide" target="_blank">登录</a><a id="http://buy.ccb.com/member/memberBegin.jhtml" style="cursor:pointer" class="Quick_Link_top_button hide" target="_blank">登录</a><a id="http://erp.ccb.com" style="cursor:pointer" class="Quick_Link_top_button hide" target="_blank">登录</a>\
+			</div>\
+			<div class="logined_box">\
+				<ul>\
+					<li class="name_widyh">\
+						<span ><a href="#"></a></span>\
+						<a href="http://www.ccb.com/cn/mycom/user_center.html ">我的.com</a>\
+						<a style="cursor:pointer" onclick="out();">安全退出</a>\
+					</li>\
+					<li>\
+						<a href="http://www.ccb.com/cn/v3/jump/personal_loginbank.html">进入个人网上银行</a>\
+					</li>\
+				</ul>\
+			</div>\
+		</div>\
+		<script type="text/javascript" src="http://www.ccb.com/cn/v3/include/login/login2.js"><\/script>');
+

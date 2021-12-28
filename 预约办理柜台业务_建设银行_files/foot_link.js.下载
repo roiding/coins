@@ -1,0 +1,9 @@
+
+
+
+
+
+   document.write('<div class="footer_links"><div class="footer_link_main"><div class="footerr_links_img"><a href="#" ><img width="94px" src="http://image3.ccb.com/cn/home/v3/images/footer_links_img.gif"></a></div><div class="footerr_links_img"><a href="https://ss.knet.cn/verifyseal.dll?sn=e17090611010268808kqyr000000&pa=111332" ><img width="94px" src="http://image3.ccb.com/cn/home/v3/images/ss.png"></a></div><ul><li><a href="http://www.ccb.com/cn/home/map/branchSearch.html" target="_blank">网点及ATM</a></li><li><a href="http://www.ccb.com/cn/home/equityProtect/equityProtect.html" target="_blank">消费者权益保护</a></li><li><a href="http://store.ccb.com/cn/public/20141027_1414371456.html" target="_blank">服务价目表</a></li><li><a href="http://jf.ccb.com/donate.html?columnNo=7&tid=page7" target="_blank">积分圆梦微公益</a></li><li><a href="http://www.ccb.com/cn/v3/head_content/sitemap.html" target="_blank">网站地图</a></li><li><a href="http://www.ccb.com/cn/v3/head_content/sitedeclare.html" target="_blank">网站声明</a></li><li><a href="http://www.ccb.com/cn/v3/head_content/friendlink.html" target="_blank">友情链接 </a></li></ul><div class="Language_select"><a href="http://fjt.ccb.com/gate/big5/www.ccb.com/cn/home/indexv3.html">繁体</a>/<a href="http://en.ccb.com/en/home/indexv3.html">ENGLISH</a></div><div class="clear"></div></div></div>')
+
+
+

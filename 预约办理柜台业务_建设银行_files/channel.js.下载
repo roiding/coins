@@ -1,0 +1,86 @@
+﻿$(function(){
+ 
+	var name=navigator.appName;
+	if("Microsoft Internet Explorer"===name){ 
+
+		var elve_kefu=$(".kefu_noconflict");
+	 	var elve_jhjt=$(".jhjt_noconflict");
+		var elve_white=$(".white_content3_noconflict");
+		var elve_chengshi=jQuery(".chengshixuanze").attr("style","");
+		var elve_list1=jQuery(".pro_city3_list1_noconflict").attr("style","");
+	
+	 
+		// $(".kefu_noconflict").remove();
+		// $(".jhjt_noconflict").remove();
+		// $(".white_content3_noconflict").remove();
+		// $(".chengshixuanze").remove();
+		// $(".pro_city3_list1_noconflict").remove();
+		
+		 
+		$("#kefu_noconflict").after(elve_kefu);
+		$("#jhjt_noconflict").after(elve_jhjt);
+		$("#white_content3_noconflict").after(elve_white);
+		$(".logo").after(elve_chengshi);
+		$(".pro_city3_noconflict").append(elve_list1);
+		
+		jQuery(".zxkf_btn").click(function(){
+		var noteservice=jQuery(".r_on_noconflict").next().val();openWinPop(noteservice,"新窗口");
+		});
+		function openWinPop(url,name){
+			var nWinLeft = (screen.width-757)/2;var nWinTop = (screen.height-570)/2;
+			var win_style="menubar=no,toolbar=no,location=no,directories=no,status=yes,resizable=yes,scrollbars=no,width=953,height=554,top="+nWinTop+",left="+nWinLeft;window.open(url,name,win_style);
+		}
+	}else{
+		jQuery(".chengshixuanze").attr("style","");
+		jQuery(".pro_city3_list1_noconflict").attr("style","");
+		jQuery(".chengshixuanze_branch").attr("style","");
+	}; 
+	
+	
+	
+	
+	showChannerName();
+	function showChannerName(){
+	    var URL=location.href;
+		var subUrl=URL.substr(URL.indexOf('/',7));
+		var channelName=URL.split('/')[2].split('.')[0];
+		var lng=subUrl.split("/")[1];
+		var columnName=subUrl.split("/")[2];
+		var category=subUrl.split("/")[3];
+		var channel=["外汇","基金","贵金属","私人银行","学生惠","论坛","招聘"];
+		var channel_name=["forex","fund","gold","privatebank","edu","bbs","job"];
+		var column=["个人存款","个人贷款","银行卡","房改金融","证券代理","便利服务"];
+		var column_name=["deposit","credit","debitcard","housing","securities","convenient"];
+		var flag=true;
+		if(channelName){
+			var i=0   
+			for(i;i<channel_name.length;i++){
+				if(channelName==channel_name[i]){   
+					$(".chengshixuanze").after('<div class="chen">'+channel[i]+'</div>');
+						flag=false;
+				}
+			}
+
+			
+			if(channelName=="ebank" && lng=="cn" && columnName=="ebank"){
+				$(".chengshixuanze").after('<div class="chen">电子银行</div>');
+				flag=false;
+			}
+
+		}
+		                      //fixed by lhy 2016.03.24
+                      if(channelName=="privatebank")
+                      {                  
+	      	        $('.header_top_left ul li').eq(0).removeClass('se'); 
+	                $('.header_top_left ul li').eq(1).addClass('se');
+                       }
+		if(lng=="cn" && columnName=="personal" && flag){
+			for(var i=0;i<column_name.length;i++){
+					if(column_name[i]==category && category){ 
+						$(".chengshixuanze").after('<div class="chen">'+column[i]+'</div>');
+					}
+				}
+		}      
+ }
+	
+});

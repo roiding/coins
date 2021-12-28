@@ -1,0 +1,42 @@
+   
+	
+		
+			$(function(){
+				var html = '<div class="kfhover" style="display: none;">\
+								<div class="kfpath">\
+									<div class="kf_fl">\
+               <a href="http://www.ccb.com/cn/home/customer_service/customer_service.html" >客户服务专区 &gt;</a>\
+               <span class="kf_ad"><img src="http://image3.ccb.com/cn/v3/upload/20180124_1516762640/20180128023225580501.jpg"><div class="serviceAndcomplain">客服与投诉热线：95533</div></span>\
+            </div>\
+		<div class="kf_fr">\
+               <div class="top_line"></div>\
+               <div class="kf_fr_top fr"> <a href="#" class="btnkf" ><img src="http://image3.ccb.com/cn/home/v3/images/shutdown.png"></a> </div>\
+               <div class="kf_fr_middle">\
+		<div class="kf_list">\
+        	              <div class="kf_tit"><i class="i01"><img src="http://image3.ccb.com/cn/v3/upload/20180124_1516762640/20180128023248121792.png"></i>自助服务</div>\
+            <a href="http://www.ccb.com/cn/home/customer_service/customer_service.html#tw" class="kf_item" >快捷提问</a><a href="javascript:void 0" onclick="window.open(\'http://echat.ccb.com/rolsvc/vservice.html?userType=17&type=2\',\'新窗口\',\'_blank\')" class="kf_item" >我要留言</a><a href="http://www.ccb.com/cn/home/customer_service/customer_service.html#ywzy" class="kf_item" >建行主播   </a><a href="http://ebank.ccb.com/cn/ebank/personal/downloadcenter/201306071370593615.html" class="kf_item" >下载中心</a></div>\<div class="kf_list">\
+        	              <div class="kf_tit"><i class="i01"><img src="http://image3.ccb.com/cn/v3/upload/20180124_1516762640/20180128023257382868.png"></i>在线客服</div>\
+            <a href="javascript:void 0" onclick="window.open(\'http://echat.ccb.com/rolsvc/vservice.html?userType=17\',\'新窗口\',\'_blank\')" class="kf_item" >个人业务</a><a href="javascript:void 0" onclick="window.open(\'http://echat.ccb.com/rolsvc/vservice.html?userType=20\',\'新窗口\',\'_blank\')" class="kf_item" >公司业务</a><a href="javascript:void 0" onclick="window.open(\'http://echat.ccb.com/colsvc/vservice.html?userType=18&IMType=02\',\'新窗口\',\'_blank\')" class="kf_item" >善融商务</a></div>\<div class="kf_list">\
+        	              <div class="kf_tit"><i class="i01"><img src="http://image3.ccb.com/cn/v3/upload/20180124_1516762640/20180128023306871123.png"></i>联系我们</div>\
+            <a href="http://www.ccb.com/cn/home/customer_service/customer_service.html#lxwm" class="kf_item" >微信客服</a><a href="http://www.ccb.com/cn/home/customer_service/customer_service.html#lxwm" class="kf_item" >联系电话</a><a href="http://www.ccb.com/cn/home/customer_service/customer_service.html#lxwm" class="kf_item" >电子邮箱</a><a href="http://www.ccb.com/cn/home/customer_service/customer_service.html#lxwm" class="kf_item" > 邮寄地址</a></div>\</div>\
+		    </div>\
+		\
+								</div>\
+							</div>';
+				$("#kefu_noconflict").after(html);
+	
+				$(".btnkf").click(function (event) {
+					$(this).parents().removeClass("se");
+					$(".kfhover").hide();
+					event.stopPropagation();
+				});
+				
+				function openWinPop(url,name){
+					var nWinLeft = (screen.width-950)/2;
+					var nWinTop = (screen.height-620)/2;
+					var win_style = "menubar=no,toolbar=no,location=no,directories=no,status=yes,resizable=yes,scrollbars=no,width=940,height=603,top=" + nWinTop + ",left=" + nWinLeft;
+					window.open(url,name,win_style);
+				}
+			});				
+		
+		

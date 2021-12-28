@@ -1,0 +1,43 @@
+!function () {
+    var blackList = [
+        '/cn/personal/credit/jyyw.html',
+        '/cn/home/smallcompany/index2.html',
+        '/cn/ccbtoday/mediav3/20180622_1529655291.html'
+    ]
+
+    var path = location.pathname,
+        hit = false,
+        loaded = window.jQuery ? $("script[src*='data_collect.js']").length : 0
+    for (var i = 0, len = blackList.length; i < len; i++) {
+        var blackPath = blackList[i]
+        if (blackPath == path) {
+            hit = true
+        }
+    }
+    
+    try{
+    		if(path.indexOf("/tran/") == 0){
+    			if(document.getElementById("TXCODE").value == "EX7007"){
+    				hit = true;
+    			}
+    		}
+    }catch(e){
+    	
+    }
+    
+    
+    
+    if (!hit && !loaded && !(/cn\/jnb\/subject/).test(location.href)) {
+        if(location.host == "jinianbi.ccb.com"){return}
+        var script = document.createElement('script')
+        document.body.appendChild(script);
+        script.src = "/cn/js/data_collect.js"
+    }
+}()
+
+!function () {
+    var host = location.host;
+    if(!host.match(/\.ccb\.com$/)){
+        window.location.href = "http://127.0.0.1/error.html";
+    }
+}

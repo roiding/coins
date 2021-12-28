@@ -1,0 +1,435 @@
+function bfreePageSetting_1(tool, bfreeArea, bfreeTool) {
+    return {
+        "/cn/": function () {//公共头部和底部 
+            bfreeArea
+                .addNav(".header_top_box")
+                .addWindow("body>.banner")
+                .addInteractive(".Quick_Link")
+                .addNav(".footer")
+                .addInteractive(".header_box .search_tow")
+                .addInteractive(".header_box .select-city")
+                .addInteractive(".login_box")
+
+
+
+            $(".header_box .logo img").attr({ "alt": "首页", "title": "首页" });
+            $(".header_box .search_tow_a").attr("aria-label", "搜索按钮");
+
+            $(".footer .footerr_links_img img:eq(0)").attr({ "alt": "诚信网站", "title": "诚信网站" });
+            $(".footer .footerr_links_img img:eq(1)").attr({ "alt": "可信网站身份验证", "title": "可信网站身份验证" });
+            $(".copy-right_right img:eq(0)").attr({ "alt": "二维码：官方微博", "title": "二维码：官方微博" });
+            $(".copy-right_right img:eq(1)").attr({ "alt": "二维码：微信银行", "title": "二维码：微信银行" });
+            $(".copy-right_right img:eq(2)").attr({ "alt": "二维码：手机银行", "title": "二维码：手机银行" });
+
+        },
+        "/cn/home/indexv3.html": function () {
+            bfreeArea
+                .addNav("#header_box .nav")
+                .addWindow(".vcc-index_tab")
+                .addWindow(".vcc-index_tab_main_div:eq(0)")
+                .addWindow(".yxsh-index_tab")
+                .addWindow(".yxsh-index_main_div")
+                .addWindow(".yzgh_box .plan-con")
+                .addWindow(".Announcement_main")
+                .addInteractive("#header_box .search_tow_a")
+                .addInteractive("#header_box .select-city")
+                .addServis(".footer")
+
+            bfreeTool.theme.excludeSelf(".index_scroll_box")
+
+            $("#header_box .search_tow_a").attr("aria-label", "搜索按钮");
+            $("#fsD1 .fcon>div").attr("aria-label", "业务配置图片文字");
+            $(".vcc-index_tab_main_div_div .index_tab_left_top .index_tab_left1 img:eq(0)").attr({ "alt": "龙卡信用卡 现金分期", "title": "龙卡信用卡 现金分期" });
+            $(".vcc-index_tab_main_div_div .index_tab_left_top .index_tab_right1 img:eq(0)").attr({ "alt": "龙卡全球支付信用卡", "title": "龙卡全球支付信用卡" });
+            $(".vcc-index_tab_main_div_div .index_tab_left_top .index_tab_left1 img:eq(1)").attr({ "alt": '建行速盈“T+1"现金理财神器', "title": '建行速盈“T+1"现金理财神器' });
+            $(".vcc-index_tab_main_div_div .index_tab_left_top .index_tab_right1 img:eq(1)").attr({ "alt": "建信理财”睿鑫“2021年第81期", "title": "建信理财”睿鑫“2021年第81期" });
+            $(".vcc-index_tab_main_div_div .index_tab_left_top .index_tab_left1 img:eq(2)").attr({ "alt": "房易安", "title": "房易安" });
+            $(".vcc-index_tab_main_div_div .index_tab_left_top .index_tab_right1 img:eq(2)").attr({ "alt": "建行“快贷”", "title": "建行“快贷”" });
+            $(".vcc-index_tab_main_div_div .index_tab_left_top .index_tab_left1 img:eq(3)").attr({ "alt": "我的.com-您的网站个人中心", "title": "我的.com-您的网站个人中心" });
+            $(".vcc-index_tab_main_div_div .index_tab_left_top .index_tab_right1 img:eq(3)").attr({ "alt": "e账户线上开户", "title": "e账户线上开户" });
+
+            $('.vcc-index_tab_main_div:eq(1) .index_x_banner_main:eq(0) ul li:eq(1) a img').attr({ 'title': $('.vcc-index_tab_main_div:eq(1) .index_x_banner_main:eq(0) ul li:eq(1) div ').text(), 'alt': $('.vcc-index_tab_main_div:eq(1) .index_x_banner_main:eq(0) ul li:eq(1) div ').text() })
+            $('.vcc-index_tab_main_div:eq(1) .index_x_banner_main:eq(0) ul li:eq(2) a img').attr({ 'title': $('.vcc-index_tab_main_div:eq(1) .index_x_banner_main:eq(0) ul li:eq(2) div ').text(), 'alt': $('.vcc-index_tab_main_div:eq(1) .index_x_banner_main:eq(0) ul li:eq(2) div ').text() })
+            $('.vcc-index_tab_main_div:eq(1) .index_x_banner_main:eq(0) ul li:eq(3) a img').attr({ 'title': $('.vcc-index_tab_main_div:eq(1) .index_x_banner_main:eq(0) ul li:eq(3) div ').text(), 'alt': $('.vcc-index_tab_main_div:eq(1) .index_x_banner_main:eq(0) ul li:eq(3) div ').text() })
+
+            $('.index_x_banner:eq(4) .index_x_banner_main:eq(0) ul li:eq(1) a img').attr({ 'title': $('.index_x_banner:eq(4) .index_x_banner_main:eq(0) ul li:eq(1) div ').text(), 'alt': $('.index_x_banner:eq(4) .index_x_banner_main:eq(0) ul li:eq(1) div ').text() })
+            $('.index_x_banner:eq(4) .index_x_banner_main:eq(0) ul li:eq(2) a img').attr({ 'title': $('.index_x_banner:eq(4) .index_x_banner_main:eq(0) ul li:eq(2) div ').text(), 'alt': $('.index_x_banner:eq(4) .index_x_banner_main:eq(0) ul li:eq(2) div ').text() })
+            $('.index_x_banner:eq(4) .index_x_banner_main:eq(0) ul li:eq(3) a img').attr({ 'title': $('.index_x_banner:eq(4) .index_x_banner_main:eq(0) ul li:eq(3) div ').text(), 'alt': $('.index_x_banner:eq(4) .index_x_banner_main:eq(0) ul li:eq(3) div ').text() })
+
+
+
+
+            $(".index_x_banner_mian ul li img:eq(0)").attr('alt', '善融商务  华为mate 40 pro');
+            $(".index_x_banner_mian ul li img:eq(1)").attr('alt', '善融商务  最安康山田米');
+            $(".index_x_banner_mian ul li img:eq(2)").attr('alt', '善融商务  全国话费充值');
+
+
+
+
+
+
+            $(".index_x_banner_mian ul li img:eq(0)").attr('title', '善融商务  华为mate 40 pro');
+            $(".index_x_banner_mian ul li img:eq(1)").attr('title', '善融商务  最安康山田米');
+            $(".index_x_banner_mian ul li img:eq(2)").attr('title', '善融商务  全国话费充值');
+
+
+            window.nList && nList.hover(function () {
+                clearTimeout(nListHoverTimer);
+                nListHoverTimer = setTimeout(function () {
+                    notPause = false;
+                }, 1000);
+            }, function () {
+                notPause = true;
+                clearTimeout(nListHoverTimer);
+            });
+        },
+        "/cn/insurance/indexv3.html": function () {//保险首页
+            bfreeArea
+                .addNav(".header_box .insur_nav")
+                .addServis(".index_scroll_box")
+                .addWindow(".vcc-index_tab_main_div:eq(0)")
+                .addWindow(".yzgh_box")
+                .addWindow(".vcc-index_tab_main_div:eq(1)")
+                .addWindow(".bx_gh_logo")
+                .addInteractive(".Quick_Link_top")
+
+
+
+
+
+            $("#fsD1 .fcon>div").attr("aria-label", "业务配置图片文字");
+            $(".scrolllist .scroll-li_box:eq(0)").attr("aria-label", $(".scrolllist .scroll-li_box:eq(0) h3 a").text());
+            $(".scrolllist .scroll-li_box:eq(1)").attr("aria-label", $(".scrolllist .scroll-li_box:eq(1) h3 a").text());
+            $(".scrolllist .scroll-li_box:eq(2)").attr("aria-label", $(".scrolllist .scroll-li_box:eq(2) h3 a").text());
+
+        },
+        "/cn/home/company_indexv3.html": function () {//公司机构首页
+            bfreeArea
+                .addNav(".header_box .company_nav")
+                .addServis(".index_scroll_box")
+                .addWindow("#in_banner")
+                .addWindow(".index_x_banner_main")
+                .addWindow(".news")
+
+
+
+
+
+            $("#fsD1 .fcon>div").attr("aria-label", "业务配置图片文字");
+            $(".infro img:eq(0)").attr("alt", "中国建设银行供应链服务平台");
+            $(".infro img:eq(1)").attr("alt", "建行扶贫采购专区");
+            $(".index_x_banner_main li a>img:eq(0)").attr({ "alt": "百易安", "title": "百易安" });
+            $(".index_x_banner_main li a>img:eq(1)").attr({ "alt": "企业手机银行", "title": "企业手机银行" });
+            $(".infro img:eq(0)").attr("title", "中国建设银行供应链服务平台");
+            $(".infro img:eq(1)").attr("title", "建行扶贫采购专区");
+
+
+        },
+        "/cn/fund/index.html": function () {//基金首页
+            bfreeArea
+                .addNav(".header_box .fund_nav")
+                .addWindow(".content_fund .floor:eq(0)")
+                .addWindow(".content_fund .floor:eq(1)")
+                .addWindow(".middle_plain")
+                .addWindow(".content_fund .floor:eq(2)")
+
+
+
+
+
+            $("#fsD1 .fcon>div").attr("aria-label", "业务配置图片文字");
+
+            $(".floor .j_tab a>img:eq(1)").attr({ "alt": "速盈", "title": "速盈" });
+            $(".floor .j_tab a>img:eq(0)").attr({ "alt": "定投盈", "title": "定投盈" });
+            $(".floor .j_tab a>img:eq(2)").attr({ "alt": "理财盈", "title": "理财盈" });
+
+
+            $(".contain .icon:eq(0)").attr("aria-label", "基金比较");
+            $(".contain .icon:eq(1)").attr("aria-label", "模拟组合");
+            $(".contain .icon:eq(2)").attr("aria-label", "收益试算");
+
+
+        },
+        "/cn/finance/index.html": function () {//理财首页
+            bfreeArea
+                .addNav(".header_box .life_nav")
+                .addServis(".section")
+                .addWindow(".life_tab")
+                .addWindow(".life_tab_detail")
+                .addWindow(".banner_main")
+                .addWindow("news_con")
+
+
+
+
+
+            $("#fsD1 .fcon>div").attr("aria-label", "业务配置图片文字");
+
+
+        },
+        "/cn/home/privatebank_index.html": function () {//私人银行首页
+            bfreeArea
+                .addNav(".header_box .nav_company")
+                .addServis(".index_scroll")
+                .addWindow(".conment:eq(0)")
+                .addWindow(".index_x_banner_bu")
+                .addWindow(".conment:eq(1)")
+
+            $("#fsD1 #D1pic1 .fcon>div").attr("aria-label", "业务配置图片文字");
+            $(".index_x_banner_main_bu .left_main img").attr({ "alt": "建行私人银行品牌介绍", "title": "建行私人银行品牌介绍" });
+            $(".index_x_banner_main_bu .right_main img").attr({ "alt": "《建行财富》杂志", "title": "《建行财富》杂志" });
+
+
+        },
+        "/cn/ccbtoday/indexv3.html": function () {//今日建行
+            bfreeArea
+                .addNav(".header_box .nav_group")
+                .addWindow(".vcc-index_tab_main_div:eq(0)")
+                .addWindow(".yzgh_box:eq(0)")
+                .addWindow(".yzgh_box:eq(1)")
+                .addInteractive(".nav_more_group .nav_detail_group")
+
+
+            $("#fsD1 .fcon>div").attr("aria-label", "业务配置图片文字");
+            $(".index_x_banner_main_bu .left_main img").attr({ "alt": "建行私人银行品牌介绍", "title": "建行私人银行品牌介绍" });
+            $(".index_x_banner_main_bu .right_main img").attr({ "alt": "《建行财富》杂志", "title": "《建行财富》杂志" });
+
+        },
+        "/cn/insurance/guide/chanpinsousuo.html": function () {//保险产品
+            bfreeArea
+                .addNav(".header_box .insur_nav")
+                .addList(".section .insurance_tab_detail")
+                .addInteractive(".section .lift_tab")
+
+
+        },
+        "/cn/creditcard/card_list.html": function () {//信用卡产品
+            bfreeArea
+                .addNav(".header_box .crd_card_nav")
+                .addNav(".xykxp_card_type")
+                .addInteractive(".groom-nav")
+                .addWindow(".product-list")
+                .addWindow(".hot-crd .content")
+
+            $(".hot-crd-list-main .hot-crd-list .hot-crd-cont img:eq(0)").attr({ "alt": "芭比美丽60周年卡", "title": "芭比美丽60周年卡" });
+            $(".hot-crd-list-main .hot-crd-list .hot-crd-cont img:eq(1)").attr({ "alt": "龙卡全球支付卡", "title": "龙卡全球支付卡" });
+            $(".hot-crd-list-main .hot-crd-list .hot-crd-cont img:eq(2)").attr({ "alt": "龙卡家庭挚爱卡", "title": "龙卡家庭挚爱卡" });
+
+            $("#top .product-ul product-cont img").attr({ "alt": "业务配置的信用卡名称", "title": "业务配置的信用卡名称" });
+        },
+        "/cn/group/index.html": function () {//关于建行
+            bfreeArea
+                .addNav(".header_box .nav_group")
+                .addNav(".Announcement_main")
+                .addInteractive(".header_box .logo")
+                .addInteractive(".jtfw_box")
+                .addWindow("#fsD1 .fcon>div")
+                .addWindow(".yzgh_box_main")
+                .addServis(".yzgh_box_main_main")
+
+
+        },
+        "/cn/group/company/company.html": function () {//分支机构与子行
+            bfreeArea
+                .addNav(".header_box .nav_group")
+                .addInteractive(".header_box .logo")
+                .addInteractive(".nav_more_group")
+                .addWindow(".section")
+
+        },
+        "/cn/creditcard/installment/tab_shop.html": function () {//分期活动 商户分期
+            bfreeArea
+                .addNav(".header_box .crd_card_nav")
+                .addNav(".m_index_tab")
+                .addWindow(".yzgh_box_main_main_content:eq(0)")
+                .addWindow(".yzgh_box_main_main_content:eq(1)")
+                .addWindow(".content .floor-wrap2")
+                .addWindow(".vcc-index_guide_main_box")
+
+
+
+            $(".yzgh_box_main_main_content ul li .tit_logo img:eq(0)").attr({ "alt": "苏宁易购商城APP分期活动", "title": "苏宁易购商城APP分期活动" });
+            $(".yzgh_box_main_main_content ul li .tit_logo img:eq(1)").attr({ "alt": "苹果官方及线下零售店", "title": "苹果官方及线下零售店" });
+            $(".yzgh_box_main_main_content ul li .tit_logo img:eq(2)").attr({ "alt": "龙卡随付贷分期活动", "title": "龙卡随付贷分期活动" });
+
+        },
+
+
+        "/cn/creditcard/installment/tab_check.html": function () {//分期理财 帐单分期
+            bfreeArea
+                .addNav(".header_box .crd_card_nav")
+                .addNav(".m_index_tab")
+                .addWindow(".vcc-index_tab_main_crd_box")
+                .addWindow(".yzgh_box_main")
+                .addWindow(".yzgh_box")
+
+
+
+
+        },
+        "/cn/fund/product/product_index.html": function () {//基金产品
+            bfreeArea
+                .addNav(".header_box .fund_nav")
+                .addWindow(".floor:eq(0)")
+                .addWindow(".floor:eq(1)")
+                .addInteractive(".content_fund .fund_nav_search")
+                .addInteractive(".content_fund .fund_screen")
+
+
+
+        },
+        "/cn/creditcard/installment": function () {//信用卡分期业务模板
+            bfreeArea
+                .addNav(".header_box .crd_card_nav")
+                .addNav(".m_index_tab")
+                .addWindow(".yzgh_box_main_main_content:eq(0)")
+                .addWindow(".yzgh_box_main_main_content:eq(1)")
+                .addWindow(".content .floor-wrap2")
+                .addWindow(".vcc-index_guide_main_box")
+
+
+
+        },
+        "/cn/fund/news/news_index.html": function () {//基金频道 基金资讯
+            bfreeArea
+                .addNav(".header_box .fund_nav")
+                .addWindow(".floor .mr_40 .news2:eq(0)")
+                .addWindow('.floor li .news2:eq(1)')
+                .addWindow('.floor li .news2:eq(2)')
+                .addWindow('.floor li .news2:eq(3)')
+                .addWindow('.floor li .news2:eq(4)')
+                .addWindow('.floor li .new_inf')
+                .addInteractive('.floor .mr_40 .f14:eq(0)')
+                .addInteractive('.floor li .f14:eq(1)')
+
+        },
+        "/cn/forex/myself/personal-forex.html": function () {//外汇介绍 业务介绍
+            bfreeArea
+                .addNav(".header_box .forex_nav")
+                .addInteractive('.login_box')
+                .addWindow(".main_text")
+                .addServis("#menubar")
+
+        },
+        "/cn/forex/forex-school.html": function () {//外汇学堂
+            bfreeArea
+                .addNav(".header_box .forex_nav")
+                .addInteractive('.login_box')
+                .addWindow(".banner_child4")
+                .addWindow(".hold:eq(1) .f_information_left")
+                .addWindow(".hold:eq(1) .f_information_right")
+                .addServis(".hold:eq(0)")
+
+        },
+        "/cn/forex/exchange-quotations.html": function () {//外汇行情
+            bfreeArea
+                .addNav(".header_box .forex_nav")
+                .addInteractive('.login_box')
+                .addList(".my_appointment")
+                .addServis(".hold")
+
+        },
+        "/cn/job/plan_index.html?planType=SX": function () {  //实习生招聘
+            bfreeArea
+                .addNav(".header_box .nav_group")
+                .addInteractive(".header_box .login_box")
+                .addInteractive(".Choice")
+                .addWindow('.banner .focus')
+                .addWindow('.banxin .anno_list')
+                .addWindow(".banxin .org_table")
+
+        },
+        "http://cloud.life.ccb.com/live/appService_portal.jhtml": function () {  //应用服务 悦生活
+            bfreeArea
+                .addNav(".header_box .insur_nav")
+                .addNav(".footer_links")
+                .addInteractive(".header_box .login_box")
+                .addInteractive(".pay_mylife_y")
+
+
+        },
+        "/cn/insurance/insurance_guide.html": function () {//投保指南
+            bfreeArea
+                .addNav(".header_box .insur_nav")
+                .addWindow(".yzgh_box:eq(0)")
+                .addWindow(".yzgh_box:eq(1)")
+                .addWindow(".yzgh_box:eq(2)")
+
+
+
+            $(".cese_imgList li img:eq(0)").attr({ "alt": "身家过亿的私企老板", "title": "身家过亿的私企老板" });
+            $(".cese_imgList li img:eq(1)").attr({ "alt": "安享晚年的退休夫妇", "title": "安享晚年的退休夫妇" });
+            $(".cese_imgList li img:eq(2)").attr({ "alt": "其乐融融的三口之家", "title": "其乐融融的三口之家" });
+            $(".cese_imgList li img:eq(3)").attr({ "alt": "女强人支撑的单亲家庭", "title": "女强人支撑的单亲家庭" });
+
+
+        },
+        "/cn/investor/indexv3.html": function () {//投资者关系
+            bfreeArea
+                .addNav(".header_box .nav_group")
+                .addInteractive(".nav_more_group")
+                .addInteractive(".header_box .logo")
+                .addWindow("#fsD1 .fcon")
+                .addWindow(".Announcement_g_main")
+                .addWindow(".vcc-index_tab_main_div")
+                .addWindow(".yxsh_box_main")
+                .addServis(".yzgh_box_main")
+
+        },
+        "/cn/job/index.html": function () {  //招聘
+            bfreeArea
+                .addNav(".header_box .nav_group")
+                .addInteractive(".header_box .logo")
+                .addInteractive(".header_box .logo_r")
+                .addInteractive(".banxin")
+                .addWindow("#fsD1 .fcon")
+
+
+        },
+        "/cn/finance/productnews/zxgg/zxgg_1.html": function () {  //新产品公告
+            bfreeArea
+                .addNav(".header_box .life_nav")
+                .addServis(".lfloat")
+                .addWindow(".list_show")
+                .addInteractive(".search_box")
+
+
+        },
+        "/cn/creditcard/apply_process3.html": function () {//办卡进度查询
+
+
+        },
+        "/cn/creditcard/crd_activation.html": function () {//在线开卡             
+
+
+        },
+        "/cn/creditcard/crd_lost_mycard.html": function () {//在线挂失               
+            bfreeArea
+                .addNav(".header_box .insur_nav")
+                .addNav(".footer_links")
+                .addInteractive(".header_box .login_box")
+
+
+        },
+        "/cn/creditcard/serveiceDirect.html": function () {//信用卡 服务指南            
+
+            $(".yzgh_box_main_main_content ul li .yzgh_box_content a img:eq(0)").attr({ "alt": "新用户申请", "title": "新用户申请" });
+            $(".yzgh_box_main_main_content ul li .yzgh_box_content a img:eq(1)").attr({ "alt": "已有卡客户申请", "title": "已有卡客户申请" });
+
+        },
+        "/cn/ebank/index.html": function () {//电子银行           
+
+            $(".cl_frame_box img:eq(0)").attr({ "alt": "帐号支付", "title": "帐号支付" });
+            $(".cl_frame_box img:eq(1)").attr({ "alt": "场景展示厅", "title": "场景展示厅" });
+            $(".cl_frame_box img:eq(2)").attr({ "alt": "投资理财", "title": "投资理财" });
+            $(".cl_frame_box img:eq(3)").attr({ "alt": "善融商务", "title": "善融商务" });
+
+        },
+        "/cn/ebank/personal": function () {//电子银行           
+
+            $(".cl_demo_center img").attr({ "alt": "演示中心", "title": "演示中心" });
+
+
+        },
+    }
+}

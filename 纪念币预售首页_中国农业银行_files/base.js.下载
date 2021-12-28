@@ -1,0 +1,57 @@
+﻿/**
+ * Created by Nan on 2014/7/10.
+ */
+$(document).ready(function () {
+    function init() {
+        bindEvt();
+    }
+
+    init();
+
+    function bindEvt() {
+        $("#FriendLink").change(function () {
+            var selectedHref = $(this).find("option:selected").val();
+            if (selectedHref != "") {
+                window.open(selectedHref);
+            }
+        });
+        $(".nav li").hover(navLiMouseOver, navLiMouseOut);
+        $(".map-tit li").click(mapTitAddState);
+    }
+
+    function mapTitAddState() {
+        var index = $(this).index();
+        $(this).addClass("act").siblings().removeClass("act");
+        $(".map-con").children().eq(index).fadeIn(600).siblings().fadeOut(300);
+
+    }
+
+    function navLiMouseOver() {
+        $(this).parent().parent().find("li").removeClass("hov");
+        $(this).addClass("hov");
+    }
+
+    function navLiMouseOut() {
+        $(".nav li").removeClass("hov");
+    }
+
+    function navLiClick() {
+        $(this).parent().parent().find("li").removeClass("active");
+        $(this).addClass("active");
+    }
+
+    //Set SearchInput
+    $('#searchForm').children(':text').focus(function () {
+        if (!this.initValue) {
+            this.initValue = this.value;
+        }
+        if (this.value === this.initValue) {
+            this.value = '';
+        }
+    }).blur(function () {
+        if (this.value === '' || this.value === null) {
+            this.value = this.initValue;
+        }
+    });
+});
+

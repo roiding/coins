@@ -1,0 +1,68 @@
+function noObstacleAlertBox(callbackfn) {
+    if (!window.bfreeWorking) {
+        if (typeof callbackfn == "function") {
+            callbackfn();
+        }
+        return;
+    }
+    
+    var alertBox = '<div class="noObstacleAlertBox" style="z-index:999; position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.498039215686275);">\
+            <div style="width:480px; height:auto; background:#fff; position:absolute; left:35%; top:35%;">\
+                <div style="height: 48px;line-height: 48px; font-size: 18px; color: #fff; background: #0066b3; text-align: center;"> 温馨提示</div>\
+                <div style="text-align: center;">\
+                    <p style="font-size:18px;color:#333;height: 80px;padding: 15px 5px;line-height: 80px;">您正在办理业务，请确认填写的信息无误后提交</p>\
+                </div>\
+                <div style="text-align:center; height:52px; background: #eee;">\
+                    <a href="#" class="noObstacleAlertBoxConfirmBtn" style="width: 120px;border-radius: 15px;background: #0066b3;color: #fff;cursor: pointer;display:inline-block;line-height:32px;height:32px;margin: 10px 10px 0 0;font-size: 14px; text-decoration: none;">确认提交(5)</a>\
+                    <a href="#" class="noObstacleAlertBoxCancelBtn" style="width: 120px;border-radius: 15px;background: #3da4f1;cursor: pointer;display: inline-block;line-height: 32px;height: 32px;margin: 10px 10px 0 0;font-size: 14px;color: #fff; text-decoration: none;">取消</a>\
+                </div>\
+            </div>\
+        </div>';
+
+    $("body").append(alertBox);
+
+
+    ConfirmBtnTimer();
+    
+    //取消
+    $(".noObstacleAlertBox .noObstacleAlertBoxCancelBtn").click(function () {
+        // $(this).parents(".noObstacleAlertBox").hide();
+        $(this).parents(".noObstacleAlertBox").remove();
+    })
+
+    //确定
+    $(".noObstacleAlertBox .noObstacleAlertBoxConfirmBtn").click(function () {
+        if ($(this).attr("affirm") == "true") {
+            $(this).parents(".noObstacleAlertBox").remove();
+            // $(this).parents(".noObstacleAlertBox").hide();
+            if (typeof callbackfn == "function") {
+                callbackfn();
+            }
+        }
+    })
+
+    function ConfirmBtnTimer() {
+        //倒计时5s
+        var num = 5;
+        var timer = null;
+        var JQbtn = $(".noObstacleAlertBox .noObstacleAlertBoxConfirmBtn");
+        JQbtn.html('确认提交(5)').attr("affirm", "false").attr("style", "width: 120px;border-radius: 15px;background: #ccc;color: #fff;cursor: default;display:inline-block;line-height:32px;height:32px;margin: 10px 10px 0 0;font-size: 14px; text-decoration: none;");
+        timer = setInterval(function () {
+            play()
+        }, 1000)
+        function play() {
+            num--;
+            if (num < 1) {
+                JQbtn.html('确认提交').attr("affirm", "true");
+                JQbtn.attr("style", "width: 120px;border-radius: 15px;background: #0066b3;color: #fff;cursor: pointer;display:inline-block;line-height:32px;height:32px;margin: 10px 10px 0 0;font-size: 14px; text-decoration: none;");
+                clearInterval(timer);
+            } else {
+                JQbtn.html('确认提交(' + num + ')').attr("affirm", "false");
+                JQbtn.attr("style", "width: 120px;border-radius: 15px;background: #ccc;color: #fff;cursor: default;display:inline-block;line-height:32px;height:32px;margin: 10px 10px 0 0;font-size: 14px; text-decoration: none;");
+            }
+        }
+    }
+}
+
+
+

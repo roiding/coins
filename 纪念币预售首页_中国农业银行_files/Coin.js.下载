@@ -1,0 +1,381 @@
+﻿function ischinese(d, e) {
+    var s = document.getElementById(d).value;
+    var j = 0;
+    for (var i = 0; i < s.length; i++) {
+        if (s.charCodeAt(i) >= 10000) {
+            continue;
+        }
+        document.getElementById(d).value = "";
+        j = -1;
+        break;
+    }
+    if (j == -1) {
+        $('#' + e).show();
+        document.getElementById(e).innerHTML = "**请输入中文**";
+    }
+    else {
+        $('#' + e).hide();
+        document.getElementById(e).innerHTML = "";
+    }
+    document.getElementById(d).focus();
+
+}
+
+////证件号码只能输入英文字母与数字
+function NumAndEngCheckInPut(d, e) {
+    s = document.getElementById(d).value;
+    j = 0;
+    if ($("#cardtype").val() == "0") {
+        for (var i = 0; i < s.length; i++) {
+            var c = parseInt(s.charCodeAt(i));
+            if ((c >= 48) && (c <= 57)) { //是数字
+                continue;
+            }
+            if ((c >= 65) && (c <= 90)) { //英文大写
+                continue;
+            }
+            if ((c >= 97) && (c <= 122)) { //英文小写
+                continue;
+            }
+            document.getElementById(d).value = "";
+            j = -1;
+            break;
+        }
+        if (j == -1) {
+            $('#' + e).show();
+            document.getElementById(e).innerHTML = "**请输入英文或数字**";
+            document.getElementById(d).value = "";
+            return;
+        }
+        else {
+            $('#' + e).hide();
+            document.getElementById(e).innerHTML = "";
+        }
+    }
+   
+    
+    if ($("#cardtype").val() == "0")
+    {
+        $('#' + e).show();
+        if (s.length != 18) {
+            $('#' + e).show();
+            document.getElementById(e).innerHTML = "**身份证号码必须为18位**";
+            document.getElementById(d).value = "";
+            return;
+        }
+        else
+        {
+            $('#' + e).hide();
+            document.getElementById(e).innerHTML = "";
+        }
+    }
+    if ($("#cardtype").val() != "0") {
+        document.getElementById(e).innerHTML = "";
+    }
+
+    //else if ($("#cardtype").val() == "1")
+    //{
+    //    $('#' + e).show();
+    //    var reg = /^[0-9A-Za-z_-]{3,20}$/;
+    //    if (!reg.test(document.getElementById(d).value)) {
+    //        document.getElementById(e).innerHTML = "**请输入正确的护照号**";
+    //        document.getElementById(d).value = "";
+    //        return;
+    //    }
+    //    else
+    //    {
+    //        $('#' + e).hide();
+    //        document.getElementById(e).innerHTML = "";
+    //    }
+    //}
+    //else if ($("#cardtype").val() == "2") {
+    //    $('#' + e).show();
+    //    var reg = /^[0-9a-zA-Z-_\u0391-\uFFE5]{3,20}$/;
+    //    if (!reg.test(document.getElementById(d).value)) {
+    //        document.getElementById(e).innerHTML = "**请输入正确的军官证**";
+    //        document.getElementById(d).value = "";
+    //        return;
+    //    }
+    //    else
+    //    {
+    //        $('#' + e).hide();
+    //        document.getElementById(e).innerHTML = "";
+    //    }
+    //}
+    //else if ($("#cardtype").val() == "3") {
+    //    $('#' + e).show();
+    //    var reg = /^[0-9A-Za-z_-]{3,20}$/;
+    //    if (!reg.test(document.getElementById(d).value)) {
+    //        document.getElementById(e).innerHTML = "**请输入正确的港澳居民来往内地通行证**";
+    //        document.getElementById(d).value = "";
+    //        return;
+
+    //    }
+    //    else {
+    //        $('#' + e).hide();
+    //        document.getElementById(e).innerHTML = "";
+    //    }
+    //}
+    //else if ($("#cardtype").val() == "4") {
+    //    $('#' + e).show();
+    //    var reg = /^[0-9A-Za-z_-]{3,20}$/;
+    //    if (!reg.test(document.getElementById(d).value)) {
+    //        document.getElementById(e).innerHTML = "**请输入正确的台湾居民来往大陆通行证**";
+    //        document.getElementById(d).value = "";
+    //        return;
+    //    }
+    //    else
+    //    {
+    //        $('#' + e).hide();
+    //        document.getElementById(e).innerHTML = "";
+    //    }
+    //}
+
+    
+    document.getElementById(d).focus();
+}
+
+function ValueCheckInPut(d, e, a) {
+    var s = document.getElementById(d).value;
+    //  alert(a);
+    if ((s > 100000) && (a == '1')) {
+        $('#' + e).show();
+        document.getElementById(e).innerHTML = "**值超出范围**";
+        document.getElementById(d).value = "";
+        return;
+    }
+    if ((s > 100000) && (a == '7')) {
+        $('#' + e).show();
+        document.getElementById(e).innerHTML = "**值超出范围**";
+        document.getElementById(d).value = "";
+        return;
+    }
+    if ((s > 200) && (a == null)) {
+        $('#' + e).show();
+        document.getElementById(e).innerHTML = "**值超出范围**";
+        document.getElementById(d).value = "";
+        return;
+    }
+
+    j = 0;
+    for (var i = 0; i < s.length; i++) {
+        var c = parseInt(s.charCodeAt(i));
+        if ((c < 48) || (c > 57)) {
+            //alert("请输入数字!");
+            document.getElementById(d).value = "";
+            j = -1;
+            break;
+        }
+    }
+    if (j == -1) {
+        $('#' + e).show();
+        document.getElementById(e).innerHTML = "**请输入数字**";
+        document.getElementById(d).focus();
+    }
+    else {
+        $('#' + e).hide();
+        document.getElementById(e).innerHTML = "";
+    }
+
+    if ((a == '2') && (s.length != 6))
+    {  //校验邮编
+        $('#' + e).show();
+        document.getElementById(e).innerHTML = "**应为6位数字**";
+        document.getElementById(d).value = "";
+        return;
+    }
+
+    if ((a == '3') && (s.length != 11))
+    {  //校验手机
+        $('#' + e).show();
+        document.getElementById(e).innerHTML = "**应为11位数字**";
+        document.getElementById(d).value = "";
+        return;
+    }
+
+    if (a == '4') {  //校验区号
+        var b = s.indexOf('0', 0, 1);
+        if (b != "0") {
+            $('#' + e).show();
+            document.getElementById(e).innerHTML = "**区号错误**";
+            document.getElementById(d).value = "";
+            return;
+        }
+        if ((s.length != 3) && (s.length != 4)) {
+            $('#' + e).show();
+            document.getElementById(e).innerHTML = "**区号位数不正确**";
+            document.getElementById(d).value = "";
+            return;
+        }
+    }
+
+    if (a == '5') {  //校验号码
+        if ((s.length != 8) && (s.length != 7)) {
+            $('#' + e).show();
+            document.getElementById(e).innerHTML = "**号码位数不正确**";
+            document.getElementById(d).value = "";
+            return;
+        }
+    }
+
+}
+function hasNumberOrLetter(d,e)
+{
+    var str = document.getElementById(d).value;
+    for (var i in str)
+    {
+        var asc = str.charCodeAt(i);
+        if ((asc >= 48 && asc <= 57)
+            ||
+            (asc >= 65 && asc <= 90)
+            ||
+            (asc >= 97 && asc <= 122)
+        ) {
+            $('#' + e).show();
+            document.getElementById(e).innerHTML = "**请输入正确姓名信息**";
+            document.getElementById(d).value = "";
+            return true;
+        }
+        else
+        {
+            $('#' + e).hide();
+        }
+
+       
+    }
+}
+
+function hasNumberOrLetterForMod(d, e) {
+    var str = document.getElementById(d).value;
+    for (var i in str) {
+        var asc = str.charCodeAt(i);
+        if ((asc >= 48 && asc <= 57)
+            ||
+            (asc >= 65 && asc <= 90)
+            ||
+            (asc >= 97 && asc <= 122)
+        ) {
+            $('#' + e).show();
+            document.getElementById(e).innerHTML = "**请输入正确姓名信息**";
+            document.getElementById(d).value = "";
+            return true;
+        }
+        
+    }
+    
+        $('#' + e).hide();
+        return false;
+    
+}
+
+function isChinese(str)
+{
+    
+    //var reg = /^[\u4e00-\u9fa5]{2}/;
+    var reg = /^[\u4e00-\u9fa5]{2}[.·\u4e00-\u9fa5]*$/;
+   // var m = str.match(reg);
+   // console.log(m);
+   
+    if (reg.test(str)) {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+function checkCoinFrom() {
+    if ($("#name").length > 0) {
+        if ($("#name").val() == "" || $("#name").val() == null) {
+            $("#errorName").show();
+            document.getElementById("errorName").innerHTML = "**姓名不能为空**";
+            return false;
+        }
+        if (!isChinese($("#name").val())) {
+            $("#errorName").show();
+            document.getElementById("errorName").innerHTML = "**请输入正确姓名信息**";
+            return false;
+        }
+       
+
+    }
+    if ($("#identNo").length > 0) {
+        if ($("#identNo").val() != "" && $("#identNo").val() != null) {
+            NumAndEngCheckInPut('identNo', 'errorcertNo');
+        } else {
+            $("#errorcertNo").show();
+            document.getElementById("errorcertNo").innerHTML = "**证件号不能为空**";
+            return false;
+        }
+    }
+    if ($("#mobile").length > 0)
+    {
+        if ($("#mobile").val() != "" && $("#mobile").val() != null) {
+            ValueCheckInPut('mobile', 'errorphoneNo', '3');
+        }
+        else {
+            $("#errorphoneNo").show();
+            document.getElementById("errorphoneNo").innerHTML = "**手机号码不能为空**";
+            return false;
+        }
+    }
+  
+    if ($("#orglevel1").val() <= 0)
+    {
+        $("#errorlevel").show();
+        document.getElementById("errorlevel").innerHTML = "**必须选择兑换网点**";
+        return false;
+    }
+    else
+    {
+        document.getElementById("errorlevel").innerHTML = "";
+        $("#errorlevel").hide();
+    }
+
+    if ($("#coindate").val() == "" || $("#coindate").val() == null)
+    {
+        $("#errordate").show();
+        document.getElementById("errordate").innerHTML = "**必须选择预约兑换日期**";
+        return false;
+    }
+    else
+    {
+        document.getElementById("errordate").innerHTML = "";
+        $("#errordate").hide();
+    }
+
+    return true;
+}
+
+
+
+
+
+Date.prototype.Format = function (fmt) { //author: meizz 
+    var o = {
+        "M+": this.getMonth() + 1,                 //月份 
+        "d+": this.getDate(),                    //日 
+        "h+": this.getHours(),                   //小时 
+        "m+": this.getMinutes(),                 //分 
+        "s+": this.getSeconds(),                 //秒 
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+        "S": this.getMilliseconds()             //毫秒 
+    };
+    if (/(y+)/.test(fmt))
+        fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt))
+            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+}
+
+String.prototype.trim = function () {
+    return this.replace(/(^\s*)|(\s*$)/g, "");
+}
+String.prototype.ltrim = function () {
+    return this.replace(/(^\s*)/g, "");
+}
+String.prototype.rtrim = function () {
+    return this.replace(/(\s*$)/g, "");
+}  

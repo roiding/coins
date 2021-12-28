@@ -1,0 +1,17 @@
+﻿/*this css for 1200 screen*/
+/*直接在原有宽度加200px*/
+.w1200 .bu-wrapper {
+	width: 1200px;
+}
+.w1200 .bu-main {
+ 	width: 1200px;
+}
+.w1200 .bu-header {
+	height: 80px;
+	position:relative;
+	text-align:center;
+	line-height:64px;
+	font-size:28px;
+	color:#b5002a;
+}
+

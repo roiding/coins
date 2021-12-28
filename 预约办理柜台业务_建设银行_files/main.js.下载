@@ -1,0 +1,752 @@
+﻿/*
+author : zhupinglei_zjnb@163.com
+desc : SelectSimu
+data : 2012/07/19
+dependon : jquery-1.7.js
+*/
+(function($){
+
+
+
+	function _SelectSimu(here,options,index){
+		var _this = this;
+		this.$e = $(here),
+		this.opts = options,
+		this.index = index;
+		this.init();
+	}
+	_SelectSimu.prototype = {
+		init : function(){
+			var _this = this;
+			var className = (_this.$e.attr('id') ? '#'+_this.$e.attr('id')+' ' : 0) || (_this.$e.attr('class') ? '.'+_this.$e.attr('class')+' ' : 0);
+			var cssStr = 	'<style>'+
+							className + '{position:relative;  float: left; width:'+_this.opts.width+'px; z-index:'+_this.opts.zIndex+';}'+
+							className + '.selectInput{position: relative; border:1px solid #0066b3; font-size:14px; font-family: "微软雅黑"; background:#fff; width:158px; height:30px;}'+
+							className + '.selectInput span{width:80%; height: 30px; padding-left:5px; line-height:30px; display: block; overflow: hidden; border:none;}'+
+							className + '.selectInput i{display:block; position: absolute; right:0px; top:0px; background: url("'+_this.opts.imgSrc+'") center center no-repeat; width:30px; height: 30px;}'+
+							className + '.selectList{position: absolute; border:1px solid #ccc; width:100%; margin-top:-1px; cursor: default; font-family: "微软雅黑"; font-size:14px;  background:#fff; display:none;}'+
+							className + '.selectList ul li{height: 28px; line-height: 28px; padding-left:6px; overflow:hidden;}'+
+							className + '.selectList ul li:hover{background: #0d7cd7; color:#fff;}'+
+							className + '.selectList ul li.hover{background: #0d7cd7; color:#fff;}'+
+							'</style>';
+			//css插入页面				
+			_this.$e.before(cssStr);
+			//html代码导入
+			var	selectStr = '<div class="selectInput">'+
+								'<input type="hidden" name="selectInput" value="'+(_this.opts.listValue[0] ? _this.opts.listValue[0] : "")+'" />'+
+								'<span>'+(_this.opts.listOption[0] ? _this.opts.listOption[0] : "")+'</span>'+
+								'<i></i>'+
+							'</div>'+
+							'<div class="selectList">'+
+								'<ul>';
+			for(var i = 0; i < _this.opts.listNum; i++){
+				selectStr += '<li value="'+(_this.opts.listValue[i] ? _this.opts.listValue[i] : "")+'">'+ (_this.opts.listOption[i] ? _this.opts.listOption[i] : "")+'</li>'
+			}
+			selectStr += '</ul></div>';
+			_this.$e.append(selectStr);
+			_this.event();
+		},
+		event : function(){
+			var _this = this;
+
+			_this.$e.on('click','.selectInput',function(e){
+				e.stopPropagation();
+				_this.$e.find('.selectList').toggle();
+			});
+			$(document).click(function(){
+				_this.$e.find('.selectList').hide();
+			});
+			_this.$e.find('.selectList').on('click','li',function(){
+				var liValue = $(this).val(),
+					liTxt = $(this).text();
+				_this.$e.find('.selectInput input').val(liValue);
+				_this.$e.find('.selectInput span').text(liTxt);
+			});
+		}
+	}
+	$.fn.SelectSimu = function(options){
+		var opts = $.extend({},$.fn.SelectSimu.defaults,options);
+		return this.each(function(index){
+			this.SelectSimu = new _SelectSimu(this,opts,index);
+		});
+	}
+	$.fn.SelectSimu.defaults = {
+		width : 150,
+		zIndex : 0,
+		listNum : 1,
+		listValue : ['0'],
+		listOption : ['请选择'],
+		imgSrc : ''
+	}
+})(jQuery);
+
+	
+$(document).ready(function() {
+
+
+
+$('.vcc-index_title_box_1,.vcc-index_tab').click(function(){
+	    	
+$(".index_scroll_1,.index_scroll_2,.index_scroll_3,.index_scroll_4,.index_scroll_5,.index_scroll_6,.index_scroll_7,.index_scroll_8").hide();
+	$(".index_scroll_bottom").each(function(){ 
+			$(this).html($(this).attr("text"));
+			$(this).removeClass("index_scroll_bottom_up");
+
+    });			
+			
+			
+			
+			
+		});
+		
+
+$('.btn_close').click(function(){
+	    	$('.notice').fadeOut(250);
+		});
+
+
+$('.Quick_Link').hover(function(){
+	    	$(this).addClass("Quick_Link_hover").animate({'height':'106px'},500);
+			$(".Quick_Link_m").show();
+			$(".hm_bott").show();
+		},function(){
+			$(this).removeClass("Quick_Link_hover").animate({'height':'56px'},500);
+			$(".Quick_Link_m").hide();
+			$(".hm_bott").hide();
+			});		
+		
+		
+$('.search_tow').hover(function(){
+			$(".search_nav").stop();
+			$(".search_tow_a").addClass("search_tow_a_hover");
+			$(".search_nav").show();
+			
+			
+		},function(){
+			$(".search_nav").stop();
+			$(".search_tow_a").removeClass("search_tow_a_hover");
+			$(".search_nav").hide();
+			});
+
+$('#txt').click(function(){
+			$('.select_hide').show();
+		});
+
+
+$('.search_tow_a').click(function(){			
+			$(this).addClass("search_tow_a_hover");
+			$(".search_nav").show();
+		});		
+$('.sd_sn').click(function(){			
+			$('.search_nav').hide();
+			$(".search_tow_a").removeClass("search_tow_a_hover");
+		});
+			
+		
+
+//信用卡tab
+var $div_li3 =$("div.vcc-index_tab_main ul li");
+	    $div_li3.hover(function(){
+			$(this).addClass("se");
+			$(this).siblings("li").removeClass("se");  //去掉其它同辈<li>元素的高亮
+            var index3 =  $div_li3.index(this);  // 获取当前点击的<li>元素 在 全部li元素中的索引。
+		    $("div.vcc-index_tab_main_div > div").eq(index3).show().siblings("div").hide();
+		    $("div.vcc-index_tab_main_div2 > div").eq(index3).show().siblings("div").hide();
+		}) 
+		
+		
+
+
+var i_index_tab=0;	
+
+$(function(){ 
+setInterval(function(){ 
+
+if(i_index_tab==5){
+	i_index_tab=0;
+	$("div.index_tab_sc ul li").eq(i_index_tab).addClass("se").siblings("li").removeClass("se");
+	$("div.index_tab_sc_main > div").eq(i_index_tab).show().siblings("div").hide();
+	}else{
+		$("div.index_tab_sc ul li").eq(i_index_tab).addClass("se").siblings("li").removeClass("se");
+		$("div.index_tab_sc_main > div").eq(i_index_tab).show().siblings("div").hide();
+
+		return  i_index_tab++;
+		}
+
+
+
+
+},1000); 
+}); 
+
+	
+
+
+
+		
+		
+		
+//缴费tab
+var $div_li2 =$("div.vcc-tab_2 ul li");
+	    $div_li2.click(function(){
+			$(this).addClass("se");
+			$(this).siblings("li").removeClass("se");  //去掉其它同辈<li>元素的高亮
+            var index2 =  $div_li2.index(this);  // 获取当前点击的<li>元素 在 全部li元素中的索引。
+		    $("div.vcc-tab_2_main > div").eq(index2).show().siblings("div").hide();
+		})
+
+
+// 国内分行
+var $div_li1 =$("div.zz_top_left ul li");
+	    $div_li1.hover(function(){
+			$(this).addClass("hover");
+			$(this).siblings("li").removeClass("hover");  //去掉其它同辈<li>元素的高亮
+            var index1 =  $div_li1.index(this)-3;  // 获取当前点击的<li>元素 在 全部li元素中的索引。
+		    $("div.tab_jt > div").eq(index1).show().siblings("div").hide();
+		   // alert(index1);
+		})
+		
+var $div_li4 =$("div.zz_top1 div.zz_top_left ul li");
+	    $div_li4.hover(function(){
+			$(this).addClass("hover");
+			$(this).siblings("li").removeClass("hover");  //去掉其它同辈<li>元素的高亮
+            var index4 =  $div_li4.index(this);  // 获取当前点击的<li>元素 在 全部li元素中的索引。
+		    $("div.jhjt_tab_main > div").eq(index4).show().siblings("div").hide();
+		   // alert(index1);
+		})	
+			
+var $div_li5 =$("div.header_top_right > ul > li > a");
+	    $div_li5.click(function(){
+			$(this).parent("li").addClass("se");
+			$(this).parent("li").siblings("li").removeClass("se");  //去掉其它同辈<li>元素的高亮
+            $(this).next("div").show();
+			$(this).parent("li").siblings("li").find("a").next("div").hide();
+		})			
+		
+//导航
+var $div_li7 =$("div.nav > ul > li");
+	    $div_li7.hover(function(){
+			$(this).addClass("hover");
+			$(this).siblings("li").removeClass("hover");  
+            $(this).find(".mnavL").show();
+			$(this).siblings("li").find(".mnavL").hide();
+		},function(){
+			$(this).removeClass("hover");
+            $(this).find(".mnavL").hide();
+
+			
+			})	
+			
+			
+			var $div_li8 =$("div.bx_nav > ul > li");
+	    $div_li8.hover(function(){
+			$(this).addClass("hover");
+			$(this).siblings("li").removeClass("hover");  
+            $(this).find(".mnavL").show();
+			$(this).siblings("li").find(".mnavL").hide();
+		},function(){
+			$(this).removeClass("hover");
+            $(this).find(".mnavL").hide();
+
+			
+			})		
+		 
+// 城市选择
+var $div_li6 =$("div.place_title ul li");
+	    $div_li6.hover(function(){
+			$(this).addClass("hover");
+			$(this).siblings("li").removeClass("hover");  //去掉其它同辈<li>元素的高亮
+            var index6 =  $div_li6.index(this);  // 获取当前点击的<li>元素 在 全部li元素中的索引。
+		    $("div.caty_select > div").eq(index6).show().siblings("div").hide();
+		})
+
+$(".City_select").click(function() {
+	if($('.city_se_bg').is(':hidden')){
+		$(".City_select").find(".city_se_bg,.place_list").show();
+	}else{
+		$(".City_select").find(".city_se_bg,.place_list").hide();
+	}
+});
+
+
+//菜单悬浮
+$(window).scroll(function(){
+					
+					var top_jl =$(document).scrollTop();
+					if(top_jl<343){
+						$(".header_box_3").hide();
+						$(".header_box_shadow").hide();
+						$(".header_box").removeClass("header_box_2");
+						$("#header_box").attr("style","");
+						
+						}else{
+						$(".header_box_3").show();
+						$(".header_box_shadow").show();
+						$("#header_box").addClass("header_box_2").slideDown("slow");
+
+						}
+});
+
+//快捷导航
+  var screen_w=window.screen.width;
+  var div_w=(screen_w-960)/2+960;
+  
+  $("#suspend").mouseover(function() {
+        $(this).stop();
+        $(this).animate({width: 120}, 400);
+    });
+	$("#suspend").mouseout(function(){
+        $(this).stop();
+        $(this).animate({width: 40}, 400);
+    });
+/*	$("#suspend").click(function() {
+		 $(this).hide();
+		 $(this).css({"width":"0px"});
+		$("#fadee").show();
+        $(".susp_show").stop();
+        $(".susp_show").animate({width: div_w}, 400);
+    });*/
+	$("#suspend").click(function() {
+		$("#suspend").hide();
+		$("#fadee").show();
+        $(".susp_show").stop();
+        $(".susp_show").css('display','block').animate({width: 1160}, 400);
+		$('#silder').css('display','none');
+		$("#suspend").css('right','-100px');
+    });	
+	$(".btn_close").click(function() {
+		$("#fadee").hide();
+		$(".susp_show").animate({width: 0}, 400);
+		$("#suspend").show(650);
+		$("#suspend").css('right','0px');
+	});
+	$("#fadee").click(function() {
+		$("#fadee").hide();
+		$(".susp_show").animate({width: 0}, 400);
+		$("#suspend").show(650);
+		$("#suspend").css('right','0px');
+	});
+function hoverb(obj1,obj2,cl)
+{
+	var id;
+	$(obj1).mouseover(function(){
+	id=$(obj1).index($(this));	
+	//alert(id);
+	$(obj1).removeClass(cl);
+	$(this).addClass(cl);
+	$(obj2).hide();
+	//$(obj2).toggle(400);
+	$(obj2).eq(id).show();
+	})	
+	$(obj2+":first").show();
+}
+
+
+
+hoverb(".susp_l ul li.sus",".susp_show .susp_r","hover");
+hoverb(".susp_tit2 ul li.sus-li1",".susp_cont2","hover");
+hoverb(".susp_tit3 ul li.sus-li2",".susp_cont3","hover");
+
+
+
+$(".index_scroll_bottom").click(function(){
+	//$(".index_scroll_bottom_hied_div").hide();	
+	$(".index_scroll_bottom").each(function(){ 
+			$(this).html($(this).attr("text"));
+			$(this).removeClass("index_scroll_bottom_up");
+
+    }); 
+	
+		})
+
+
+downMenudonghua(".btn-slide1",".index_scroll_1");
+downMenudonghua(".btn-slide2",".index_scroll_2");
+downMenudonghua(".btn-slide3",".index_scroll_3");
+downMenudonghua(".btn-slide4",".index_scroll_4");
+downMenudonghua(".btn-slide5",".index_scroll_5");
+downMenudonghua(".btn-slide6",".index_scroll_6");
+downMenudonghua(".btn-slide7",".index_scroll_7");
+downMenudonghua(".btn-slide8",".index_scroll_8");
+
+function downMenudonghua(clickClass,dropMenu){//下拉菜单  动画
+	$(clickClass).click(function(){
+		
+		
+		if($(dropMenu).is(":hidden")){
+			$(".index_scroll_1,.index_scroll_2,.index_scroll_3,.index_scroll_4,.index_scroll_5,.index_scroll_6,.index_scroll_7,.index_scroll_8").hide();
+			$(dropMenu).slideDown();
+			$(clickClass).html("收起").addClass("index_scroll_bottom_up");
+
+		}else{
+			$(dropMenu).slideUp();
+			$(clickClass).html($(this).attr("text"));
+			$(clickClass).removeClass("index_scroll_bottom_up");
+
+		}
+		
+		
+
+	});
+	
+	
+	
+}	
+
+
+
+
+// $(function(){
+// 	$(".susp_right").Xslider({
+// 		unitdisplayed:2,
+// 		unitlen:300,
+// 		numtoMove:1,
+// 		speed:500,
+// 		scrollobjSize:Math.ceil($(".susp_right").find("li").length/1)*600,
+// 		loop:"cycle",
+// 	})
+// })
+	
+	
+
+
+
+
+$(".Business_box").hover(function(){
+			$(this).find(".Business_text").show(200);
+		},function(){
+			$(this).find(".Business_text").hide(200);
+		})
+
+
+
+// 首页bannerli添加
+$(".D1fBt").hover(function(){
+	$(".D1fBt").find("span").stop();
+	 $(".D1fBt").find("span").animate({ height: "48px" }, 300);
+		},function(){
+			$(".D1fBt").find("span").stop();
+	 $(".D1fBt").find("span").animate({ height: "0px" }, 300);
+		})
+// 搜索框
+ $('.Search_txt').focus(function() { 
+ 	$(this).animate({ width: "212px" }, 300);
+	$(".Search").animate({ width: "246px" }, 300);
+ }); 
+$('.Search_txt').blur(function() { 
+	$(this).animate({ width: "26px" }, 300);
+	$(".Search").animate({ width: "60px" }, 300);
+ }); 
+
+//top按钮功能
+$(".GoTo-Top").click(function(){ 
+				$("html, body").animate({ scrollTop: 0 }, 500);
+})
+
+//国内分行关闭
+
+$("#button2,.btn3").click(function(){ 
+
+				$(".select_hide").hide();
+				$(".kefu,.jhjt,.white_content3").hide();
+				$("div.header_top_right > ul > li").removeClass("se");
+})
+
+
+
+$(function(){
+    var page = 1;
+    var i = 4; //每版放4个图片
+    //向后 按钮
+		
+   $(".index_scroll_right").click(function(){ 
+   $(".index_scroll_1,.index_scroll_2,.index_scroll_3,.index_scroll_4,.index_scroll_5,.index_scroll_6,.index_scroll_7,.index_scroll_8").hide();
+	$(".index_scroll_bottom").each(function(){ 
+			$(this).html($(this).attr("text"));
+			$(this).removeClass("index_scroll_bottom_up");
+
+    });    //绑定click事件
+	     var $parent = $(this).parents("div.index_scroll");//根据当前点击元素获取到父元素
+		 var $v_show = $parent.find("div.index_scroll_main"); //寻找到"视频内容展示区域"
+		 var $v_content = $parent.find("div.index_scroll_box"); //寻找到"视频内容展示区域"外围的DIV元素
+		 var v_width = $v_content.width() ;
+		 var len = $v_show.find("li").length;
+		 var page_count = Math.ceil(len / i) ;   //只要不是整数，就往大的方向取最小的整数
+		 if( !$v_show.is(":animated") ){    //判断"视频内容展示区域"是否正在处于动画
+			  if( page == page_count ){  //已经到最后一个版面了,如果再向后，必须跳转到第一个版面。
+				//$v_show.animate({ left : '0px'}, "slow"); //通过改变left值，跳转到第一个版面
+				//page = 1;
+				}else{
+				
+				$v_show.animate({ left : '-='+v_width }, "slow");  //通过改变left值，达到每次换一个版面
+				$(this).removeClass("index_scroll_right_a_hover");
+				$(".index_scroll_left").addClass("index_scroll_left_a_hover");
+				page++;
+			 }
+		 }
+		
+   });
+    //往前 按钮
+    $(".index_scroll_left").click(function(){
+$(".index_scroll_1,.index_scroll_2,.index_scroll_3,.index_scroll_4,.index_scroll_5,.index_scroll_6,.index_scroll_7,.index_scroll_8").hide();
+	$(".index_scroll_bottom").each(function(){ 
+			$(this).html($(this).attr("text"));
+			$(this).removeClass("index_scroll_bottom_up");
+
+    }); 
+	     var $parent = $(this).parents("div.index_scroll");//根据当前点击元素获取到父元素
+		 var $v_show = $parent.find("div.index_scroll_main"); //寻找到"视频内容展示区域"
+		 var $v_content = $parent.find("div.index_scroll_box"); //寻找到"视频内容展示区域"外围的DIV元素
+		 var v_width = $v_content.width();
+		 var len = $v_show.find("li").length;
+		 var page_count = Math.ceil(len / i) ;   //只要不是整数，就往大的方向取最小的整数
+		 if( !$v_show.is(":animated") ){    //判断"视频内容展示区域"是否正在处于动画
+		 	 if( page == 1 ){  //已经到第一个版面了,如果再向前，必须跳转到最后一个版面。
+				//$v_show.animate({ left : '-='+v_width*(page_count-1) }, "slow");
+				//page = page_count;
+			}else{
+				$v_show.animate({ left : '+='+v_width }, "slow");
+				$(this).removeClass("index_scroll_left_a_hover");
+				$(".index_scroll_right").addClass("index_scroll_right_a_hover");
+				page--;
+			}
+		}
+		
+    });
+});
+
+$(function(){
+	
+	$(".select_list").click(function(){
+		$(this).find(".select_ul").toggle();
+	})
+	
+	$(".select_list").mouseleave(function(){
+		$(this).find(".select_ul").hide();
+	});
+	
+	$(".select_list .select_ul ul li").click(function(){
+		$(this).parents(".select_list").find(".select_value").text($(this).text());
+	});
+	
+	$(".box_close").click(function(){
+		$("#box").hide();
+		$(".box_bg").hide();
+	})
+	
+	$("#bank").click(function(){
+		$(".site").hide();
+		$(".bank").show();
+		$(".Quick_Link_top_button:eq(0)").show();
+		$(".Quick_Link_top_button:eq(1)").hide();
+	})
+	$("#site").click(function(){
+		$(".site").show();
+		$(".bank").hide();
+		$(".Quick_Link_top_button:eq(0)").show();
+		$(".Quick_Link_top_button:eq(1)").hide();
+	})
+	$("#buy").click(function(){
+		$(".Quick_Link_top_button:eq(0)").hide();
+		$(".Quick_Link_top_button:eq(1)").show();
+	})
+	
+	$(".login_input").blur(function(){
+		if($(this).val()==""){
+			$(this).parent().find(".error span").show();
+			$(this).addClass("input_error");
+		}
+		else{
+			$(this).parent().find(".error span").hide();
+			$(this).removeClass("input_error");
+		}
+	})
+
+	/*下拉菜单*/
+	$('.classify_select b').click(function(event) {
+    	$(this).siblings('p').show();
+	}); 
+
+	$('.classify_select p a').mouseenter(function(event) {
+	    $(this).css('background','#eee');
+	}).mouseleave(function(event) {
+	    $(this).css('background','#fff');
+	});  
+	$('.classify_select p a').click(function(event) {
+	    $(this).parent('p').siblings('b').text($(this).text());
+	    $(this).parent('p').hide();
+	});
+
+	$("body").bind("click",function(e){
+    if($(e.target).closest(".classify_select b,.classify_select p").length==0)
+    {
+        $('.classify_select p').hide();
+    } 
+	});
+
+
+	 $('.search-pannal a').on('click', function() {
+      $('.open_box').show();
+  });
+
+  $('.open_box').on('click', function() {
+//      $(this).hide();
+//      $(this).next('.open_box2').show();
+  });
+
+
+
+  $('.jnbxz').click(function(event) {
+     $('.jnbxx').show();
+	});
+	$('.dzxz').click(function(event) {
+	     $('.dzxx').show();
+		 $('.dzxx2').hide();
+	});
+
+
+	 $('.choose_more em').click(function(event) {
+      if($(this).hasClass('curr'))
+      {
+          $(this).removeClass('curr');
+      }else
+      {
+          $(this).addClass('curr');
+      }
+  });
+
+
+
+	 // 点击隐藏每个选项夹
+  $('.foreign_tit span').click(function(event) {
+      if($(this).hasClass('curr'))
+      {
+          $(this).removeClass('curr');
+          $(this).siblings('em').removeClass('curre');
+          $(this).parent().siblings('ul').show();
+      }
+      else
+      {
+          $(this).addClass('curr');
+          $(this).siblings('em').addClass('curre');
+          $(this).parent().siblings('ul').hide();
+      }
+  });
+
+  $('.foreign_tit em').click(function(event) {
+      if($(this).hasClass('curre'))
+      {
+          $(this).removeClass('curre');
+          $(this).siblings('span').removeClass('curr');
+          $(this).parent().siblings('ul').show();
+      }
+      else
+      {
+          $(this).addClass('curre');
+          $(this).siblings('span').addClass('curr');
+          $(this).parent().siblings('ul').hide();
+      }
+  });
+
+
+});
+
+// 2016.6.28新增js效果
+var time=5;
+var timer=null;
+function setTime(obj)
+	{
+		if(time==0)
+		{ 
+			$(obj).html('重新获取');
+			$(obj).css({'pointer-events':'auto','background':'#2a83c7'});
+		}
+		else
+		{
+			$(obj).html('重新获取('+time+')');
+			time--;
+			$(obj).css({'pointer-events':'none','background':'#ccc'});
+		}
+		timer=setTimeout(function(){
+			setTime(obj);
+		}, 1000);
+	}
+
+
+function max_num(obj,num){
+	$(obj).blur(function(event) {
+		if(parseInt($(this).val())>num)
+		{
+			$(this).after('<p class="max_money">最大金额不能超过'+num+'元</p>');
+		}
+		else
+		{
+			$(this).siblings('.max_money').remove();
+		}
+	});
+}
+max_num('.max_one',5000);
+max_num('.max_two',10000);
+max_num('.max_three',50000);
+
+// zhkt页面的交互效果
+$('.tiaokuan').click(function(event) {
+    $('.look_agreement').show();
+});
+$('.btn_close').click(function(event) {
+	$('.look_agreement').hide();
+});
+
+
+
+      
+})
+
+
+//银行卡 每四位空格
+
+
+var num = 0;
+function inputAccount(){
+
+	var str = $('#bankCard').val();
+
+	var elem = document.getElementById("bankCard");
+
+	console.log(elem);
+
+	if(str.length > num){
+		var c = str.replace(/\s/g,  "");
+
+		if(str != "" && c.length > 4 && c.length % 4 == 1){
+			$('#bankCard').val(str.substring(0, str.length - 1)+ " " + str.substring(str.length - 1, str.length));
+
+		}
+	}
+
+	if(elem.setSelectionRange){//W3C
+		setTimeout(function(){
+			elem.setSelectionRange(elem.value.length,elem.value.length);
+			elem.focus();
+		},0);
+	}else if(elem.createTextRange){//IE
+		var textRange=elem.createTextRange();
+		textRange.moveStart("character",elem.value.length);
+		textRange.moveEnd("character",0);
+		textRange.select();
+	}
+
+	num = str.length;
+
+}
+
+
+
+  function modalShowAndHide(type) {
+      if (type >= 1) {
+          $('.modal-mask, .map-dialog').show();
+      } else {
+          $('.modal-mask, .map-dialog').hide();
+          $('.open_box, .open_box2').hide();
+      }
+  }

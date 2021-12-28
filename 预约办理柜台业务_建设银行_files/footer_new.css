@@ -1,0 +1,39 @@
+/*/cn/header/common/WORKAREA/resource/cn/include/footer_new.html 引用这个CSS*/
+
+/*footer*/
+.footer{width:100%;height:210px;clear:both;}
+.footer_links{width:100%;height:50px;line-height:50px;background:#025a9d;}
+.GoTo-Top a{display:block;background:url(http://www.ccb.com/cn/v3/images/GoTo-top.gif);transition:all 0.5s;-moz-transition:all 0.5s;/* Firefox 4 */
+-webkit-transition:all 0.5s;/* Safari and Chrome */
+-o-transition:all 0.5s;/* Opera */
+}
+.GoTo-Top a:hover{background:url(http://www.ccb.com/cn/v3/images/GoTo-top.gif) center bottom;transition:all 0.5s;-moz-transition:all 0.5s;/* Firefox 4 */
+-webkit-transition:all 0.5s;/* Safari and Chrome */
+-o-transition:all 0.5s;/* Opera */
+}
+.GoTo-Top,.GoTo-Top a{width:36px;height:36px;}
+.GoTo-Top{float:right;margin-top:7px;}
+.footer_link_main{ overflow:hidden;width:960px;height:50px;}
+.footer_link_main .footerr_links_img{float:left;padding-top:8px;width:112px;display:block;}
+.footer_link_main ul {float:left;width:713px;overflow:hidden;margin-left:8px;}
+.footer_link_main ul li{float:left;padding-right:18px;}
+.footer_link_main .Language_select{float:right;width:115px;text-align:right;color:#1dd9e2;}
+
+.footer_link_main a{color:#1dd9e2;font-size:14px;line-height:50px;}
+.footer_link_main a:link{font-size:14px;color:#1dd9e2;font-family: "Microsoft Yahei",Arial, Helvetica, sans-serif,"黑体";height: 50px; line-height: 50px;}
+.footer_link_main a:visited{line-height:50px;}
+.footer_link_main ul li a:hover{color:#fff;}
+.footer_link_main a:active{line-height:50px;}
+
+.footer_link_main{width:960px;margin:0 auto;}
+.footer_link_main .Language_select a:hover{color:#fff;}
+
+.copy-right{width:100%;height:160px;background:#0066b3;}
+.copy-right_main{width:960px;margin:0 auto;}
+.copy-right_left{float:left;font-size:14px;color:#fff;padding-top:48px;}
+.copy-right_left span{padding-right:25px;line-height:2.0;}
+.copy-right_img{width:22px;height:28px;float:left;padding-right:20px;padding-top:10px;}
+.copy-right_text{float:left;font-family: "Microsoft Yahei",Arial, Helvetica, sans-serif,"黑体";}
+.copy-right_right{float:right;}
+.copy-right_right ul li{float:left;background:#fff;width:60px;padding:5px;margin-left:34px;text-align:center;color:#0066b3;line-height:15px;font-size:12px;font-family: "Microsoft Yahei",Arial, Helvetica, sans-serif,"黑体";}
+.copy-right_right ul{padding-top:36px;overflow:hidden;}

@@ -1,0 +1,336 @@
+﻿//start--防止重复提交
+function disableInnerSubmitBtn(form) {
+    $(form).find(".submitButton").each(function () { $(this).attr("disabled", "disabled"); });
+    $(form).find(".submitButton").each(function () { $(this).removeClass("submitButton").addClass("btn_disabled"); });
+}
+
+var WebUtil = {
+    // 将json对象转换为js string
+    jsonToString: function (data, replacer, space) {// replacer and space are optional
+        if ((typeof JSON == "undefined") || (typeof JSON.stringify == "undefined"))
+            throw new Error("Cannot find JSON.stringify(). Some browsers (e.g., IE < 8) don't support it natively, but you can overcome this by adding a script reference to json2.js, downloadable from http://www.json.org/json2.js");
+        return JSON.stringify(data, replacer, space);
+    },
+
+    getQueryString: function (name) {
+        var result = location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+        if (result == null || result.length < 1) {
+            return "";
+        }
+        return result[1];
+    },
+
+    insideContainer: function (containner, event) {
+        var offset = containner.offset();
+        if (offset === undefined) {
+            return false;
+        }
+        else {
+            offset.right = offset.left + containner.outerWidth();
+            offset.bottom = offset.top + containner.outerHeight();
+
+            return event.pageY < offset.bottom &&
+               event.pageY > offset.top &&
+               event.pageX < offset.right &&
+               event.pageX > offset.left;
+        }
+    },
+
+    ajax: function (options) {
+        var setting = {
+            async: false,
+            cache: true,
+            type: "post", //"get",//"post",
+            dataType: "json", //默认使用json， 除非指定为html
+            url: "",
+            data: {},
+            success: function (result) { },
+            error: function (result) { }
+        };
+        $.extend(setting, options);
+
+        jQuery.ajax({
+            async: setting.async,
+            type: setting.type,
+            dataType: setting.dataType,
+            cache: setting.cache,
+            url: setting.url,
+            data: setting.data,
+            success: setting.success,
+            error: setting.error
+        });
+    },
+    ajaxAntiForgery: function (options) {
+        var setting = {
+            async: false,
+            cache: true,
+            type: "post", //"get",//"post",
+            dataType: "json", //默认使用json， 除非指定为html
+            url: "",
+            data: {},
+            success: function (result) { },
+            error: function (result) { }
+        };
+        $.extend(setting, options);
+
+        $.ajaxAntiForgery({
+            async: setting.async,
+            type: setting.type,
+            dataType: setting.dataType,
+            cache: setting.cache,
+            url: setting.url,
+            data: setting.data,
+            success: setting.success,
+            error: setting.error
+        });
+    }
+}
+
+/* id:导航栏menu的id */
+function showMenu(id) {
+    $(".SecMenu-center").addClass('V2_None');
+    $("#SecMenu" + id).removeClass('V2_None').css("display", "block");
+    var menu = $('#Menu_' + id);
+    menu.removeClass();
+    switch (id) {
+        case '0':
+            menu.addClass('FstMenu_on');
+            break;
+        case '8':
+            menu.addClass('LstMenu_on');
+            break;
+        default:
+            menu.addClass('Menu_on');
+            break;
+
+    }
+}
+
+
+//获取首页日期
+function getDate(id) {
+    var myDate = new Date();
+    var dYear = myDate.getFullYear().toString();   //获取完整的年份(4位,1970-????)
+    var dMonth = myDate.getMonth().toString();      //获取当前月份(0-11,0代表1月)
+    var dDay = myDate.getDate().toString();       //获取当前日(1-31)
+
+    dMonth = parseInt(dMonth) + 1;
+
+    if ((dMonth.toString().length) < 2) {
+        dMonth = "0" + dMonth;
+    }
+    if (dDay.length < 2) {
+        dDay = "0" + dDay;
+    }
+    var str = dYear + "年" + dMonth + "月" + dDay + "日";
+    document.getElementById(id).innerHTML = str;
+}
+
+//end--防止重复提交
+try { document.domain = "abchina.com"; } catch (e) { }
+
+//提点建议部分
+$(function () {
+
+    //友情链接选择事件
+    $("#FriendLink").bind("change", function () {
+        var linkValue = $("#FriendLink :selected").val();
+        if (linkValue != "") {
+            window.open(linkValue);
+        }
+    });
+
+    $("a.FeedbackDialog").click(function (e) {
+        e.preventDefault();
+        var $this = $(this);
+        var horizontalPadding = 30;
+        var verticalPadding = 30;
+        $('<iframe frameborder="0" id="externalSite" class="externalSite" src="' + this.href + '" />').dialog({
+            title: ($this.attr('title')) ? $this.attr('title') : '提点建议',
+            autoOpen: true,
+            width: 550,
+            height: 380,
+            modal: true,
+            resizable: false,
+            autoResize: true,
+            overlay: {
+                opacity: 0.7,
+                background: "black"
+            }
+        }).width(550 - horizontalPadding).height(380 - verticalPadding);
+    });
+
+    //var curl = this.location.href.toString();
+    //var newcurl;
+
+    //if (curl.indexOf('/cn/') != -1)  //包含cn
+    //{
+    //    newcurl = curl.replace("/cn/", "/zt/");
+    //    $("#tc")[0].href = newcurl;
+    //}
+
+    //if (curl.indexOf('/zt/') != -1) //包含zt
+    //{
+    //    newcurl = curl.replace("/zt/", "/cn/");
+    //    $("#tc")[0].href = newcurl;
+    //}
+
+    //$('.logo-header').children(':text').focus(function () {
+    //    if (!this.initValue) {
+    //        this.initValue = this.value;
+    //    }
+    //    if (this.value === this.initValue) {
+    //        this.value = '';
+    //    }
+    //}).blur(function () {
+    //    if (this.value === '' || this.value === null) {
+    //        this.value = this.initValue;
+    //    }
+    //});
+
+    //$(".nav-center li:eq(" + menuid + ")").attr("class", "act");
+
+    //$(".nav li").bind("mouseover", function () {
+    //    $(this).addClass("hov")
+    //});
+    //$(".nav li").bind("mouseleave", function () {
+    //    $(this).removeClass("hov");
+    //    //$(".nav-center li:eq(" + menuid + ")").attr("class", "cur");
+    //});
+
+    //var u = navigator.userAgent, app = navigator.appVersion;
+    //var trident = u.indexOf('Trident') > -1 || u.indexOf('MSIE') > -1;
+    //var version = app.split(";");
+    //var trim_Version = version[1].replace(/[ ]/g, "");
+    //var ele = $("#snsshareside");
+    //if (ele[0] && trident && $.trim(trim_Version) == "MSIE6.0") {
+    //    ele.css({ position: "absolute" });
+    //    ele[0].style.setExpression("top", "eval((document.documentElement||document.body).scrollTop+" + 270 + ") + 'px'");
+    //}
+
+    //返回顶部
+    //var fixedDiv = $("#back-to-top");
+    //fixedDiv.hide();
+    //$(window).scroll(function () {
+    //    if ($(window).scrollTop() > 100) {
+    //        fixedDiv.fadeIn(500);
+    //    }
+    //    else {
+    //        fixedDiv.fadeOut(500);
+    //    }
+    //});
+    //fixedDiv.click(
+    //    function () {
+    //        $('body,html').animate({ scrollTop: 0 }, 500);
+    //        return false;
+    //    }
+    //);
+});
+
+function pageGoDirect() {
+    var p = $("#pageNumInput").val();
+    var pageIndex = parseInt(p, 0);
+    if (isNaN(pageIndex)) {
+        pageIndex = 1;
+    }
+    var currentUrl = window.location.href;
+    if (currentUrl.indexOf("?") == -1) {
+        location.href = currentUrl + "?pageIndex=" + pageIndex;
+    }
+    else {
+        if (currentUrl.indexOf("pageIndex=") == -1) {
+            location.href = currentUrl + "&pageIndex=" + pageIndex;
+        }
+        else {
+            if (new RegExp('pageIndex=NaN', 'gi').test(currentUrl)) {
+                location.href = currentUrl.replace(/pageIndex=NaN/g, "pageIndex=" + pageIndex);
+            } else {
+                location.href = currentUrl.replace(/pageIndex=(\d+\.?\d*|\.\d+)/g, "pageIndex=" + pageIndex);
+            }
+        }
+    }
+
+}
+
+var CommonUtil = {
+    // Not Available
+    isNA: function (obj) {
+        if (typeof (obj) == "undefined") { return true; }
+        if (typeof (obj) == "string" && obj === "") { return true; }
+        if (obj == null) { return true; }
+        return false;
+    },
+
+    numberLimit: function () {
+        var k = window.event.keyCode;
+
+        if ((k == 46) || (k == 8) || (k == 9)
+            || (k >= 48 && k <= 57)
+            || (k >= 96 && k <= 105) || (k >= 37 && k <= 40))
+        { }
+        else {
+            window.event.returnValue = false;
+        }
+        /*
+        ascii码说明：
+        8：退格键
+        46：delete
+        37-40： 方向键
+        48-57：小键盘区的数字
+        96-105：主键盘区的数字
+        110、190：小键盘区和主键盘区的小数点
+        189、109：小键盘区和主键盘区的负号
+        */
+    }
+}
+
+//注册事件
+function showDialogRegister() {
+    showDialogRegisterbyUrl("https://app.abchina.com/static/sns/RegisterGuide/", 440);
+}
+
+function showDialogRegisterbyUrl(url, dialogHeight) {
+    var d_w = 480;
+    var yOffset = 119;
+
+    var w_h = $(window).height(); //basic:633
+    var w_w = $(window).width(); //basic:1295
+    //var pageWidth = $(".topWrap").width();
+
+    var pageWidth = $(".logo-header").width();
+    var xOffset = (w_w - pageWidth) / 2;
+
+    if (xOffset < 0) { xOffset = 5 };
+
+    $('<iframe id="frm" frameborder="0"  style="overflow:hidden" scrolling="no" src="' + url + '" style="padding:5px 0px" />').dialog({
+        width: 900,
+        title: '',
+        height: dialogHeight,
+        position: [xOffset, yOffset],
+        closeOnEscape: true,
+        resizable: false
+    }).width(900).height(dialogHeight);
+
+    $("#frm_dialog").contents().find("#gologin").click(function () { $("#frm_dialog").dialog("close"); });
+}
+function closeDialog() {
+    $("#frm_dialog").dialog("close");
+}
+
+
+function shareTo(site) {
+    var e = encodeURIComponent, s = screen, wd = 640, hg = 480, u = document.location;
+    var uuid = '';
+    var ctxt = $('#contentText p').length > 0 ? $('#contentText p')[0].html().replace(/<[^>].*?>/g, '').substr(0, 120) : '';
+    var url = "http://api.bshare.cn/share/" + site + "?url=" + e(u) + "&title=" + e(document.title) + "&publisherUuid=" + uuid + "&summary=" + ctxt;
+    window.open(url, 'bshare', ['toolbar=0,status=0,resizable=1,width=' + wd + ',height=' + hg + ',left=' + (s.width - wd) / 2 + ',top=' + (s.height - hg) / 2]);
+}
+
+
+
+
+
+
+
+
+

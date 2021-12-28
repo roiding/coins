@@ -1,0 +1,243 @@
+var proSelct_index;
+var citySelct_index;
+var countyS_index;
+function getProInfo(item){//获取省份 
+	var item = $("#Scr_PD_ECD").val().split("|")[0];//item 产品id 
+	provinceArray = new Array();
+	var src = JS_FROM+"/cn/home/news/jnb/jnb_booking_"+item+"_"+V720+".js";
+		$.ajax({
+			type: "POST",
+			url: src,
+			async: false,
+			dataType:"jsonp",
+			jsonp:'callback',
+		    jsonpCallback:'jnbcb',
+		//	cache:true,
+			error: function(XMLHttpRequest, textStatus, errorThrown){
+				alert('Error ');
+			},
+			success: function(msg){
+				PRODUCT_LIST = msg.PRODUCT_LIST;
+				var proArr=[];
+				for(var proid in PRODUCT_LIST){
+					if(PRODUCT_LIST[proid].PRODUCT_ID == item){
+						provinceArray = PRODUCT_LIST[proid].pro_list;
+					}
+				}
+				for(var j=0;j<provinceArray.length;j++){
+					if (provinceArray[j].value.indexOf("售完)")!= -1){
+						$("#Prov_Cd").append("<option value='"+provinceArray[j].id+"' sidx='"+j+"' disabled=disabled>"+provinceArray[j].value+"</option>");
+					}else{
+						$("#Prov_Cd").append("<option value='"+provinceArray[j].id+"' sidx='"+j+"'>"+provinceArray[j].value+"</option>");
+					}
+				}
+
+				if (isFrist_flag && V448!=''){
+					$('#Prov_Cd').val(V448);
+					$("#Prov_Cd").parents(".pbd_selectCtrl").find(".cur_select").text($("#Prov_Cd").find('option:selected').text());
+					$('#Prov_Cd').change();
+				}
+			}
+
+		});
+}
+
+
+function getProv_Cd(){
+
+	clearSelect("City_Cd","市");//市
+	clearSelect("CntyAndDstc_Cd","区/县");
+	$("#xzwd").val('');
+	$("#ORG_CODE").empty();
+	$("#CheckWeek_input").val('');
+	countryArray.length=0;
+	$("#area_wd").html('');
+	$("#KYY_DIV").html('');
+	$("#BOOKING_DATE").val("");
+
+	$("#ORG_NAME").val('');
+	$("#ORG_ADD").val('');
+	$("#ORG_TEL").val('');
+	
+	if ($("#Prov_Cd").val()==""){}else{
+
+		//非会员是否发过短信
+		if (Vlogin_flag =='1'){
+		}else{
+			if (V404=='' &&V784==''){
+				if ($("#FLOWID").val()==''){
+					$("#MOBILE_CODE").focus();
+					go_text("请先获取短信验证码!");
+					$('#Prov_Cd').val('');
+		    		$("#Prov_Cd").parents(".pbd_selectCtrl").find(".cur_select").text($("#Prov_Cd option:first").html());
+					return false;
+				}
+			}
+		}
+
+
+
+
+		proSelct_index =$("#Prov_Cd").find("option:selected").attr("sidx");
+		var cityList  = provinceArray[proSelct_index].city_list;
+		for(var i = 0;i<cityList.length;i++){
+			if (cityList[i].value.indexOf("售完)")!= -1){
+				$("#City_Cd").append("<option value='"+cityList[i].id+"'  sidx='"+i+"' disabled=disabled>"+cityList[i].value+"</option>");
+			}else{
+				$("#City_Cd").append("<option value='"+cityList[i].id+"'  sidx='"+i+"'>"+cityList[i].value+"</option>");
+			}
+		}
+		if (isFrist_flag && V460 !=''){
+			$('#City_Cd').val(V460);
+			$("#City_Cd").parents(".pbd_selectCtrl").find(".cur_select").text($("#City_Cd").find('option:selected').text());
+			$("#City_Cd").change();
+		}
+	}
+
+}
+
+function getCity_Cd(){
+	var Prov_CdObj = $("#City_Cd").val();
+	clearSelect("CntyAndDstc_Cd","区/县");
+	$("#xzwd").val('');
+	$("#ORG_CODE").empty();
+	$("#CheckWeek_input").val('');
+	countryArray.length=0;
+	$("#area_wd").html('');
+	$("#KYY_DIV").html('');
+	$("#BOOKING_DATE").val("");
+
+	$("#ORG_NAME").val('');
+	$("#ORG_ADD").val('');
+	$("#ORG_TEL").val('');
+	
+	if (Prov_CdObj ==""){}else{
+		citySelct_index =$("#City_Cd").find("option:selected").attr("sidx");
+		var countyList  = provinceArray[proSelct_index].city_list[citySelct_index].COUNTY_list;
+		for(var i = 0;i<countyList.length;i++){
+			if (countyList[i].value.indexOf("售完)")!= -1){
+				$("#CntyAndDstc_Cd").append("<option value='"+countyList[i].id+"'  sidx='"+i+"' disabled=disabled>"+countyList[i].value+"</option>");
+			}else{
+				$("#CntyAndDstc_Cd").append("<option value='"+countyList[i].id+"'  sidx='"+i+"'>"+countyList[i].value+"</option>");
+			}
+		}
+		if (isFrist_flag && V449 !=''){
+			$('#CntyAndDstc_Cd').val(V449);
+			$("#CntyAndDstc_Cd").parents(".pbd_selectCtrl").find(".cur_select").text($("#CntyAndDstc_Cd").find('option:selected').text());
+			$("#CntyAndDstc_Cd").change();
+		}
+	}
+}
+
+
+
+function getNJNB_WD_DATE(){
+	var JNB_DATE_TYPE =$("#Scr_PD_ECD").val().split("|")[4];
+	if ('0'==JNB_DATE_TYPE){
+		if ($("#Prov_Cd").val()==""){}else{
+			var ORG_CODE =$("#ORG_ID_V").val();
+			var PRODUCT_ID = $("#Scr_PD_ECD").val().split("|")[0];
+			var item = $("#Scr_PD_ECD").val().split("|")[0];//item 产品id 
+			var src = JS_FROM+"/cn/home/news/jnb/jnb_booking_date_"+item+".js?";
+			$.ajax({
+		    	type: "POST",
+		  		url: src,
+		  		async: false,
+				dataType:"jsonp",
+				jsonp:'callback',
+				jsonpCallback:'jnbcb',
+			//	cache:true,
+		  		error: function(XMLHttpRequest, textStatus, errorThrown){
+		  			go_count('当前预约场面火爆，请稍后再试\n参考代码:0060Z110LK01');
+		    		$("#xzwd").val('');
+		    		$("#area_wd").html('');
+		    		$("#KYY_DIV").html('');
+				},
+				success: function(msg){
+					msg = eval(msg);
+					PRODUCT_LIST = msg.PRODUCT_LIST;
+					var proArr=[];
+					var wd_list;
+					var date_mark;//预约日期位图
+					
+					for1:
+					for(var proid in PRODUCT_LIST){
+						if(PRODUCT_LIST[proid].PRODUCT_ID == PRODUCT_ID){
+							wd_list = PRODUCT_LIST[proid].wd_list;
+							for(var index in wd_list){
+								if(wd_list[index].ORG_CODE_ID == ORG_CODE){
+									date_mark = wd_list[index].mark;
+									break for1;
+								}
+							}//end for wd_list
+
+						}//end if
+					}//end for
+
+					if(date_mark == undefined){
+						$("#CheckWeek_input").val("");
+					}else{
+						var start_str = $("#beginSpan").text();
+						var end_str = $("#endSpan").text();
+						var start_date = new Date(getYMD(start_str,"Y"),getYMD(start_str,"M"),getYMD(start_str,"D"));
+						var end_date = new Date(getYMD(end_str,"Y"),getYMD(end_str,"M"),getYMD(end_str,"D"));
+
+						var i = 0;
+						var outPutStr = "";
+						while(true){
+							if(start_date.getTime() > end_date.getTime() ) break;
+							if(date_mark.charAt(i) == 1) outPutStr += ","+formatDateReturn(start_date);
+							start_date.setDate(start_date.getDate()+1);
+							i++
+						} 
+						
+						if(outPutStr.length != 0) outPutStr = outPutStr.substring(1);
+						$("#CheckWeek_input").val(outPutStr);
+
+						if(isFrist_flag && V778 != "" && outPutStr.indexOf(V778)> -1){
+								$("#BOOKING_DATE").val(V778);
+								isFrist_flag = false;
+ 						}
+
+					}
+					
+				}
+			});
+		}
+	}
+}
+
+function getYMD(dateStr,type){
+	if(type =="Y"){
+		return dateStr.substr(0,4);
+	}else if(type =="M"){
+		return (dateStr.substr(4,2)-1);
+	}else if(type =="D"){
+		return dateStr.substr(6,2);
+	}else return dateStr;
+}
+
+function formatDateReturn(dateV){
+	var year = dateV.getFullYear();
+	var month = dateV.getMonth()+1;
+	var date = dateV.getDate();
+	if(month<10){
+		month = "0"+month;
+	}
+	if(date<10){
+		date = "0"+date;
+	}
+	var formatDate = year+""+month+""+date;
+	return formatDate;
+}
+
+
+
+
+
+
+
+
+
+
+

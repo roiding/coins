@@ -1,0 +1,42 @@
+
+/*滑动验证码*/
+#verify-refresh {
+	width: 22px;
+	height: 22px;
+	text-align:center;
+	margin: 10px;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	background: url(./refresh.png) center no-repeat;
+	background-size: 100%;
+}
+
+#verify-track {
+	/* position: relative; */
+	background: #FFFFFF;
+	text-align: center;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+
+
+.verify-noselect {/*对ie无效 可使用onselectstart="return false;"*/
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    user-select:none;
+}
+.verify-background-size {
+    /* behavior: url(backgroundsize.htc); */
+}
+.verify-border-radius {/*为应对IE7/8 不支持border-radius属性的问题*/
+    behavior: url(./PIE.htc);
+}
+

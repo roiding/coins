@@ -1,0 +1,415 @@
+/*
+
+    Copyright 2009 Itamar Arjuan
+    jsDatePick is distributed under the terms of the GNU General Public License.
+
+*/
+.JsDatePickBox .sunday,
+.JsDatePickBox .weekend{
+    -khtml-user-select: none;
+    font-size: 12px;
+    cursor: pointer;
+    overflow: hidden;
+    color: #7c7c7c;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    float: left;
+    font-weight: 700;
+    background: url(../images/date_head_bg.png) left -51px no-repeat;
+    border: 1px solid #D4D4D4;
+    margin-left: -1px;
+    margin-top: -1px;
+    text-decoration: none;
+}
+.daySelected{
+    text-shadow: 0 1px 0 #333;
+    background: url(../images/date_head_bg.png) left -77px no-repeat;
+}
+
+.JsDatePickBox{
+    position: relative;
+    width: 212px;
+    font-family: Arial;
+}
+
+.JsDatePickBox .jsDatePickCloseButton{
+    display: none;
+}
+.JsDatePickBox .jsDatePickCloseButtonOver{
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    top: 1px;
+    right: 10px;
+    width: 33px;
+    height: 13px;
+    background: url(../images/closeButton_over.gif) left top no-repeat;
+}
+.JsDatePickBox .jsDatePickCloseButtonDown{
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    top: 1px;
+    right: 10px;
+    width: 33px;
+    height: 13px;
+    background: url(../images/closeButton_down.gif) left top no-repeat;
+}
+
+.JsDatePickBox .boxLeftWall{
+    /*float: left;
+    width: 7px;
+    margin: 0;
+    padding: 0;*/
+    display: none;
+}
+
+.JsDatePickBox .boxRightWall{
+    display: none;
+}
+
+.JsDatePickBox .topWall{
+    display: none;
+}
+.JsDatePickBox .bottomWall{
+    display: none;
+}
+
+.JsDatePickBox .hiddenBoxLeftWall{
+    float: left;
+    width: 0px;
+    overflow: hidden;
+    overflow: hidden;
+}
+.JsDatePickBox .hiddenBoxRightWall{
+    float: left;
+    width: 0px;
+    overflow: hidden;
+    overflow: hidden;
+}
+
+.JsDatePickBox .boxMain {
+    width: 190px;
+}
+.JsDatePickBox .boxMainStripped{
+    background: #ffffff;
+    border: none;
+}
+.JsDatePickBox .tooltip{
+    display: none;
+}
+.JsDatePickBox .weekDaysRow{
+    height: 20px;
+    overflow: hidden;
+    line-height: 20px;
+    font-size: 10px;
+    color: #999;
+    text-align: center;
+    background: url(../images/date_head_bg.png) left -31px repeat-x;
+    border-left: 1px solid #D4D4D4;
+    border-right: 1px solid #D4D4D4;
+}
+.JsDatePickBox .weekDaysRow .weekDay{
+    float: left;
+    overflow: hidden;
+    width: 27px;
+}
+
+.JsDatePickBox .boxMainInner{
+    background: #fff;
+    width: 191px;
+    margin: 5px 0 0 0;
+    box-shadow: 0 0 3px #ccc;
+}
+.JsDatePickBox .boxMainCellsContainer{
+    overflow: hidden;
+    zoom:1;
+    background-color: #fff;
+    border: 1px solid #D4D4D4;
+}
+
+.JsDatePickBox .boxMainInner .controlsBar{
+    /*overflow: hidden;*//*里面要添加下拉框。*/
+    height: 31px;
+    position: relative;
+    background: url(../images/date_head_bg.png) left top repeat-x;
+}
+.JsDatePickBox .boxMainInner .controlsBarText{
+    /*overflow: hidden;*//*里面要添加下拉框。*/
+    line-height: 20px;
+    color: #000000;
+    font-size: 12px;
+    padding-top: 5px;
+    /*margin-left: 20px;*/
+}
+.JsDatePickBox .boxMainInner .controlsBarText select {
+    width: 60px;
+    /*margin-right: 40px;*/
+    margin-right:17px;
+    margin-left:17px;
+}
+.JsDatePickBox .boxMainInner .controlsBarText .iyear {
+	margin-right: 0;
+}
+
+.JsDatePickBox .boxMainInner .monthForwardButton{
+    overflow: hidden;
+    cursor: pointer;
+    width: 5px;
+    height: 9px;
+    position: absolute;
+    top: 11px;
+   left:80px;
+    background: url(../images/date_right_month.png) left top no-repeat;
+}
+.JsDatePickBox .boxMainInner .monthForwardButtonOver{
+    overflow: hidden;
+    cursor: pointer;
+    width: 5px;
+    height: 9px;
+    position: absolute;
+    top: 11px;
+   left:80px;
+    background: url(../images/date_right_month_hover.png) left top no-repeat;
+}
+.JsDatePickBox .boxMainInner .monthForwardButtonDown{
+    overflow: hidden;
+    cursor: pointer;
+    width: 5px;
+    height: 9px;
+    position: absolute;
+    top: 11px;
+   left:80px;
+    background: url(../images/date_right_month_down.png) left top no-repeat;
+}
+
+.JsDatePickBox .boxMainInner .monthBackwardButton{
+    overflow: hidden;
+    cursor: pointer;
+    width: 5px;
+    height: 9px;
+    position: absolute;
+    top: 11px;
+    left: 10px;
+    background: url(../images/date_left_month.png) left top no-repeat;
+}
+.JsDatePickBox .boxMainInner .monthBackwardButtonOver{
+    overflow: hidden;
+    cursor: pointer;
+    width: 5px;
+    height: 9px;
+    position: absolute;
+    top: 11px;
+    left: 10px;
+    background: url(../images/date_left_month_hover.png) left top no-repeat;
+}
+.JsDatePickBox .boxMainInner .monthBackwardButtonDown{
+    overflow: hidden;
+    cursor: pointer;
+    width: 5px;
+    height: 9px;
+    position: absolute;
+    top: 11px;
+    left: 10px;
+    background: url(../images/date_left_month_down.png) left top no-repeat;
+}
+
+.JsDatePickBox .boxMainInner .yearForwardButton{
+    overflow: hidden;
+    cursor: pointer;
+    width: 10px;
+    height: 9px;
+    position: absolute;
+    top: 11px;
+    right: 6px;
+    background: url(../images/date_right_month.png) left top no-repeat;
+}
+.JsDatePickBox .boxMainInner .yearForwardButtonOver{
+    overflow: hidden;
+    cursor: pointer;
+    width: 10px;
+    height: 9px;
+    position: absolute;
+    top: 11px;
+    right: 6px;
+    background: url(../images/date_right_month_hover.png) left top no-repeat;
+}
+.JsDatePickBox .boxMainInner .yearForwardButtonDown{
+    overflow: hidden;
+    cursor: pointer;
+    width: 10px;
+    height: 9px;
+    position: absolute;
+    top: 11px;
+    right: 6px;
+    background: url(../images/date_right_month_down.png) left top no-repeat;
+}
+
+.JsDatePickBox .boxMainInner .yearBackwardButton{
+    overflow: hidden;
+    cursor: pointer;
+    width: 10px;
+    height: 9px;
+    position: absolute;
+    top: 11px;
+    left: 104px;
+    background: url(../images/date_left_month.png) left top no-repeat;
+}
+.JsDatePickBox .boxMainInner .yearBackwardButtonOver{
+    overflow: hidden;
+    cursor: pointer;
+    width: 10px;
+    height: 9px;
+    position: absolute;
+    top: 11px;
+    left: 104px;
+    background: url(../images/date_left_month_hover.png) left top no-repeat;
+}
+.JsDatePickBox .boxMainInner .yearBackwardButtonDown{
+    overflow: hidden;
+    cursor: pointer;
+    width: 10px;
+    height: 9px;
+    position: absolute;
+    top: 11px;
+    left: 104px;
+    background: url(../images/date_left_month_down.png) left top no-repeat;
+}
+
+.JsDatePickBox .boxMainInner .dayNormal,
+.JsDatePickBox .boxMainInner .skipDay,
+.JsDatePickBox .boxMainInner .prevMonth {
+    -khtml-user-select: none;
+    font-size: 12px;
+    cursor: pointer;
+    overflow: hidden;
+    color: #7c7c7c;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    float: left;
+    background: url(../images/date_head_bg.png) left -51px no-repeat;
+    border: 1px solid #D4D4D4;
+    margin-left: -1px;
+    margin-top: -1px;
+    text-decoration: none;
+}
+.JsDatePickBox .boxMainInner a:hover{
+    text-decoration: none;
+}
+.JsDatePickBox .boxMainInner .dayNormalToday{
+    -khtml-user-select: none;
+    font-size: 12px;
+    cursor: pointer;
+    overflow: hidden;
+    color: #f00;
+    font-weight: bold;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    float: left;
+    border: 1px solid #D4D4D4;
+    margin-left: -1px;
+    margin-top: -1px;
+}
+
+.JsDatePickBox .boxMainInner .dayDisabled {
+    text-decoration: line-through;
+    color: #999;
+    -khtml-user-select: none;
+    font-size: 12px;
+    cursor: pointer;
+    overflow: hidden;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    float: left;
+    background: url(../images/date_head_bg.png) left -51px no-repeat;
+    border: 1px solid #D4D4D4;
+    margin-left: -1px;
+    margin-top: -1px;
+    cursor: default;
+}
+
+.JsDatePickBox .boxMainInner .dayOver{
+    -khtml-user-select: none;
+    cursor: pointer;
+    font-size: 12px;
+    overflow: hidden;
+    color: #fff;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    float: left;
+    text-align: center;
+    background: url(../images/date_head_bg.png) left -103px no-repeat;
+    text-shadow: 0 1px 0 #333;
+    border: 1px solid #D4D4D4;
+    margin-left: -1px;
+    margin-top: -1px;
+}
+.JsDatePickBox .boxMainInner .dayOverToday{
+    -khtml-user-select: none;
+    cursor: pointer;
+    font-size: 12px;
+    overflow: hidden;
+    color: #fff;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    float: left;
+    text-align: center;
+    background: url(../images/date_head_bg.png) left -103px no-repeat;
+    text-shadow: 0 1px 0 #333;
+    border: 1px solid #D4D4D4;
+    margin-left: -1px;
+    margin-top: -1px;
+}
+
+.JsDatePickBox .boxMainInner .dayDown{
+    -khtml-user-select: none;
+    cursor: pointer;
+    font-size: 12px;
+    overflow: hidden;
+    color: #fff;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    float: left;
+    text-align: center;
+    background: url(../images/date_head_bg.png) left -77px no-repeat;
+    text-shadow: 0 1px 0 #333;
+    border: 1px solid #D4D4D4;
+    margin-left: -1px;
+    margin-top: -1px;
+    text-decoration: none;
+}
+.JsDatePickBox .boxMainInner .dayDownToday{
+    -khtml-user-select: none;
+    cursor: pointer;
+    font-size: 12px;
+    overflow: hidden;
+    color: #fff;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    float: left;
+    text-align: center;
+    background: url(../images/date_head_bg.png) left -77px no-repeat;
+    text-shadow: 0 1px 0 #333;
+    border: 1px solid #D4D4D4;
+    margin-left: -1px;
+    margin-top: -1px;
+}
+.JsDatePickBox .boxMainInner .lineThrough {
+    text-decoration: line-through;
+}
+.JsDatePickBox .boxMainInner .nextMonth,
+.JsDatePickBox .boxMainInner .prevMonth {
+	background: url(../images/date02.png) 0 0 no-repeat;
+}

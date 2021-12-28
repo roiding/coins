@@ -1,0 +1,10 @@
+
+
+	jQuery(function(){
+		var length=jQuery(".showj_li").length;
+		if(4>length){
+			jQuery(".showj_tit:eq(0)").after('<li class="showj_li"><a href="http://group.ccb.com/cn/ccbtoday/newsv3/20211210_1639139832.html" target="_blank">• 建设银行与全国股转公司、北京...</a></li><li class="showj_li"><a href="http://group.ccb.com/cn/ccbtoday/newsv3/20211029_1635510600.html" target="_blank">• 中国建设银行公布2021年第三季...</a></li>')
+		};
+	});
+ 
+

@@ -1,0 +1,1 @@
+document.write('<div class="header_box"><div class="header_noconflict"><div class="logo"><a href="http://www.ccb.com/cn/home/indexv3.html"><img src="http://image3.ccb.com/cn/v3/images/logo.png" alt="中国建设银行" /></a></div><script type="text/javascript" src="http://www.ccb.com/cn/v3/include/headfoot/region_box_noconflict.shtml"></script>');

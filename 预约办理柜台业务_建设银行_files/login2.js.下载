@@ -1,0 +1,377 @@
+﻿$(function () {
+    $(".choose").each(function (i) {
+
+        $(this).click(function () {
+
+            $(".Quick_Link_top_button").hide().eq(i).show();
+            $(".Quick_Link_top_button").removeClass("hide");    //有些页面的css 设置 .hide { display: none !important;} 必须把hide删掉
+        });
+
+    });
+    $(".login_box").show();
+    $(".logined_box").hide();
+
+    var ajax_host = "http://www.ccb.com";
+    if (location.protocol == "https:") {
+        ajax_host = "https://sinfo.ccb.com";
+    }
+
+    if (getccbCookie("cs_cid")) {
+        if (!(/jinianbi/).test(location.hostname) && !(/TXCODE=NXH/).test(location.href) && !(/cn\/jnb\/subject/).test(location.href)) {
+            $.ajax({
+                type: "post",
+                cache: false,
+                url: ajax_host + "/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NHY000&jsoncallback=?",
+                dataType: "jsonp",
+                success: function (data) {
+                    var output = data;
+                    var loginStatus = output.loginStatus;
+                    var locat = top.location.href;
+                    if (loginStatus == "2") {
+                        loginStatus = "0";
+                        if (locat.indexOf("/cn/mycom/") != -1) {
+                            if ((typeof halfStatus == "undefined" || halfStatus != true)) {
+                                loginStatus = "1";
+                            }
+                        }
+                    }
+
+                    if (loginStatus == "1") {
+                        if (locat.indexOf("/cn/mycom/") != -1) {
+                            if (typeof mustNeedLogin == "undefined" || mustNeedLogin != false) {
+                                if (locat.indexOf("tourl") != -1) {
+                                    if (locat.substring(locat.indexOf("tourl") + 5).indexOf("/tran/") != -1) {
+                                        locat = "http://www.ccb.com/cn/home/indexv3.html";
+                                    }
+                                }
+
+                                var index = locat.indexOf('.');
+                                var formatstr = locat.substring(7, index);
+
+                                if (formatstr == 'sinfo' || formatstr == 'www' || formatstr == 'group' || formatstr == 'insurance' || formatstr == 'life' || formatstr == 'finance' || formatstr == 'login') {
+                                    if (locat.indexOf('&') != -1) {
+                                        locat = locat.replace(/&/g, '|@|');
+                                    }
+                                }
+
+                                top.location.href = "http://login.ccb.com/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NHY010&tourl=" + locat;
+                            }
+                        }
+                    } else {
+                        $(".login_box").hide();
+                        $(".logined_box").show();
+                        var name = output.showName;
+                        var titleName = name;
+                        if (name.length >= 4) {
+                            name = name.substring(0, 4) + "…";
+
+
+                        }
+                        var time = output.sysTime;
+                        time = time.substring(8, 10);
+
+                        if (time >= 6 && time < 12) {
+                            $(".name_widyh span").html("<a href='#' onclick='toMyInfo4LoginArea();' title='" + titleName + "'>" + name + "</a>，上午好！");
+                        } else if (time >= 12 && time < 14) {
+                            $(".name_widyh span").html("<a href='#' onclick='toMyInfo4LoginArea();' title='" + titleName + "'>" + name + "</a>，中午好！");
+                        } else if (time >= 14 && time < 18) {
+                            $(".name_widyh span").html("<a href='#' onclick='toMyInfo4LoginArea();' title='" + titleName + "'>" + name + "</a>，下午好！");
+
+                        } else {
+                            $(".name_widyh span").html("<a href='#' onclick='toMyInfo4LoginArea();' title='" + titleName + "'>" + name + "</a>，晚上好！");
+                        }
+                    }
+                }
+            });
+        }
+    }
+
+    $(".Quick_Link_top_button").each(function (i) {
+        $(this).click(function () {
+            var id = $(this).attr("id");
+            var text = $(this).parent().children('.select_list').children('.select_value').text();
+            if (text == '个人网上银行') {
+
+                setTimeout(loginByWy, 30000);
+                if (id.indexOf('?') < 0) {
+                    id += "?";
+                    url = successjump();
+                } else {
+                    url = "&" + successjump();
+
+                }
+                id += url;
+            }
+            if (id.indexOf("login.ccb.com") > 0) {
+                var localUrl = window.location.href;
+                var index = localUrl.indexOf('.');
+                var formatstr = localUrl.substring(7, index);
+                if (formatstr == 'sinfo' || formatstr == 'jinianbi' || formatstr == 'group' || formatstr == 'insurance' || formatstr == 'life' || formatstr == 'finance' || formatstr == 'www') {
+                    if (localUrl.indexOf('&') != -1) {
+                        localUrl = localUrl.replace(/&/g, '|@|');
+                    }
+                };
+                // if(formatstr == 'jinianbi'){
+                // 	localUrl = "http://www.ccb.com/cn/html1/office/ebank/subject/17/1205hzbwz/index.html";
+                // }
+                window.open(id + "&tourl=" + encodeURI(localUrl));
+            } else {
+                window.open(id);
+            }
+        });
+    });
+});
+
+function out() {
+    var ajax_host = "http://www.ccb.com";
+    if (location.protocol == "https:") {
+        ajax_host = "https://sinfo.ccb.com";
+    }
+    $.ajax({
+        type: "post",
+        cache: false,
+        url: ajax_host + "/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NHY001&jsoncallback=?",
+        dataType: "jsonp",
+        success: function (data) {
+
+			/*if(typeof mustNeedLogin != "undefined" && mustNeedLogin == true){
+				top.location.href = "http://login.ccb.com/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NHY010&tourl=http://life.ccb.com/cn/home/indexv3.html";
+			}else{
+				location.reload();
+			}*/
+
+            if (top.location.href.indexOf("http://www.ccb.com/cn/mycom/account_detail.html") == 0) {
+                top.location.href = "http://login.ccb.com/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NHY010&tourl=http://member.ccb.com/cn/mycom/user_center.html";
+            } else {
+                location.reload();
+            }
+        }
+    });
+}
+
+
+function successjump() {
+    var udc_customer_id = "cs_cid";
+    var udc_customer_name = "custName";
+    var udc_cookie = "ccbcustomid";
+    var udc_session_id = "ccbsessionid";
+    var strRight = "UDC_CUSTOMER_ID=" + getccbCookie(udc_customer_id) +
+        "&UDC_CUSTOMER_NAME=" + getccbCookie(udc_customer_name) +
+        "&UDC_COOKIE=" + getccbCookie(udc_cookie) +
+        "&UDC_SESSION_ID=" + getccbCookie(udc_session_id);
+    //window.location = "https://ibsbjstar.ccb.com.cn/app/V5/CN/STY1/login.jsp"+"?"+strRight;
+    return strRight;
+}
+function getccbCookie(cookieName) {
+    var allcookies = document.cookie;
+    var cookiePos = allcookies.indexOf(cookieName + "=");
+    var cookieValue = "";
+    if (cookiePos != -1) {
+        cookiePos += cookieName.length + 1;
+        var cookieEnd = allcookies.indexOf(";", cookiePos);
+        if (cookieEnd == -1) {
+            cookieEnd = allcookies.length;
+        }
+        cookieValue = unescape(allcookies.substring(cookiePos, cookieEnd));
+    }
+    return cookieValue;
+}
+
+var loginByWyTryTimes = 0;
+
+function loginByWy() {
+
+    if (!document.getElementById("testgetpcinfo")) {
+        $('<object id="testgetpcinfo" 	classid="clsid:87B65713-8973-4C2F-99C7-89B63F8618AD" style="display:none;"></object>').appendTo("body");
+    }
+    var tester = document.getElementById("testgetpcinfo");
+    if (tester && tester.GetInfoScan) {
+        //console.log(111);
+        return;
+    }
+
+    $.ajax({
+        type: "post",
+        cache: false,
+        url: "https://ibsbjstar.ccb.com.cn/CCBIS/B2CMainPlat_00?CCB_IBSVersion=V6&TXCODE=REG000&jsoncallback=?",
+        dataType: "jsonp",
+        success: function (data) {
+            var output = data;
+            var mycode = output.code;
+            var encString = output.encString;
+            if (loginByWyTryTimes < 3) {
+                if ("0" == mycode) {
+                    var myurl = "http://login.ccb.com/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NHY065&silent=loginByWY&code=0&encString=" + encString + "&tourl=" + top.location.href + "&jsoncallback=?";
+                    document.getElementById("loginByWyIframe").src = myurl;
+                    loginByWyTryTimes = 0;
+                } else {
+                    loginByWyTryTimes++;
+                    setTimeout(loginByWy, 30000);
+                }
+            } else {
+                loginByWyTryTimes = 0;
+            }
+
+        }
+    });
+
+
+}
+
+
+//新方法，解决跨域问题
+function toMyCom4LoginArea() {
+    var ajax_host = "http://www.ccb.com";
+    if (location.protocol == "https:") {
+        ajax_host = "https://sinfo.ccb.com";
+    }
+
+    var targetUrl = "http://member.ccb.com/cn/mycom/user_center.html";
+    var loginUrl = "http://login.ccb.com/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NHY010&tourl=http://member.ccb.com/cn/mycom/user_center.html";
+
+    $.ajax({
+        type: "post",
+        cache: false,
+        url: ajax_host + "/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NHY000&jsoncallback=?",
+        dataType: "jsonp",
+        success: function (data) {
+            var output = data;
+            var loginStatus = output.loginStatus;
+            var locat = top.location.href;
+            if (loginStatus == "0" || loginStatus == "2") {
+                top.location.href = targetUrl;
+            } else {
+                top.location.href = loginUrl;
+            }
+        },
+        error: function () {
+            top.location.href = loginUrl;
+        }
+    });
+}
+
+
+
+//新方法，解决跨域问题
+function toMyMsg4LoginArea() {
+    var ajax_host = "http://www.ccb.com";
+    if (location.protocol == "https:") {
+        ajax_host = "https://sinfo.ccb.com";
+    }
+
+    var targetUrl = "http://member.ccb.com/cn/mycom/znxx/messageService01.html";
+    var loginUrl = "http://login.ccb.com/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NHY010&tourl=http://member.ccb.com/cn/mycom/znxx/messageService01.html";
+
+    $.ajax({
+        type: "post",
+        cache: false,
+        url: ajax_host + "/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NHY000&jsoncallback=?",
+        dataType: "jsonp",
+        success: function (data) {
+            var output = data;
+            var loginStatus = output.loginStatus;
+            var locat = top.location.href;
+            if (loginStatus == "0") {//|| loginStatus == "2"
+                top.location.href = targetUrl;
+            } else {
+                top.location.href = loginUrl;
+            }
+        },
+        error: function () {
+            top.location.href = loginUrl;
+        }
+    });
+}
+
+//新方法，解决跨域问题
+function toMyHead4LoginArea() {
+    var ajax_host = "http://www.ccb.com";
+    if (location.protocol == "https:") {
+        ajax_host = "https://sinfo.ccb.com";
+    }
+
+    var targetUrl = "http://member.ccb.com/cn/mycom/xxxg/index_headxg.html";
+    var loginUrl = "http://login.ccb.com/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NHY010&tourl=http://member.ccb.com/cn/mycom/xxxg/index_headxg.html";
+
+    $.ajax({
+        type: "post",
+        cache: false,
+        url: ajax_host + "/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NHY000&jsoncallback=?",
+        dataType: "jsonp",
+        success: function (data) {
+            var output = data;
+            var loginStatus = output.loginStatus;
+            var locat = top.location.href;
+            if (loginStatus == "0") {//|| loginStatus == "2"
+                top.location.href = targetUrl;
+            } else {
+                top.location.href = loginUrl;
+            }
+        },
+        error: function () {
+            top.location.href = loginUrl;
+        }
+    });
+}
+
+
+
+//新方法，解决跨域问题
+function toMyInfo4LoginArea() {
+    var ajax_host = "http://www.ccb.com";
+    if (location.protocol == "https:") {
+        ajax_host = "https://sinfo.ccb.com";
+    }
+
+    var targetUrl = "http://member.ccb.com/cn/mycom/xxxg/index_messagexg.html";
+    var loginUrl = "http://login.ccb.com/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NHY010&tourl=http://member.ccb.com/cn/mycom/xxxg/index_messagexg.html";
+
+    $.ajax({
+        type: "post",
+        cache: false,
+        url: ajax_host + "/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NHY000&jsoncallback=?",
+        dataType: "jsonp",
+        success: function (data) {
+            var output = data;
+            var loginStatus = output.loginStatus;
+            var locat = top.location.href;
+            if (loginStatus == "0") {//|| loginStatus == "2"
+                top.location.href = targetUrl;
+            } else {
+                top.location.href = loginUrl;
+            }
+        },
+        error: function () {
+            top.location.href = loginUrl;
+        }
+    });
+}
+
+
+//新方法，解决跨域问题
+function toWangYin4LoginArea() {
+    var ajax_host = "http://www.ccb.com";
+    if (location.protocol == "https:") {
+        ajax_host = "https://sinfo.ccb.com";
+    }
+
+    $.ajax({
+        type: "post",
+        cache: false,
+        url: ajax_host + "/tran/WCCMainPlatV5?CCB_IBSVersion=V5&SERVLET_NAME=WCCMainPlatV5&TXCODE=NHY000&jsoncallback=?",
+        dataType: "jsonp",
+        success: function (data) {
+            var output = data;
+            var loginStatus = output.loginStatus;
+            var locat = top.location.href;
+            if (loginStatus == "0") {//|| loginStatus == "2"
+
+            } else {
+                setTimeout(loginByWy, 30000);
+            }
+        },
+        error: function () {
+            setTimeout(loginByWy, 30000);
+        }
+    });
+}

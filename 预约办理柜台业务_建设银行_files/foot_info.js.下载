@@ -1,0 +1,8 @@
+
+
+
+
+
+   document.write('<div class="copy-right"><div class="copy-right_main"><div class="copy-right_left"><div class="copy-right_img"><img src="http://www.ccb.com/cn/home/v3/images/copy_right_img.gif"></div><div class="copy-right_text"><span>本网站支持IPv6</span><br /><span>© 版权所有中国建设银行</span><span>京ICP备13030780号</span> <span>京公网安备：110102000450</span> <br /><span>总行地址：中国北京西城区金融大街25号</span> <span>邮编：100033</span><br /><span>手机网站：m.ccb.com</span><span>客服与投诉热线：95533</span></div></div><div class="copy-right_right"><ul><li><img src="http://www.ccb.com/cn/home/include/20151206_1449376288/wb.382411751461452652833.jpg">官方微博</li><li><img src="http://www.ccb.com/cn/home/include/20151206_1449376288/weixin.382411751461452652852.jpg">微信银行</li><li><img src="http://www.ccb.com/cn/home/include/20151206_1449376288/sj.jpg">手机银行</li></ul></div><div class="clear"></div></div></div><script type="text/javascript" src="http://www.ccb.com/cn/v3/head_content/quest.js"></script><div class="quick_operate" style="display: block;"><ul><li><a class="to_top" href="#none" onclick="LinkClickFunction(this)"></a></li></ul></div>')
+
+

@@ -1,0 +1,83 @@
+@keyframes shake {
+    0%,to {
+        transform: translateZ(0)
+    }
+    10%,30%,50%,70%,90% {
+        transform: translate3d(-10px,0,0)
+    }
+    20%,40%,60%,80% {
+        transform: translate3d(10px,0,0)
+    }
+}
+.shake {
+    animation: shake 1s;
+}
+.slice-result {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    bottom: -25px;
+    height: 24px;
+    text-indent: 16px;
+    font-size: 14px;
+    line-height: 24px;
+    transition: bottom .3s ease;
+    -o-transition: bottom .3s ease;
+    -moz-transition: bottom .3s ease;
+    -webkit-transition: bottom .3s ease;
+}
+.slice-result.fail {
+    background-color: #de715b;
+    bottom: 0;
+}
+.slice-result.success {
+    background-color: #5ebf70;
+    bottom: 0;
+}
+
+#slice-refresh {
+    width: 22px;
+    height: 22px;
+    text-align:center;
+    margin: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    background: url(./refresh.png) center no-repeat;
+    background-size: 100%;
+}
+#slice-drag-slider {
+    /* width: 34px;
+    height: 24px; */
+    position: absolute;
+    /* top: 3px; */
+    /* left: 10px; */
+    /* filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../icon/slider.png',sizingMethod='scale'); */
+    border-radius: 12px;
+    cursor: pointer;
+    border-width: 0px;
+}
+#slice-drag-slider-img {
+    /* background-color: #1296db; */
+    background-image: url(./slider.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+}
+
+
+.slice-noselect {/*对ie无效 可使用onselectstart="return false;"*/
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    user-select:none;
+}
+.slice-background-size {
+    /* behavior: url(backgroundsize.htc); */
+}
+.slice-border-radius {
+    behavior: url(./PIE.htc);
+}
+

@@ -1,0 +1,11 @@
+ 
+
+	jQuery(function(){
+		var length=jQuery(".showj_li").length;
+		if(4>length){
+			jQuery(".showj_tit:eq(1)").after('<li class="showj_li"><a href="http://group.ccb.com/cn/investor/announcement/20211201_1638340196.html" target="_blank">• 截至2021年11月30日止股份发行...</a></li><li class="showj_li"><a href="http://group.ccb.com/cn/investor/announcement/20211111_1636622809.html" target="_blank">• 关于李运副行长任职的公告</a></li>')
+		}
+		
+	});
+  
+

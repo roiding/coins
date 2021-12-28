@@ -1,0 +1,37 @@
+﻿document.write('<div class="header_top_box">\
+    <div class="header_top_main">\
+        <div class="header_top_left">\
+            <ul>\
+                <li class="se"><a href="http://www.ccb.com/cn/home/indexv3.html">个人客户</a></li>\
+                <li><a href="http://privatebank.ccb.com">私人银行</a></li>\
+                <li><a href="http://company.ccb.com/cn/home/company_indexv3.html">公司机构</a></li>\
+                <li><a href="http://scompany.ccb.com/cn/home/s_company_indexv3.html">小微企业</a></li>\
+                <li class="Business_box_noconflict">\
+                    <div class="Business"><a href="javascrpic:void(0)"><img src="http://image4.ccb.com/cn/home/v3/images/sr_icon.png"></a>\
+                        <div class="Business_text_noconflict"><a href="http://buy.ccb.com" target="_blank">个人商城</a> <a href="https://mall.ccb.com" target="_blank">企业商城</a></div>\
+                    </div>\
+                </li>\
+            </ul>\
+        </div>\
+        <div class="header_top_right">\
+            <ul>\
+                <li><a href="#" class="header_top_right_a" id="kefu_noconflict"><img src="http://image4.ccb.com/cn/home/v3/images/zx_icon.png">客户服务</a>\
+                    <!--在线客服业务维护部分-->\
+                    <script type="text/javascript" src="http://www.ccb.com/cn/v3/head_content/head_service_noconflict.js" charset="utf-8"><\/script>\
+                </li>\
+                <li class="padding_13 header_top_right_a">|</li>\
+                <li><a href="#" class="header_top_right_a" id="jhjt_noconflict">建行集团</a>\
+                    <!--建行集团业务维护部分-->\
+                    <script type="text/javascript" src="http://www.ccb.com/cn/v3/head_content/head_ccbgroup_noconflict.js" charset="utf-8"><\/script>\
+                </li>\
+                <li><a href="#" id="white_content3_noconflict" class="header_top_right_a">国内分行</a>\
+                    <!--国内分行业务维护部分-->\
+                    <script type="text/javascript" src="http://www.ccb.com/cn/v3/head_content/head_branch_noon_noconflict.js" charset="utf-8"><\/script>\
+                </li>\
+                <li><a href="http://job.ccb.com" class="header_top_right_a" target="_blank">诚聘英才</a></li>\
+				<li class="padding_13 header_top_right_a">|</li>\
+				<li><a href="http://yun.ccb.com" target="_blank" class="header_top_right_a">建行云</a></li>\
+            </ul>\
+        </div>\
+    </div>\
+</div>');

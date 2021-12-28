@@ -1,0 +1,405 @@
+!function () {
+    window.sourceHost = location.protocol === "https:" ? "https://sinfo.ccb.com" : "http://www.ccb.com"
+    window.pageJquery = window.$ || window.jQuery
+
+    if (!pageJquery || pageJquery.prototype.on == null) {
+        window.$ = window.jQuery = void 0
+        document.write('<script type="text/javascript" src="' + sourceHost + '/cn/v3/js/jquery_pc.js"></script>')
+    }
+
+    document.write('<script type="text/javascript" src="' + sourceHost + '/cn/bfree/barrier-free-pageset.js"></script>')
+    document.write('<script type="text/javascript" src="' + sourceHost + '/cn/bfree/barrier-free-pageset_1.js"></script>')
+    document.write('<script type="text/javascript" src="' + sourceHost + '/cn/bfree/barrier-free-pageset_2.js"></script>')
+    document.write('<script type="text/javascript" src="' + sourceHost + '/cn/bfree/noObstacleAlertBox.js"></script>')
+    document.write('<script type="text/javascript" src="' + sourceHost + '/cn/bfree/barrier-free-main.js"></script>')
+}()
+
+!function () {
+    var Undefined = void 0
+
+    extend(Array.prototype, {
+        forEach: function (cb, ctx) {
+            if (typeof cb !== 'function') return
+
+            for (var i = 0, len = this.length; i < len; i++) {
+                if (Object.hasOwnProperty.call(this, i)) {
+                    cb.call(ctx, this[i], i, this)
+                }
+            }
+        },
+        map: function (cb, ctx) {
+            if (typeof cb !== 'function') return
+
+            var newArr = []
+
+            for (var i = 0, len = this.length; i < len; i++) {
+                newArr.push(cb.call(ctx, this[i], i, this));
+            }
+
+            return newArr
+        },
+        filter: function (cb, ctx) {
+            if (typeof cb !== 'function') return;
+
+            var newArr = [];
+
+            for (var i = 0, len = this.length; i < len; i++) {
+                if (i in this && cb.call(ctx, this[i], i, this)) {
+                    newArr.push(this[i]);
+                }
+            }
+
+            return newArr;
+        },
+        reduce: function (cb, initValue) {
+            if (typeof cb !== 'function') return;
+
+            var hasInit = initValue != Undefined,
+                init = hasInit ? initValue : this[0], i = hasInit ? 0 : 1;
+
+            for (var len = this.length; i < len; i++) {
+                init = cb(init, this[i], i, this);
+            }
+
+            return init;
+        },
+        reduceRight: function (cb, initValue) {
+            if (typeof cb !== 'function') return;
+
+            var hasInit = initValue != Undefined,
+                lastIndex = this.length - 1, init = hasInit ? initValue : this[lastIndex], i = hasInit ? lastIndex : lastIndex - 1;
+
+            for (; i >= 0; i--) {
+                init = cb(init, this[i], i, this);
+            }
+
+            return init;
+        },
+        some: function (cb, ctx) {
+            if (typeof cb !== 'function') return;
+
+            var result = false;
+
+            for (var i = 0, len = this.length; i < len; i++) {
+                result = !!cb.call(ctx, this[i], i, this)
+
+                if (result) break;
+            }
+
+            return result;
+        },
+        every: function (cb, ctx) {
+            if (typeof cb !== 'function') return;
+
+            var result = true;
+
+            for (var i = 0, len = this.length; i < len; i++) {
+                result = !!cb.call(ctx, this[i], i, this)
+
+                if (!result) break;
+            }
+
+            return result;
+        },
+        indexOf: function (val) {
+            for (var i = 0, len = this.length; i < len; i++) {
+                if (this[i] === val) return i;
+            }
+
+            return -1;
+        },
+        includes: function (val) {
+            return !!~this.indexOf(val)
+        },
+        find: function (cb, ctx) {
+            if (typeof cb !== 'function') return;
+
+            for (var i = 0, len = this.length; i < len; i++) {
+                if (cb.call(ctx, this[i], i, this)) {
+                    return this[i]
+                }
+            }
+        },
+        findIndex: function (cb, ctx) {
+            if (typeof cb !== 'function') return;
+
+            for (var i = 0, len = this.length; i < len; i++) {
+                if (cb.call(ctx, this[i], i, this)) {
+                    return i
+                }
+            }
+        },
+        flat: function (maxDeep) {
+            maxDeep = maxDeep === Undefined ? 1 : isNaN(maxDeep) ? 0 : +maxDeep
+
+            return flat(this, 0)
+
+            function flat(arr, deep) {
+                if (deep >= maxDeep) return arr
+
+                var newArr = []
+
+                for (var i = 0, len = arr.length; i < len; i++) {
+                    var item = arr[i]
+
+                    item instanceof Array
+                        ? newArr.push.apply(newArr, flat(item, deep + 1))
+                        : newArr.push(item)
+                }
+
+                return newArr
+            }
+        }
+    })
+
+    extend(Object, {
+        assign: function () {
+            var args = Array.prototype.slice.call(arguments),
+                obj = args.shift()
+
+            for (var i = 0, len = args.length; i < len; i++) {
+                var arg = args[i]
+
+                if (typeof arg === "object") {
+                    for (var attr in arg) {
+                        if (arg.hasOwnProperty(attr)) {
+                            obj[attr] = arg[attr];
+                        }
+                    }
+                }
+            }
+
+            return obj;
+        },
+        keys: function (obj) {
+            var arr = []
+
+            for (var i in obj) {
+                arr.push(i);
+            }
+
+            return arr;
+        },
+        values: function (obj) {
+            var arr = []
+
+            for (var i in obj) {
+                arr.push(obj[i]);
+            }
+
+            return arr;
+        },
+        create: function (prototype) {//与原生不同，这个Object.create(null)的原型仍会指向object
+            if (typeof prototype === 'object') {
+                function f() { }
+                f.prototype = prototype
+
+                return new f
+            } else {
+                throw Error('Object prototype may only be an Object or null')
+            }
+        }
+    })
+
+    extend(window, {
+        Promise: function () {
+            function Promise(resolver) {
+                if (typeof resolver !== 'function')
+                    throw new TypeError('必须传递一个函数作为Promise的第1个参数');
+
+                if (!(this instanceof Promise))
+                    return new Promise(resolver);
+
+                this._value;
+                this._reason;
+                this._status = 'PENDING';
+                this._resolves = null;
+                this._rejects = null;
+
+                var resolve = statusHandler.bind(this, 'RESOLVED'),
+                    reject = statusHandler.bind(this, 'REJECTED')
+
+                try { resolver(resolve, reject) } catch (e) { reject(e) }
+            }
+
+            Promise.prototype = {
+                constructor: Promise,
+                then: function (onResolved, onRejected) {
+                    var promise = this
+
+                    return new Promise(function (resolve, reject) {
+                        if (promise._status === 'PENDING') {
+                            (promise._resolves || (promise._resolves = [])).push(resolveHandler);
+                            (promise._rejects || (promise._rejects = [])).push(rejectHandler);
+                        } else if (promise._status === 'RESOLVED') {
+                            addJob(resolveHandler.bind(null, promise._value))
+                        } else if (promise._status === 'REJECTED') {
+                            addJob(rejectHandler.bind(null, promise._reason))
+                        }
+
+                        function resolveHandler(value) {
+                            if (isPromise(value)) {
+                                value.then(resolveHandler, rejectHandler)
+                            } else if (typeof onResolved === 'function') {
+                                try { value = onResolved(value), resolve(value) } catch (e) { reject(e) }
+                            } else {
+                                resolve(value);
+                            }
+                        }
+
+                        function rejectHandler(reason) {
+                            if (typeof onRejected === 'function') {
+                                try { reason = onRejected(reason), resolve(reason) } catch (e) { reject(e) }
+                            } else {
+                                reject(reason);
+                            }
+                        }
+                    });
+                },
+                "catch": function (onRejected) {
+                    return this.then(Undefined, onRejected)
+                }
+            }
+
+            Promise.resolve = function (value) {
+                if (value instanceof Promise) return value
+
+                return new Promise(function (resolve, reject) {
+                    if (typeof value === 'object' && typeof value['then'] === 'function') {
+                        var thenable = value
+
+                        thenable.then(function (value) {
+                            resolve(value)
+                        }, function (reason) {
+                            reject(reason)
+                        })
+                    } else {
+                        resolve(value)
+                    }
+                })
+            }
+
+            Promise.reject = function (reason) {
+                return new Promise(function (resolve, reject) {
+                    reject(reason)
+                })
+            }
+
+            Promise.all = function (promises) {
+                if (!(promises instanceof Array)) {
+                    throw new TypeError('参数必须是Promise数组');
+                }
+
+                return new Promise(function (resolve, reject) {
+                    var result = []
+
+                    function resolver(index) {
+                        return function (value) {
+                            resolveAll(index, value);
+                        };
+                    }
+
+                    function resolveAll(index, value) {
+                        result[index] = value
+
+                        if (--count === 0) {
+                            resolve(result)
+                        }
+                    }
+
+                    if (promises.length === 0) resolve([])
+
+                    for (var i = 0, count = len = promises.length; i < len; i++) {
+                        promises[i] && promises[i].then && promises[i].then(resolver(i), reject);
+                    }
+                })
+            }
+
+            Promise.race = function (promises) {
+                if (!(promises instanceof Array)) {
+                    throw new TypeError('参数必须是Promise数组')
+                }
+
+                return new Promise(function (resolve, reject) {
+                    for (var i = 0, len = promises.length; i < len; i++) {
+                        promises[i].then(resolve, reject)
+                    }
+                })
+            }
+
+            function statusHandler(status, value) {
+                var promise = this;
+
+                if (promise._status !== 'PENDING') return
+                if (promise === value) throw Error("参数不能是自身的Promise实例")
+
+                promise._status = status;
+
+                var isResolved = promise._status === 'RESOLVED',
+                    callbacks = promise[isResolved ? '_resolves' : '_rejects']
+
+                addJob(function () {
+                    if (!callbacks) {
+                        if (!isResolved) {
+                            var uncaughtError = "未捕获异常:" + (value instanceof Error ? value.message : String(value))
+
+                            console.error(uncaughtError)
+                        }
+
+                        return
+                    }
+
+                    for (var i = 0; i < callbacks.length; i++) {
+                        callbacks[i](value)
+                    }
+
+                    callbacks = null
+                })
+
+                promise[isResolved ? '_value' : '_reason'] = value;
+                promise['_resolves'] = promise['_rejects'] = null;
+            }
+
+            function isPromise(p) {
+                return p && typeof p === 'object' && typeof p['then'] === 'function'
+            }
+
+            var taskId = null,
+                jobQueue = null
+
+            function addJob(job) {
+                if (!taskId) {
+                    jobQueue = []
+                    taskId = setTimeout(function () {
+                        for (var i = 0; i < jobQueue.length; i++) {
+                            jobQueue[i]()
+                        }
+
+                        jobQueue = null
+                        taskId = null
+                    })
+                }
+
+                jobQueue.push(job)
+            }
+
+            return Promise
+        }()
+    })
+
+    extend(window.Promise, {
+        delay: function (time) {
+            return new Promise(function (resolve) {
+                setTimeout(resolve, time)
+            })
+        }
+    })
+
+    function extend(target, obj) {
+        for (var k in obj) {
+            if (!(k in target)) {
+                target[k] = obj[k]
+            }
+        }
+    }
+}()

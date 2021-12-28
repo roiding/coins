@@ -1,0 +1,88 @@
+﻿var DomainReplace = (function () {
+    var DOMAIN_MODE = 'oldMode'
+    var ADDRESS_MAP = {
+        oldMode: {
+            "www.abchina.com": "www.abchina.com",
+            "eapply.abchina.com": "eapply.abchina.com",
+            "ewealth.abchina.com": "ewealth.abchina.com",
+            "app.abchina.com": "app.abchina.com",
+            "go.abchina.com": "go.abchina.com",
+            "media.abchina.com": "media.abchina.com",
+            "click.abchina.com": "click.abchina.com",
+            "m.abchina.com": "m.abchina.com",
+            "web.abchina.com": "web.abchina.com",
+            "query.abchina.com": "query.abchina.com",
+            "www.95599.cn": "www.95599.cn",
+            "ptbe.cdn-static.abchina.com": "ptbe.cdn-static.abchina.com"
+        }
+    }
+
+    var addressList = ADDRESS_MAP[DOMAIN_MODE];
+
+    function init() {
+        if (DOMAIN_MODE === "oldMode") {
+            return
+        }
+        $(function () {
+            processDOMUrl()
+        })
+    }
+
+    function processDOMUrl() {
+        var domList = document.querySelectorAll('[addressTransfer]');
+        for (var i = 0; i < domList.length; i++) {
+            var domItem = domList[i];
+            var tempTagName = domItem.tagName;
+            tempTagName = tempTagName.toUpperCase();
+            switch (tempTagName) {
+                case 'A':
+                case 'AREA':
+                case 'BASE':
+                    processUrl(domItem, 'href');
+                    break;
+                case 'IMG':
+                case 'IFRAME':
+                case 'AUDIO':
+                case 'VIDEO':
+                case 'SOURCE':
+                    processUrl(domItem, 'src');
+                    break;
+                case 'FORM':
+                    processUrl(domItem, 'action');
+                    break;
+            }
+        }
+    }
+
+    function processUrl(element, propertyName) {
+        var tempHref = element[propertyName];
+        tempHref = replaceAddressHost(tempHref)
+        element[propertyName] = tempHref;
+    }
+
+    function replaceAddressHost(sourceUrl) {
+        if (sourceUrl != undefined && sourceUrl.length > 0) {
+            var domain = getDomain(sourceUrl);
+            var newUrl = sourceUrl.replace(domain, addressList[domain]);
+            return newUrl;
+        }
+    }
+
+    function getDomain(address) {
+        var reg = /^http(s)?:\/\/([a-zA-Z0-9-.]+)\//
+        var domain = reg.exec(address)[2]
+        return domain
+    }
+
+    function getProcessedDomain(sourceDomain) {
+        if (DOMAIN_MODE === "oldMode") {
+            return sourceDomain
+        }
+        return addressList[sourceDomain]
+    }
+
+    return { init: init, replaceAddressHost: replaceAddressHost, getProcessedDomain: getProcessedDomain }
+})()
+
+//调用示例
+DomainReplace.init()
